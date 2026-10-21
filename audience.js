@@ -48,11 +48,10 @@
     css.textContent = [
       'html:not([data-audience="student"]) .tga-for-student{display:none!important;}',
       'html[data-audience="student"] .tga-for-parent{display:none!important;}',
-      '.tga-audience{display:inline-flex;align-items:center;background:#E6F6F7;border:1px solid rgba(57,178,185,.28);border-radius:9999px;padding:3px;gap:2px;flex-shrink:0;}',
-      '.tga-audience__btn{font-family:"Open Sans",sans-serif!important;font-size:11px!important;font-weight:700!important;letter-spacing:.04em!important;text-transform:uppercase!important;line-height:1.2!important;padding:7px 12px!important;border-radius:9999px!important;color:#4A4A4A!important;text-decoration:none!important;background:transparent!important;border:0!important;white-space:nowrap;cursor:pointer;}',
-      '.tga-audience__btn.is-active{background:#39B2B9!important;color:#fff!important;}',
-      '.tga-audience__btn:hover{color:#1B878D!important;}',
-      '.tga-audience__btn.is-active:hover{color:#fff!important;}',
+      '.tga-audience{display:inline-flex;align-items:center;gap:14px;flex-shrink:0;}',
+      '.tga-audience__btn{font-family:"Open Sans",sans-serif!important;font-size:13px!important;font-weight:400!important;letter-spacing:normal!important;text-transform:uppercase!important;line-height:1.2!important;padding:0!important;margin:0!important;border:0!important;border-radius:0!important;background:transparent!important;color:#595959!important;text-decoration:none!important;white-space:nowrap;cursor:pointer;}',
+      '.tga-audience__btn:hover{color:#39B2B9!important;}',
+      '.tga-audience__btn.is-active{color:#39B2B9!important;font-weight:700!important;}',
       'html[data-audience="student"] .tga-th-together{background:#39B2B9!important;}',
       'html[data-audience="student"] .tga-th-together .tga-start-here{background:rgba(255,255,255,.22);}',
       'html[data-audience="student"] .tga-price-cell--together{background:#f3fbfc;}',
@@ -64,7 +63,7 @@
       'html[data-audience="student"] .tga-pricing-layout--simple .tga-ptable col.tga-col-student,',
       'html[data-audience="student"] .tga-pricing-layout--simple .tga-ptable col.tga-col-combined{width:29%;}',
       '@media (min-width:768px){html[data-audience="parent"] #tga-includes-grid{grid-template-columns:repeat(5,minmax(0,1fr));}html[data-audience="student"] #tga-includes-grid{grid-template-columns:repeat(4,minmax(0,1fr));}}',
-      '@media (max-width:767px){.tga-audience__btn{padding:6px 9px!important;font-size:10px!important;}}'
+      '@media (max-width:767px){.tga-audience{gap:10px;}.tga-audience__btn{font-size:12px!important;}}'
     ].join('');
     (document.head || document.documentElement).appendChild(css);
   }
