@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>T.E.A.M.S. Digital Lab Series for Students</title>
+<meta name="description" content="Short video Labs for students on school, friends, confidence, and what comes next. One Lab at a time. No subscription."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;700;800&amp;family=Overpass:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .glass-card-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  }
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, rgba(0, 161, 171, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 161, 171, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #39B2B9, #1B878D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  button:not(.nav-login), a.btn { font-family: 'Overpass', sans-serif !important; }
+  header nav { flex-wrap: nowrap !important; align-items: center !important; column-gap: 1.15rem !important; }
+  .nav-link {
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 15px !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+    color: #595959 !important;
+    text-decoration: none !important;
+    border-bottom: 2px solid transparent;
+    padding: 6px 0 4px !important;
+    white-space: nowrap !important;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .nav-link:hover { color: #39B2B9 !important; }
+  .nav-link--active { color: #39B2B9 !important; border-bottom-color: #39B2B9 !important; font-weight: 700 !important; }
+  a.nav-login, .nav-login {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    color: #595959 !important;
+    text-decoration: none !important;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 10px 0 0;
+  }
+  .nav-login:hover { color: #39B2B9 !important; }
+  .btn, button { border-radius: 9999px !important; transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .btn:hover, button:hover { transform: translateY(-3px) !important; }
+  .btn.bg-primary, .btn.bg-primary-container, button.bg-primary { background-color: #39B2B9 !important; border-color: #39B2B9 !important; }
+  .btn.bg-primary:hover, .btn.bg-primary-container:hover, button.bg-primary:hover { background-color: #1B878D !important; }
+  @media (max-width: 767px) {
+    .tga-roles { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 20px 8px !important; justify-items: center !important; }
+    .tga-role { width: 100% !important; max-width: 110px !important; }
+  }
+</style>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: "#39B2B9",
+          "primary-container": "#39B2B9",
+          "deep-teal": "#1B878D",
+          charcoal: "#13151A",
+          "slate-gray": "#4A4A4A",
+          "teal-wash": "#E6F6F7",
+          surface: "#F9FAFB",
+          tertiary: "#256487"
+        },
+        fontFamily: { sans: ["Archivo", "sans-serif"] },
+        maxWidth: { page: "1200px" }
+      }
+    }
+  }
+</script>
+<script src="audience.js"></script>
+</head>
+<body class="bg-surface text-charcoal font-sans antialiased selection:bg-primary selection:text-white">
+
+<header class="w-full fixed top-0 z-50 glass-card-light border-b border-white/20">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center justify-between gap-6 h-20">
+    <a class="flex items-center gap-3 group" data-tga-home href="student_homepage.html">
+      <img alt="T.E.A.M.S. Coaching Academy Logo" class="h-[72px] w-[72px] object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfITmoi7XKIel2eO-w94ZfNaxwe8wnChfMmTvzrR76l7SLgAnyltL8bgxHQRmC8P4OxEzgVRAuaCcWjfCWxQwTaqk-2EULndgHUBy_acO9cC8152PrvKxi35MbjhqQA1Lnn3v0hAe60N6p26qZT3N48jaOscl04GjOKUbPYliPrHter-mVfN-5EhksTK2C8IILGAQtyDqIsSU_nsjqOQw0Cx0rFi3z5cqvSocEWC_spmFTwvrXByvppu6TJPHJ4c37GkivLvgX-ks0"/>
+    </a>
+    <nav class="hidden md:flex flex-1 items-center justify-center">
+      <a class="nav-link nav-link--active" data-tga-home href="student_homepage.html">Home</a>
+      <a class="nav-link" href="Series and Labs.html">Series &amp; Labs</a>
+      <a class="nav-link" href="meet_coach_walker_t.e.a.m.s._growth_academy.html">Meet Coach Walker</a>
+      <a class="nav-link" href="contact_t.e.a.m.s._growth_academy.html">Contact</a>
+      <a class="nav-link" href="about_t.e.a.m.s._growth_academy.html">About T.E.A.M.S.</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <div class="tga-audience" role="group" aria-label="Choose parent or student site">
+        <a class="tga-audience__btn" data-tga-audience="parent" href="parent_first_homepage.html">For Parents</a>
+        <a class="tga-audience__btn" data-tga-audience="student" href="student_homepage.html">For Students</a>
+      </div>
+      <a class="nav-login hidden md:block" href="https://growthacademy.teamscoachingaz.com/login">Login</a>
+      <a href="#pricing" class="btn inline-block bg-primary text-white text-[12px] font-bold tracking-[0.04em] uppercase px-5 py-2.5 shadow-[0_4px_14px_0_rgba(0,161,171,0.39)]">Start Here</a>
+    </div>
+  </div>
+</header>
+
+<section class="bg-surface pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden bg-grid-pattern">
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-teal-wash/60 to-transparent pointer-events-none"></div>
+  <div class="absolute -top-40 -right-40 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+  <div class="max-w-page mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7">
+      <span class="inline-block py-1.5 px-4 rounded-full bg-teal-wash text-deep-teal font-bold text-xs tracking-widest uppercase mb-6 border border-primary/15">Digital Lab Series for students</span>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.08] tracking-tight mb-6">Skills for school, friends, and what comes next. <span class="text-gradient">In your language.</span></h1>
+      <p class="text-lg md:text-xl text-slate-gray max-w-2xl mb-4 leading-relaxed">Each Lab is a short video plus real situations to work through. You watch on your own, practice the skill, and leave with a plan you can use the same day.</p>
+      <p class="text-base text-charcoal font-semibold max-w-2xl mb-10">One Lab at a time. No subscription. Start with the topic that matches right now.</p>
+      <div class="flex flex-col sm:flex-row flex-wrap gap-4">
+        <a href="#pricing" class="btn inline-flex items-center justify-center bg-primary text-white font-bold text-sm tracking-wide uppercase px-8 py-4 shadow-[0_4px_14px_0_rgba(0,161,171,0.39)]">Start your Student Lab</a>
+        <a href="#labs" class="btn inline-flex items-center justify-center bg-white border border-slate-300 text-charcoal hover:border-primary hover:text-deep-teal font-bold text-sm tracking-wide uppercase px-8 py-4">See all Series &amp; Labs</a>
+      </div>
+    </div>
+    <div class="lg:col-span-5">
+      <div class="relative">
+        <div class="absolute inset-0 bg-primary/15 rounded-3xl rotate-2 scale-105"></div>
+        <div class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl border border-white">
+          <img alt="Students learning together" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBENBydcL6nSwpwB29Y6NvTIXtjBjJ4dC2i7TjckQZPCHuhuDJ9XGUOChILjisuVntyHUu_LEpWzY61x0e2YMjnwakTig4CzBIL37yW8XVrlXaDLLBH1hbd_Dr9i4CWDYM_d2aDXWGIgNHStUpqMbNObfWIEeFNOV5G1uXJ10FoZBayLCCxhauuJ3OaUHVyGIwQ316RjxEBrVnv3ikVWOPyw5iX8jROHfKEcdGzq0F5xI4h2hjeFsz9KgwAHUEMK5fvx62_0Vib-k7R"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <p class="text-[11px] font-bold tracking-[0.14em] uppercase text-primary mb-2">Student Lab · $59</p>
+            <p class="text-white text-lg font-bold leading-snug">Your lesson, your scenarios, your plan. Lifetime access.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-surface pb-8 md:pb-4">
+  <div class="max-w-page mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-5">
+      <article class="bg-white rounded-3xl border border-slate-200/80 p-7 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-teal-wash text-deep-teal flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined">school</span>
+        </div>
+        <h2 class="text-xl font-bold mb-2">Know what's coming</h2>
+        <p class="text-slate-gray leading-relaxed">Middle school, high school, and life after graduation, without guessing</p>
+      </article>
+      <article class="bg-white rounded-3xl border border-slate-200/80 p-7 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-charcoal text-white flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined">record_voice_over</span>
+        </div>
+        <h2 class="text-xl font-bold mb-2">Speak up for yourself</h2>
+        <p class="text-slate-gray leading-relaxed">Confidence, peer pressure, and finding your voice in your own words</p>
+      </article>
+      <article class="bg-white rounded-3xl border border-slate-200/80 p-7 shadow-sm">
+        <div class="w-12 h-12 rounded-2xl bg-teal-wash text-deep-teal border border-primary/20 flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined">bolt</span>
+        </div>
+        <h2 class="text-xl font-bold mb-2">Use it the same day</h2>
+        <p class="text-slate-gray leading-relaxed">Scenarios and a personal action plan, not a lecture you forget</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bg-charcoal text-white py-20 md:py-28 relative overflow-hidden" id="how-it-works">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-primary/15 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="max-w-page mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-14 items-start">
+    <div class="lg:col-span-6">
+      <span class="inline-block py-1 px-3 border border-primary/40 rounded text-primary font-bold text-xs tracking-widest uppercase mb-5">Built for students</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">Your Lab. Your pace. Your next step.</h2>
+      <div class="space-y-5 text-lg text-slate-300 leading-relaxed">
+        <p>This is not another talk about what you should do. Each Lab takes one real challenge and walks you through it.</p>
+        <p>You watch the student video, work the scenarios, and leave with a plan you own. Parents can get their own Lab on the same topic if they want, but you do not have to wait on anyone.</p>
+      </div>
+      <a href="#pricing" class="btn inline-flex mt-8 bg-primary text-white font-bold text-sm tracking-wide uppercase px-8 py-4">Start your Student Lab</a>
+    </div>
+    <ol class="lg:col-span-6 space-y-4">
+      <li class="flex gap-5 bg-white/5 border border-white/10 rounded-3xl p-6">
+        <span class="w-12 h-12 shrink-0 rounded-full bg-primary text-white font-extrabold flex items-center justify-center">1</span>
+        <div>
+          <h3 class="text-xl font-bold mb-1">Pick the topic.</h3>
+          <p class="text-slate-300">Choose the Lab that matches what you are dealing with now.</p>
+        </div>
+      </li>
+      <li class="flex gap-5 bg-white/5 border border-white/10 rounded-3xl p-6">
+        <span class="w-12 h-12 shrink-0 rounded-full bg-primary text-white font-extrabold flex items-center justify-center">2</span>
+        <div>
+          <h3 class="text-xl font-bold mb-1">Watch and practice.</h3>
+          <p class="text-slate-300">Short lessons, then real situations to work through.</p>
+        </div>
+      </li>
+      <li class="flex gap-5 bg-white/5 border border-white/10 rounded-3xl p-6">
+        <span class="w-12 h-12 shrink-0 rounded-full bg-primary text-white font-extrabold flex items-center justify-center">3</span>
+        <div>
+          <h3 class="text-xl font-bold mb-1">Use it that day.</h3>
+          <p class="text-slate-300">Leave with a personal action plan, not more homework.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="bg-teal-wash/40 py-20 md:py-24 bg-grid-pattern" id="included">
+  <div class="max-w-page mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">What you get in every Student Lab</h2>
+      <p class="text-lg text-slate-gray">One topic. Your lesson. Skills you can use right away.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <article class="bg-white rounded-3xl border border-slate-200/80 p-7">
+        <span class="material-symbols-outlined text-deep-teal mb-4">play_circle</span>
+        <h3 class="text-xl font-bold mb-2">Student Video Lessons</h3>
+        <p class="text-slate-gray text-sm leading-relaxed">Self-paced lessons you watch on your own, with strategies you can use the same day.</p>
+      </article>
+      <article class="bg-white rounded-3xl border border-slate-200/80 p-7">
+        <span class="material-symbols-outlined text-deep-teal mb-4">psychology</span>
+        <h3 class="text-xl font-bold mb-2">Scenarios Activity</h3>
+        <p class="text-slate-gray text-sm leading-relaxed">Real situations, self-reflection, goal-setting, and a personal action plan.</p>
+      </article>
+      <article class="bg-white rounded-3xl border border-slate-200/80 p-7">
+        <span class="material-symbols-outlined text-deep-teal mb-4">assignment_turned_in</span>
+        <h3 class="text-xl font-bold mb-2">Pre/Post Assessments</h3>
+        <p class="text-slate-gray text-sm leading-relaxed">See where you started and what changed when you finish.</p>
+      </article>
+      <article class="bg-white rounded-3xl border border-slate-200/80 p-7">
+        <span class="material-symbols-outlined text-deep-teal mb-4">workspace_premium</span>
+        <h3 class="text-xl font-bold mb-2">Certificate of Completion</h3>
+        <p class="text-slate-gray text-sm leading-relaxed">A formal certificate that recognizes the work you put in.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bg-surface py-20 md:py-24" id="labs">
+  <div class="max-w-page mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div class="max-w-2xl">
+        <span class="text-deep-teal font-bold text-xs tracking-widest uppercase mb-3 block">Pick the Lab that fits right now</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Six Labs ready today. More on the way.</h2>
+        <p class="text-lg text-slate-gray">Each Lab takes on one challenge. Choose the one that matches this season.</p>
+      </div>
+      <a href="Series and Labs.html" class="btn inline-flex items-center gap-2 bg-primary text-white font-bold text-sm tracking-wide uppercase px-6 py-3 whitespace-nowrap">View all Series &amp; Labs <span class="material-symbols-outlined text-lg">arrow_forward</span></a>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="Series and Labs.html" class="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+        <div class="h-2" style="background:#39B2B9"></div>
+        <div class="p-6">
+          <p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#39B2B9">Transition</p>
+          <h3 class="text-xl font-bold leading-snug mb-3">Middle School Preparation and Survival</h3>
+          <p class="text-slate-gray text-sm leading-relaxed">Middle school changes everything. Walk in ready instead of catching up later.</p>
+        </div>
+      </a>
+      <a href="Series and Labs.html" class="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+        <div class="h-2" style="background:#39B2B9"></div>
+        <div class="p-6">
+          <p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#39B2B9">Transition</p>
+          <h3 class="text-xl font-bold leading-snug mb-3">High School Preparation and Survival</h3>
+          <p class="text-slate-gray text-sm leading-relaxed">Higher stakes and more freedom. Build the habits that carry you through.</p>
+        </div>
+      </a>
+      <a href="Series and Labs.html" class="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+        <div class="h-2" style="background:#39B2B9"></div>
+        <div class="p-6">
+          <p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#39B2B9">Transition</p>
+          <h3 class="text-xl font-bold leading-snug mb-3">Pathways After High School</h3>
+          <p class="text-slate-gray text-sm leading-relaxed">College, trades, work, or a gap year. Pick a path you can stand behind.</p>
+        </div>
+      </a>
+      <a href="Series and Labs.html" class="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+        <div class="h-2" style="background:#1B878D"></div>
+        <div class="p-6">
+          <p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#1B878D">Empowerment</p>
+          <h3 class="text-xl font-bold leading-snug mb-3">Peer Pressure and Social Value</h3>
+          <p class="text-slate-gray text-sm leading-relaxed">What to do when fitting in starts to matter more than doing right.</p>
+        </div>
+      </a>
+      <a href="Series and Labs.html" class="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+        <div class="h-2" style="background:#1B878D"></div>
+        <div class="p-6">
+          <p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#1B878D">Empowerment</p>
+          <h3 class="text-xl font-bold leading-snug mb-3">Self Esteem and Knowing Your Worth</h3>
+          <p class="text-slate-gray text-sm leading-relaxed">Confidence that lasts longer than a compliment.</p>
+        </div>
+      </a>
+      <a href="Series and Labs.html" class="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+        <div class="h-2" style="background:#1B878D"></div>
+        <div class="p-6">
+          <p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#1B878D">Empowerment</p>
+          <h3 class="text-xl font-bold leading-snug mb-3">Finding Your Voice</h3>
+          <p class="text-slate-gray text-sm leading-relaxed">Speak up for yourself at school, at home, and with friends.</p>
+        </div>
+      </a>
+    </div>
+    <div class="mt-6 rounded-3xl border border-dashed border-primary/40 bg-teal-wash/50 px-6 py-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <p class="text-slate-gray leading-relaxed"><span class="font-bold text-charcoal">Coming soon.</span> Athletic Mindset, Management, and Social Series are in production.</p>
+      <a href="contact_t.e.a.m.s._growth_academy.html" class="btn inline-flex shrink-0 items-center justify-center bg-white border border-primary/30 text-deep-teal font-bold text-sm uppercase tracking-wide px-5 py-3">Join the list</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-charcoal text-white py-20 md:py-24" id="pricing">
+  <div class="max-w-page mx-auto px-6">
+    <div class="max-w-2xl mb-12">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Start with one Lab. Add more when you are ready.</h2>
+      <p class="text-lg text-slate-300">Every Lab is sold on its own. No subscription.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5 max-w-4xl">
+      <article class="bg-primary text-white rounded-3xl p-8 shadow-[0_12px_40px_rgba(57,178,185,0.35)] flex flex-col">
+        <span class="self-start text-[11px] font-bold tracking-widest uppercase bg-white/20 px-3 py-1 rounded-full mb-5">Start here</span>
+        <h3 class="text-2xl font-bold mb-2">Student Lab</h3>
+        <p class="text-5xl font-extrabold mb-1">$59</p>
+        <p class="text-sm uppercase tracking-wide text-white/80 mb-6">per Lab</p>
+        <p class="text-white/95 leading-relaxed mb-8 flex-grow">Your video lessons, scenarios, assessments, and certificate. Lifetime access.</p>
+        <a href="Series and Labs.html#pricing" class="btn inline-flex justify-center bg-white text-deep-teal font-bold text-sm uppercase tracking-wide px-6 py-4">See Student Labs</a>
+      </article>
+      <article class="bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col">
+        <h3 class="text-xl font-bold mb-2">Parents have their own Labs</h3>
+        <p class="text-slate-300 leading-relaxed mb-8 flex-grow">If a parent wants the matching lesson and a plan for home, they can switch to For Parents. You do not need that to start.</p>
+        <a href="parent_first_homepage.html" data-tga-audience="parent" class="btn inline-flex justify-center bg-white/10 border border-white/20 text-white font-bold text-sm uppercase tracking-wide px-6 py-4">View the parent site</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="bg-surface py-20 md:py-24" id="coach">
+  <div class="max-w-page mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="relative">
+      <div class="absolute -inset-3 bg-primary/15 rounded-3xl -rotate-2"></div>
+      <div class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
+        <img alt="Coach Walker" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo842q5iHftXnH22chocugOcVCpMR9XQIcn10TIy9ubK9gVK9WXkAchK9quJICPRsYLnZI5R3nau3D1QxsHsHS_aw4MYWng6Vz71BaWN-0j1lLhlGvD3sGLkgcN-x4JxGw9RPGQokx5scQ05-wLTJ4vLWx62F-w7yIqvGSvGA0PzwHHHwZAUmDx4G0dJ-yhKL4hEgWYKTTuvx8ugm60stsGtyc8iiPHS8Gu9KvtuzcR4OIubfe92TR8UUi1Jj83FGt4t5wjuZMoXXP"/>
+        <div class="absolute bottom-5 left-5 bg-charcoal/80 backdrop-blur text-white rounded-2xl px-4 py-3 border-l-4 border-primary">
+          <p class="font-bold">20+ years</p>
+          <p class="text-xs uppercase tracking-wider text-primary">Teacher, coach, principal, mentor, parent</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="text-deep-teal font-bold text-xs tracking-widest uppercase mb-3 block">Your coach</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Built by someone who has sat in your seat.</h2>
+      <div class="space-y-5 text-lg text-slate-gray leading-relaxed mb-8">
+        <p>Coach Walker has been a teacher, coach, principal, and mentor for more than 20 years. The Labs come from real conversations with students moving through the same transitions you are in now.</p>
+        <p>You get the same kind of guidance he used to give in his office: a clear picture of what is going on, and practical steps you can take.</p>
+      </div>
+      <div class="tga-roles grid grid-cols-3 md:grid-cols-5 gap-4 mb-8">
+        <div class="tga-role flex flex-col items-center gap-2 text-center"><span class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center"><span class="material-symbols-outlined text-lg">school</span></span><span class="text-sm font-medium">Teacher</span></div>
+        <div class="tga-role flex flex-col items-center gap-2 text-center"><span class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center"><span class="material-symbols-outlined text-lg">sports</span></span><span class="text-sm font-medium">Coach</span></div>
+        <div class="tga-role flex flex-col items-center gap-2 text-center"><span class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center"><span class="material-symbols-outlined text-lg">account_balance</span></span><span class="text-sm font-medium">Principal</span></div>
+        <div class="tga-role flex flex-col items-center gap-2 text-center"><span class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center"><span class="material-symbols-outlined text-lg">volunteer_activism</span></span><span class="text-sm font-medium">Mentor</span></div>
+        <div class="tga-role flex flex-col items-center gap-2 text-center"><span class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center"><span class="material-symbols-outlined text-lg">family_restroom</span></span><span class="text-sm font-medium">Parent</span></div>
+      </div>
+      <a href="meet_coach_walker_t.e.a.m.s._growth_academy.html" class="btn inline-flex bg-primary text-white font-bold text-sm tracking-wide uppercase px-8 py-4">Meet Coach Walker</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-primary py-20 md:py-24 text-center relative overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.18),transparent_55%)] pointer-events-none"></div>
+  <div class="max-w-3xl mx-auto px-6 relative z-10">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-5">One Lab. One skill. Start this week.</h2>
+    <p class="text-lg text-white/90 mb-8 leading-relaxed">Pick the challenge in front of you and start the student lesson. As you grow, new Labs are there for the next stage.</p>
+    <a href="#pricing" class="btn inline-flex bg-white text-deep-teal font-bold text-sm tracking-wide uppercase px-8 py-4">Start your Student Lab</a>
+  </div>
+</section>
+
+<footer class="w-full bg-[#0a0b0d] border-t border-white/5 pt-16 pb-10">
+  <div class="max-w-page mx-auto px-6">
+    <div class="grid md:grid-cols-12 gap-10 mb-12">
+      <div class="md:col-span-5">
+        <img alt="" class="h-12 w-auto object-contain invert brightness-0 mb-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfITmoi7XKIel2eO-w94ZfNaxwe8wnChfMmTvzrR76l7SLgAnyltL8bgxHQRmC8P4OxEzgVRAuaCcWjfCWxQwTaqk-2EULndgHUBy_acO9cC8152PrvKxi35MbjhqQA1Lnn3v0hAe60N6p26qZT3N48jaOscl04GjOKUbPYliPrHter-mVfN-5EhksTK2C8IILGAQtyDqIsSU_nsjqOQw0Cx0rFi3z5cqvSocEWC_spmFTwvrXByvppu6TJPHJ4c37GkivLvgX-ks0"/>
+        <p class="text-slate-400 max-w-sm leading-relaxed">Helping students grow through reflection, honest conversation, and accountability.</p>
+      </div>
+      <div class="md:col-span-3 md:col-start-7">
+        <h2 class="text-white font-bold mb-5 uppercase text-sm tracking-wide">Programs</h2>
+        <div class="flex flex-col gap-3 text-sm">
+          <a class="text-slate-400 hover:text-primary" data-tga-home href="student_homepage.html">Home</a>
+          <a class="text-slate-400 hover:text-primary" href="Series and Labs.html">Series &amp; Labs</a>
+          <a class="text-slate-400 hover:text-primary" href="meet_coach_walker_t.e.a.m.s._growth_academy.html">Meet Coach Walker</a>
+          <a class="text-slate-400 hover:text-primary" href="contact_t.e.a.m.s._growth_academy.html">Contact</a>
+        </div>
+      </div>
+      <div class="md:col-span-3">
+        <h2 class="text-white font-bold mb-5 uppercase text-sm tracking-wide">Support</h2>
+        <div class="flex flex-col gap-3 text-sm">
+          <a class="text-slate-400 hover:text-primary" href="contact_t.e.a.m.s._growth_academy.html">Contact Us</a>
+          <a class="text-slate-400 hover:text-primary" href="https://growthacademy.teamscoachingaz.com/login">Login</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 text-sm text-slate-500">© 2026 T.E.A.M.S. Coaching Growth Academy. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>

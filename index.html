@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=parent_first_homepage.html">
-  <link rel="canonical" href="parent_first_homepage.html">
   <title>T.E.A.M.S. Growth Academy</title>
+  <script>
+    (function () {
+      var audience = 'parent';
+      try {
+        var q = new URLSearchParams(location.search).get('audience');
+        if (q === 'student' || q === 'parent') audience = q;
+        else audience = localStorage.getItem('tga-audience') || 'parent';
+      } catch (e) {}
+      var dest = audience === 'student' ? 'student_homepage.html' : 'parent_first_homepage.html';
+      location.replace(dest);
+    })();
+  </script>
+  <link rel="canonical" href="parent_first_homepage.html">
 </head>
 <body>
   <p><a href="parent_first_homepage.html">T.E.A.M.S. Growth Academy</a></p>

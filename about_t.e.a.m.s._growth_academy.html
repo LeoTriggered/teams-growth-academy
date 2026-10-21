@@ -222,6 +222,7 @@
             }
         }
     </style>
+<script src="audience.js"></script>
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- TopNavBar -->
@@ -233,7 +234,7 @@
 </a>
 <!-- Desktop Navigation -->
 <nav class="hidden md:flex flex-1 items-center justify-center gap-0 flex-nowrap whitespace-nowrap">
-<a class="nav-link" href="Home.html">Home</a>
+<a class="nav-link" data-tga-home href="parent_first_homepage.html">Home</a>
 <a class="nav-link" href="Series and Labs.html">Series &amp; Labs</a>
 <a class="nav-link" href="meet_coach_walker_t.e.a.m.s._growth_academy.html">Meet Coach Walker</a>
 <a class="nav-link" href="contact_t.e.a.m.s._growth_academy.html">Contact</a>
@@ -241,6 +242,10 @@
 </nav>
 <!-- Actions -->
 <div class="flex items-center gap-3">
+      <div class="tga-audience" role="group" aria-label="Choose parent or student site">
+        <a class="tga-audience__btn" data-tga-audience="parent" href="parent_first_homepage.html">For Parents</a>
+        <a class="tga-audience__btn" data-tga-audience="student" href="student_homepage.html">For Students</a>
+      </div>
 <a class="nav-login hidden md:block" href="https://growthacademy.teamscoachingaz.com/login">Login</a>
 <a href="Series and Labs.html#pricing" class="btn inline-block bg-primary-container text-white hover:bg-deep-teal text-[12px] font-bold tracking-[0.04em] uppercase px-5 py-2.5 rounded-full transition-all shadow-[0_4px_14px_0_rgba(0,161,171,0.39)] hover:shadow-[0_6px_20px_rgba(0,161,171,0.23)] hover:-translate-y-0.5">Start Here</a>
 </div>
@@ -447,7 +452,7 @@
 <div class="md:col-span-3 md:col-start-7">
 <h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Programs</h4>
 <div class="flex flex-col gap-4">
-<a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="Home.html">Home</a>
+<a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" data-tga-home href="parent_first_homepage.html">Home</a>
 <a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="Series and Labs.html">Series &amp; Labs</a>
 <a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="meet_coach_walker_t.e.a.m.s._growth_academy.html">Meet Coach Walker</a>
 <a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="contact_t.e.a.m.s._growth_academy.html">Contact</a>

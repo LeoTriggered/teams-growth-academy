@@ -201,6 +201,7 @@
         button.bg-primary:hover, button.bg-primary-container:hover,
         input[type="submit"]:hover { background-color: #1B878D !important; border-color: #1B878D !important; }
     </style>
+<script src="audience.js"></script>
 </head>
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
 <!-- Top Navigation Bar -->
@@ -212,7 +213,7 @@
 </a>
 <!-- Desktop Navigation -->
 <nav class="hidden md:flex flex-1 items-center justify-center gap-0 flex-nowrap whitespace-nowrap">
-<a class="nav-link" href="Home.html">Home</a>
+<a class="nav-link" data-tga-home href="parent_first_homepage.html">Home</a>
 <a class="nav-link nav-link--active" href="Series and Labs.html">Series &amp; Labs</a>
 <a class="nav-link" href="meet_coach_walker_t.e.a.m.s._growth_academy.html">Meet Coach Walker</a>
 <a class="nav-link" href="contact_t.e.a.m.s._growth_academy.html">Contact</a>
@@ -220,6 +221,10 @@
 </nav>
 <!-- Actions -->
 <div class="flex items-center gap-3">
+      <div class="tga-audience" role="group" aria-label="Choose parent or student site">
+        <a class="tga-audience__btn" data-tga-audience="parent" href="parent_first_homepage.html">For Parents</a>
+        <a class="tga-audience__btn" data-tga-audience="student" href="student_homepage.html">For Students</a>
+      </div>
 <a class="nav-login hidden md:block" href="https://growthacademy.teamscoachingaz.com/login">Login</a>
 <a href="#pricing" class="btn inline-block bg-primary-container text-white hover:bg-deep-teal text-[12px] font-bold tracking-[0.04em] uppercase px-5 py-2.5 rounded-full transition-all shadow-[0_4px_14px_0_rgba(0,161,171,0.39)] hover:shadow-[0_6px_20px_rgba(0,161,171,0.23)] hover:-translate-y-0.5">Start Here</a>
 </div>
@@ -232,16 +237,23 @@
 <div class="absolute -bottom-32 -left-24 w-[28rem] h-[28rem] bg-tertiary-container/20 rounded-full blur-3xl pointer-events-none"></div>
 <div class="max-w-container-max mx-auto px-margin-page relative z-10 py-24 grid lg:grid-cols-2 gap-16 items-center">
 <div>
-<span class="inline-flex items-center gap-2 py-1.5 px-4 bg-white/70 backdrop-blur text-primary font-label-lg rounded-full mb-6 border border-primary/20"><span class="material-symbols-outlined text-base">family_restroom</span> Pick the Lab that fits your family right now</span>
+<span class="tga-for-parent inline-flex items-center gap-2 py-1.5 px-4 bg-white/70 backdrop-blur text-primary font-label-lg rounded-full mb-6 border border-primary/20"><span class="material-symbols-outlined text-base">family_restroom</span> Pick the Lab that fits your family right now</span>
+<span class="tga-for-student inline-flex items-center gap-2 py-1.5 px-4 bg-white/70 backdrop-blur text-primary font-label-lg rounded-full mb-6 border border-primary/20"><span class="material-symbols-outlined text-base">school</span> Pick the Lab that fits right now</span>
 <h1 class="font-display-lg text-display-lg text-on-background mb-6 leading-tight">Six Labs ready today. More on the way.</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">Each Lab takes on one challenge your family is facing. Choose the one that matches this season, and start with the parent lesson.</p>
+<p class="tga-for-parent font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">Each Lab takes on one challenge your family is facing. Choose the one that matches this season, and start with the parent lesson.</p>
+<p class="tga-for-student font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">Each Lab takes on one challenge you are facing. Choose the one that matches this season, and start the student lesson.</p>
 <div class="flex flex-wrap gap-4 mb-8">
-<a class="btn inline-flex px-8 py-4 bg-primary text-on-primary font-headline-md rounded-xl hover:bg-deep-teal transition-all items-center gap-2 shadow-[0_4px_14px_0_rgba(0,161,171,0.39)] hover:-translate-y-0.5" href="#pricing">Start with the Parent Lab <span class="material-symbols-outlined">arrow_forward</span></a>
+<a class="tga-for-parent btn inline-flex px-8 py-4 bg-primary text-on-primary font-headline-md rounded-xl hover:bg-deep-teal transition-all items-center gap-2 shadow-[0_4px_14px_0_rgba(0,161,171,0.39)] hover:-translate-y-0.5" href="#pricing">Start with the Parent Lab <span class="material-symbols-outlined">arrow_forward</span></a>
+<a class="tga-for-student btn inline-flex px-8 py-4 bg-primary text-on-primary font-headline-md rounded-xl hover:bg-deep-teal transition-all items-center gap-2 shadow-[0_4px_14px_0_rgba(0,161,171,0.39)] hover:-translate-y-0.5" href="#pricing">Start your Student Lab <span class="material-symbols-outlined">arrow_forward</span></a>
 <a class="inline-flex px-8 py-4 bg-white text-primary border border-primary/30 font-headline-md rounded-xl hover:bg-teal-wash transition-all items-center gap-2" href="#series">See the Labs</a>
 </div>
-<div class="flex items-center gap-3 text-on-surface-variant">
+<div class="tga-for-parent flex items-center gap-3 text-on-surface-variant">
 <span class="material-symbols-outlined text-primary">family_restroom</span>
 <p class="font-label-lg">Parent Lab only $39 · Every Lab sold on its own · No subscription</p>
+</div>
+<div class="tga-for-student flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary">school</span>
+<p class="font-label-lg">Student Lab $59 · Every Lab sold on its own · No subscription</p>
 </div>
 </div>
 <div class="relative">
@@ -264,8 +276,10 @@
 <span class="material-symbols-outlined text-base">trending_up</span>
 LAB SERIES
 </span>
-<h2 class="font-headline-lg text-headline-lg mb-3">Start with yourself. Add your teen when they're ready.</h2>
-<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">You watch the Parent Lab first. Your teen gets their own lesson on the same topic when the timing is right.</p>
+<h2 class="tga-for-parent font-headline-lg text-headline-lg mb-3">Start with yourself. Add your teen when they're ready.</h2>
+<p class="tga-for-parent font-body-lg text-on-surface-variant max-w-2xl mx-auto">You watch the Parent Lab first. Your teen gets their own lesson on the same topic when the timing is right.</p>
+<h2 class="tga-for-student font-headline-lg text-headline-lg mb-3">Start with one Lab. Add more when you are ready.</h2>
+<p class="tga-for-student font-body-lg text-on-surface-variant max-w-2xl mx-auto">Watch the student lesson, work the scenarios, and leave with a plan you can use the same day.</p>
 </div>
 </section>
 
@@ -274,7 +288,8 @@ LAB SERIES
 <div class="max-w-container-max mx-auto px-margin-page">
 <div class="text-center mb-10">
 <h2 class="font-headline-lg text-headline-lg mb-4">The six Labs you can start today</h2>
-<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">The Lab name is the title. The line under it is for you: what to know, and how to help at home.</p>
+<p class="tga-for-parent text-body-lg text-on-surface-variant max-w-2xl mx-auto">The Lab name is the title. The line under it is for you: what to know, and how to help at home.</p>
+<p class="tga-for-student text-body-lg text-on-surface-variant max-w-2xl mx-auto">The Lab name is the title. The line under it is what you will work on.</p>
 </div>
 
 <!-- TEAMS letter strip -->
@@ -308,7 +323,8 @@ LAB SERIES
 <div class="p-7 md:p-8 flex flex-col flex-grow">
 <p class="text-xs font-bold tracking-widest uppercase mb-2" style="color:#39B2B9">Transition</p>
 <h3 class="font-headline-md text-headline-md leading-tight text-on-background mb-3">Middle School Preparation and Survival</h3>
-<p class="text-body-md text-on-surface-variant">Middle school changes everything. Know what's coming and how to help before it gets hard.</p>
+<p class="tga-for-parent text-body-md text-on-surface-variant">Middle school changes everything. Know what's coming and how to help before it gets hard.</p>
+<p class="tga-for-student text-body-md text-on-surface-variant">Middle school changes everything. Walk in ready instead of catching up later.</p>
 </div>
 </a>
 <a href="#pricing" class="group relative overflow-hidden rounded-2xl border border-outline-variant bg-white transition-all hover:shadow-xl flex flex-col no-underline">
@@ -316,7 +332,8 @@ LAB SERIES
 <div class="p-7 md:p-8 flex flex-col flex-grow">
 <p class="text-xs font-bold tracking-widest uppercase mb-2" style="color:#39B2B9">Transition</p>
 <h3 class="font-headline-md text-headline-md leading-tight text-on-background mb-3">High School Preparation and Survival</h3>
-<p class="text-body-md text-on-surface-variant">Higher stakes, more freedom, less talking. Stay connected through the high school years.</p>
+<p class="tga-for-parent text-body-md text-on-surface-variant">Higher stakes, more freedom, less talking. Stay connected through the high school years.</p>
+<p class="tga-for-student text-body-md text-on-surface-variant">Higher stakes and more freedom. Build the habits that carry you through.</p>
 </div>
 </a>
 <a href="#pricing" class="group relative overflow-hidden rounded-2xl border border-outline-variant bg-white transition-all hover:shadow-xl flex flex-col no-underline">
@@ -324,7 +341,8 @@ LAB SERIES
 <div class="p-7 md:p-8 flex flex-col flex-grow">
 <p class="text-xs font-bold tracking-widest uppercase mb-2" style="color:#39B2B9">Transition</p>
 <h3 class="font-headline-md text-headline-md leading-tight text-on-background mb-3">Pathways After High School</h3>
-<p class="text-body-md text-on-surface-variant">College, trades, work, or a gap year. Help them choose a path without choosing it for them.</p>
+<p class="tga-for-parent text-body-md text-on-surface-variant">College, trades, work, or a gap year. Help them choose a path without choosing it for them.</p>
+<p class="tga-for-student text-body-md text-on-surface-variant">College, trades, work, or a gap year. Pick a path you can stand behind.</p>
 </div>
 </a>
 <a href="#pricing" class="group relative overflow-hidden rounded-2xl border border-outline-variant bg-white transition-all hover:shadow-xl flex flex-col no-underline" id="series-e">
@@ -332,7 +350,8 @@ LAB SERIES
 <div class="p-7 md:p-8 flex flex-col flex-grow">
 <p class="text-xs font-bold tracking-widest uppercase mb-2" style="color:#1B878D">Empowerment</p>
 <h3 class="font-headline-md text-headline-md leading-tight text-on-background mb-3">Peer Pressure and Social Value</h3>
-<p class="text-body-md text-on-surface-variant">What to say when fitting in starts to matter more than doing right.</p>
+<p class="tga-for-parent text-body-md text-on-surface-variant">What to say when fitting in starts to matter more than doing right.</p>
+<p class="tga-for-student text-body-md text-on-surface-variant">What to do when fitting in starts to matter more than doing right.</p>
 </div>
 </a>
 <a href="#pricing" class="group relative overflow-hidden rounded-2xl border border-outline-variant bg-white transition-all hover:shadow-xl flex flex-col no-underline">
@@ -340,7 +359,8 @@ LAB SERIES
 <div class="p-7 md:p-8 flex flex-col flex-grow">
 <p class="text-xs font-bold tracking-widest uppercase mb-2" style="color:#1B878D">Empowerment</p>
 <h3 class="font-headline-md text-headline-md leading-tight text-on-background mb-3">Self Esteem and Knowing Your Worth</h3>
-<p class="text-body-md text-on-surface-variant">Build their confidence in ways that last longer than a compliment.</p>
+<p class="tga-for-parent text-body-md text-on-surface-variant">Build their confidence in ways that last longer than a compliment.</p>
+<p class="tga-for-student text-body-md text-on-surface-variant">Confidence that lasts longer than a compliment.</p>
 </div>
 </a>
 <a href="#pricing" class="group relative overflow-hidden rounded-2xl border border-outline-variant bg-white transition-all hover:shadow-xl flex flex-col no-underline">
@@ -348,7 +368,8 @@ LAB SERIES
 <div class="p-7 md:p-8 flex flex-col flex-grow">
 <p class="text-xs font-bold tracking-widest uppercase mb-2" style="color:#1B878D">Empowerment</p>
 <h3 class="font-headline-md text-headline-md leading-tight text-on-background mb-3">Finding Your Voice</h3>
-<p class="text-body-md text-on-surface-variant">Help a quiet or unsure teen speak up for themselves, at school and at home.</p>
+<p class="tga-for-parent text-body-md text-on-surface-variant">Help a quiet or unsure teen speak up for themselves, at school and at home.</p>
+<p class="tga-for-student text-body-md text-on-surface-variant">Speak up for yourself at school, at home, and with friends.</p>
 </div>
 </a>
 </div>
@@ -370,18 +391,23 @@ LAB SERIES
 <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top_right,rgba(57,178,185,0.14),transparent_55%)]"></div>
 <div class="absolute inset-0 pointer-events-none opacity-40" style="background-image:linear-gradient(rgba(0,161,171,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,161,171,0.05) 1px,transparent 1px);background-size:40px 40px;"></div>
 <div class="max-w-3xl mx-auto px-margin-page relative z-10 text-center">
-<span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white text-primary-container font-bold text-xs tracking-widest uppercase mb-6 shadow-sm border border-primary-container/20">
+<span class="tga-for-parent inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white text-primary-container font-bold text-xs tracking-widest uppercase mb-6 shadow-sm border border-primary-container/20">
 <span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">description</span>
 Free Parent Resource Pack
 </span>
+<span class="tga-for-student inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white text-primary-container font-bold text-xs tracking-widest uppercase mb-6 shadow-sm border border-primary-container/20">
+<span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">description</span>
+Free Student Check-In
+</span>
 <h2 id="tga-freebie-title" class="font-headline-lg text-headline-lg text-charcoal mb-4 font-extrabold">Not sure which Lab to start with?</h2>
-<p class="font-body-lg text-lg text-on-surface-variant max-w-2xl mx-auto mb-8 leading-relaxed">Get the full free Check-In pack—Middle School &amp; High School (student + parent versions) plus the Score-to-Lab Guide. Score readiness, compare answers, and see which Digital Labs match—before you buy.</p>
+<p class="tga-for-parent font-body-lg text-lg text-on-surface-variant max-w-2xl mx-auto mb-8 leading-relaxed">Get the full free Check-In pack—Middle School &amp; High School (student + parent versions) plus the Score-to-Lab Guide. Score readiness, compare answers, and see which Digital Labs match—before you buy.</p>
+<p class="tga-for-student font-body-lg text-lg text-on-surface-variant max-w-2xl mx-auto mb-8 leading-relaxed">Get the student Check-In for Middle School and High School. Score where you are and see which Labs match—before you buy.</p>
 <ul class="flex flex-col justify-center gap-3 mb-10 text-left max-w-md mx-auto">
 <li class="flex items-start gap-3 text-on-surface font-semibold text-[15px] leading-snug">
 <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-container text-white text-xs font-extrabold" aria-hidden="true">✓</span>
 <span>Middle School Check-In (Student)</span>
 </li>
-<li class="flex items-start gap-3 text-on-surface font-semibold text-[15px] leading-snug">
+<li class="tga-for-parent flex items-start gap-3 text-on-surface font-semibold text-[15px] leading-snug">
 <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-container text-white text-xs font-extrabold" aria-hidden="true">✓</span>
 <span>Middle School Check-In (Parent)</span>
 </li>
@@ -389,11 +415,11 @@ Free Parent Resource Pack
 <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-container text-white text-xs font-extrabold" aria-hidden="true">✓</span>
 <span>High School Check-In (Student)</span>
 </li>
-<li class="flex items-start gap-3 text-on-surface font-semibold text-[15px] leading-snug">
+<li class="tga-for-parent flex items-start gap-3 text-on-surface font-semibold text-[15px] leading-snug">
 <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-container text-white text-xs font-extrabold" aria-hidden="true">✓</span>
 <span>High School Check-In (Parent)</span>
 </li>
-<li class="flex items-start gap-3 text-on-surface font-semibold text-[15px] leading-snug">
+<li class="tga-for-parent flex items-start gap-3 text-on-surface font-semibold text-[15px] leading-snug">
 <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-container text-white text-xs font-extrabold" aria-hidden="true">✓</span>
 <span>Check-In Score-to-Lab Guide</span>
 </li>
@@ -406,7 +432,8 @@ Free Parent Resource Pack
 <input id="tga-freebie-email" name="email" type="email" autocomplete="email" required placeholder="Email address" class="flex-1 min-h-[52px] px-5 rounded-full border border-outline-variant/50 bg-white text-charcoal font-medium text-[15px] outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20"/>
 </div>
 <button type="submit" class="btn w-full sm:w-auto min-h-[52px] px-8 py-3.5 rounded-full bg-primary-container text-white hover:bg-deep-teal font-bold text-[15px] tracking-wide shadow-[0_4px_14px_0_rgba(0,161,171,0.35)] hover:-translate-y-0.5 transition-all">Send Me the Free Check-In Pack</button>
-<p class="mt-4 text-sm text-on-surface-variant">We’ll email all 5 PDFs. No spam.</p>
+<p class="tga-for-parent mt-4 text-sm text-on-surface-variant">We’ll email all 5 PDFs. No spam.</p>
+<p class="tga-for-student mt-4 text-sm text-on-surface-variant">We’ll email the student Check-In PDFs. No spam.</p>
 </form>
 <div class="tga-freebie__success hidden mx-auto max-w-xl mt-2 rounded-2xl border border-primary-container/25 bg-teal-wash px-6 py-5 text-left" id="tga-freebie-success" role="status" aria-live="polite">
 <p class="font-bold text-charcoal mb-1">You’re on the list.</p>
@@ -436,7 +463,8 @@ Free Parent Resource Pack
 <section class="py-24 scroll-mt-24" id="pricing">
 <div class="max-w-[1400px] mx-auto px-margin-page">
 <div class="text-center mb-16">
-<h2 class="font-headline-lg text-headline-lg mb-4">Start with yourself. Add your teen when they're ready.</h2>
+<h2 class="tga-for-parent font-headline-lg text-headline-lg mb-4">Start with yourself. Add your teen when they're ready.</h2>
+<h2 class="tga-for-student font-headline-lg text-headline-lg mb-4">Start with one Lab. Add more when you are ready.</h2>
 <p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto">Every Lab is sold on its own. No subscription.</p>
 </div>
 <div class="tga-pricing-layout tga-pricing-layout--simple">
@@ -476,16 +504,16 @@ Free Parent Resource Pack
   <table class="tga-ptable">
     <colgroup>
       <col class="tga-col-offer">
-      <col class="tga-col-price">
-      <col class="tga-col-price">
-      <col class="tga-col-price">
+      <col class="tga-col-price tga-col-parent tga-for-parent">
+      <col class="tga-col-price tga-col-student tga-for-student">
+      <col class="tga-col-price tga-col-combined tga-for-parent">
     </colgroup>
     <thead>
       <tr>
         <th class="tga-ptable__offering">Lab</th>
-        <th class="tga-th-price tga-th-price--start"><span class="tga-start-here">Start here</span><span class="tga-th-price__name">Parent alone</span><span class="tga-th-price__amount">$39</span></th>
-        <th class="tga-th-price"><span class="tga-th-price__name">Student alone</span><span class="tga-th-price__amount">$59</span></th>
-        <th class="tga-th-price"><span class="tga-th-price__name">Parent and student</span><span class="tga-th-price__amount">$79</span></th>
+        <th class="tga-th-price tga-th-price--start tga-for-parent"><span class="tga-start-here">Start here</span><span class="tga-th-price__name">Parent Lab</span><span class="tga-th-price__amount">$39</span></th>
+        <th class="tga-th-price tga-th-student tga-for-student"><span class="tga-start-here">Start here</span><span class="tga-th-price__name">Student Lab</span><span class="tga-th-price__amount">$59</span></th>
+        <th class="tga-th-price tga-for-parent"><span class="tga-th-price__name">Parent and student</span><span class="tga-th-price__amount">$79</span></th>
       </tr>
     </thead>
     <tbody>
@@ -493,205 +521,205 @@ Free Parent Resource Pack
 <tr class="tga-series-rows--t">
         <td class="tga-ptable__offering tga-ptable__lab">Middle School Preparation and Survival
         <button type="button" class="tga-learn-more tga-modal-open" data-course="middle-school" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/T3b4afXS/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/NQ7Sp4fB/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/4irBnqcD/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/T3b4afXS/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/NQ7Sp4fB/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/4irBnqcD/checkout">Buy</a></td>
       </tr>
 <tr class="tga-series-rows--t">
         <td class="tga-ptable__offering tga-ptable__lab">High School Preparation and Survival
         <button type="button" class="tga-learn-more tga-modal-open" data-course="high-school" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/2xqumhjW/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/NCHuxqEs/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/75WFT3A5/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/2xqumhjW/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/NCHuxqEs/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/75WFT3A5/checkout">Buy</a></td>
       </tr>
 <tr class="tga-series-rows--t">
         <td class="tga-ptable__offering tga-ptable__lab">Pathways After High School
         <button type="button" class="tga-learn-more tga-modal-open" data-course="pathways-after-high-school" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/8pufAVzg/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/VNnQ7y2L/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/fQ2dQ42w/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/8pufAVzg/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/VNnQ7y2L/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/fQ2dQ42w/checkout">Buy</a></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--t">
         <td class="tga-ptable__offering tga-ptable__lab">Navigating New Environments
         <button type="button" class="tga-learn-more tga-modal-open" data-course="navigating-new-environments" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--t">
         <td class="tga-ptable__offering tga-ptable__lab">Discipline &amp; Responsibility in Adulthood</td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--t">
         <td class="tga-ptable__offering tga-ptable__lab">Preparation for Independent Living</td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__section tga-ptable__section--e" id="price-series-e"><td colspan="4"><span class="tga-series-badge" aria-hidden="true">E</span><span class="tga-series-label">Empowerment Series</span></td></tr>
 <tr class="tga-series-rows--e">
         <td class="tga-ptable__offering tga-ptable__lab">Peer Pressure and Social Value
         <button type="button" class="tga-learn-more tga-modal-open" data-course="peer-pressure" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/EnB7oT5t/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/MGGLCdto/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/E9zLFvbT/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/EnB7oT5t/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/MGGLCdto/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/E9zLFvbT/checkout">Buy</a></td>
       </tr>
 <tr class="tga-series-rows--e">
         <td class="tga-ptable__offering tga-ptable__lab">Self Esteem and Knowing Your Worth
         <button type="button" class="tga-learn-more tga-modal-open" data-course="self-esteem" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/g6zeK8qf/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/7m6AzNHp/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/mcH2Wwju/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/g6zeK8qf/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/7m6AzNHp/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/mcH2Wwju/checkout">Buy</a></td>
       </tr>
 <tr class="tga-series-rows--e">
         <td class="tga-ptable__offering tga-ptable__lab">Finding Your Voice
         <button type="button" class="tga-learn-more tga-modal-open" data-course="finding-your-voice" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/Y2CB3e7P/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/NQ7Sp4fB/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/Y5fcyAdM/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/Y2CB3e7P/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/NQ7Sp4fB/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/Y5fcyAdM/checkout">Buy</a></td>
       </tr>
 <tr class="tga-series-rows--e">
         <td class="tga-ptable__offering tga-ptable__lab">Value: What Do You Bring?
         <button type="button" class="tga-learn-more tga-modal-open" data-course="value" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/QdD44jgC/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/9ytiTABD/checkout">Buy</a></td>
-        <td class="tga-price-cell"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/VLcxqhaz/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent tga-price-cell--start"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/QdD44jgC/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/9ytiTABD/checkout">Buy</a></td>
+        <td class="tga-price-cell tga-for-parent"><a class="tga-buy tga-buy--sm" href="https://digitallabseries.teamscoachingaz.com/offers/VLcxqhaz/checkout">Buy</a></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--e">
         <td class="tga-ptable__offering tga-ptable__lab">Identity: Who Are You?
         <button type="button" class="tga-learn-more tga-modal-open" data-course="identity" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--e">
         <td class="tga-ptable__offering tga-ptable__lab">What is Your Purpose
         <button type="button" class="tga-learn-more tga-modal-open" data-course="purpose" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__section tga-ptable__section--a" id="price-series-a"><td colspan="4"><span class="tga-series-badge" aria-hidden="true">A</span><span class="tga-series-label">Athletic Mindset Series</span></td></tr>
 <tr class="tga-ptable__soon tga-series-rows--a">
         <td class="tga-ptable__offering tga-ptable__lab">How To Maximize Value as an Athlete
         <button type="button" class="tga-learn-more tga-modal-open" data-course="maximize-value-athlete" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--a">
         <td class="tga-ptable__offering tga-ptable__lab">Sportsmanship and Respect
         <button type="button" class="tga-learn-more tga-modal-open" data-course="sportsmanship-respect" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--a">
         <td class="tga-ptable__offering tga-ptable__lab">Athletic Leadership
         <button type="button" class="tga-learn-more tga-modal-open" data-course="athletic-leadership" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--a">
         <td class="tga-ptable__offering tga-ptable__lab">Managing Expectations in Athletics
         <button type="button" class="tga-learn-more tga-modal-open" data-course="managing-expectations" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--a">
         <td class="tga-ptable__offering tga-ptable__lab">Identity Beyond Athletics
         <button type="button" class="tga-learn-more tga-modal-open" data-course="identity-beyond-athletics" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__section tga-ptable__section--m" id="price-series-m"><td colspan="4"><span class="tga-series-badge" aria-hidden="true">M</span><span class="tga-series-label">Management Series</span></td></tr>
 <tr class="tga-ptable__soon tga-series-rows--m">
         <td class="tga-ptable__offering tga-ptable__lab">Financial Literacy
         <button type="button" class="tga-learn-more tga-modal-open" data-course="managing-money" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--m">
         <td class="tga-ptable__offering tga-ptable__lab">Earning Your Keep
         <button type="button" class="tga-learn-more tga-modal-open" data-course="earning-your-keep" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--m">
         <td class="tga-ptable__offering tga-ptable__lab">Finding and Keeping a Job
         <button type="button" class="tga-learn-more tga-modal-open" data-course="finding-keeping-job" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--m">
         <td class="tga-ptable__offering tga-ptable__lab">Time Management
         <button type="button" class="tga-learn-more tga-modal-open" data-course="time-management" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--m">
         <td class="tga-ptable__offering tga-ptable__lab">Building A Budget
         <button type="button" class="tga-learn-more tga-modal-open" data-course="building-a-budget" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--m">
         <td class="tga-ptable__offering tga-ptable__lab">Importance of Hygiene</td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--m">
         <td class="tga-ptable__offering tga-ptable__lab">Managing Stress and Dealing With Adversity</td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__section tga-ptable__section--s" id="price-series-s"><td colspan="4"><span class="tga-series-badge" aria-hidden="true">S</span><span class="tga-series-label">Social Series</span></td></tr>
 <tr class="tga-ptable__soon tga-series-rows--s">
         <td class="tga-ptable__offering tga-ptable__lab">Healthy Relationships
         <button type="button" class="tga-learn-more tga-modal-open" data-course="healthy-relationships" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--s">
         <td class="tga-ptable__offering tga-ptable__lab">Effective Communication
         <button type="button" class="tga-learn-more tga-modal-open" data-course="effective-communication" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--s">
         <td class="tga-ptable__offering tga-ptable__lab">Reading the Room
         <button type="button" class="tga-learn-more tga-modal-open" data-course="reading-the-room" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--s">
         <td class="tga-ptable__offering tga-ptable__lab">Filter and Sensitivity
         <button type="button" class="tga-learn-more tga-modal-open" data-course="filter-sensitivity" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
 <tr class="tga-ptable__soon tga-series-rows--s">
         <td class="tga-ptable__offering tga-ptable__lab">Social Etiquette and old Fashioned Manners
         <button type="button" class="tga-learn-more tga-modal-open" data-course="social-etiquette" aria-haspopup="dialog">Learn More</button></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
-        <td class="tga-price-cell"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-price-cell--student tga-for-student"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
+        <td class="tga-price-cell tga-for-parent"><span class="tga-buy tga-buy--soon tga-buy--sm">Soon</span></td>
       </tr>
     </tbody>
   </table>
@@ -2389,14 +2417,23 @@ document.querySelectorAll('.tga-ptable a.tga-buy').forEach(function(a){
     aboutEl.textContent = course.about || '';
     showWrap('tga-lm-about-wrap', !!course.about);
 
-    fillList(whoEl, course.who);
-    showWrap('tga-lm-who-wrap', !!(course.who && course.who.length));
+    var audience = document.documentElement.getAttribute('data-audience') === 'student' ? 'student' : 'parent';
+    var who = (course.who || []).filter(function (item) {
+      if (audience === 'student') return /student/i.test(item);
+      return true;
+    });
+    fillList(whoEl, who);
+    showWrap('tga-lm-who-wrap', who.length > 0);
 
     fillList(learnEl, course.learn);
     showWrap('tga-lm-learn-wrap', !!(course.learn && course.learn.length));
 
-    fillList(includesEl, course.includes);
-    showWrap('tga-lm-includes-wrap', !!(course.includes && course.includes.length));
+    var includes = (course.includes || []).filter(function (item) {
+      if (audience === 'student' && /parent/i.test(item)) return false;
+      return true;
+    });
+    fillList(includesEl, includes);
+    showWrap('tga-lm-includes-wrap', includes.length > 0);
 
     fillList(benefitsEl, course.benefits);
     showWrap('tga-lm-benefits-wrap', !!(course.benefits && course.benefits.length));
@@ -2432,7 +2469,8 @@ document.querySelectorAll('.tga-ptable a.tga-buy').forEach(function(a){
 </script>
 
 <div class="mt-6 max-w-3xl mx-auto text-center">
-<p class="font-body-md text-on-surface-variant">Parent alone $39. Student alone $59. Parent and student $79. Every Lab is sold on its own. No subscription.</p>
+<p class="tga-for-parent font-body-md text-on-surface-variant">Parent Lab $39. Parent and student $79. Every Lab is sold on its own. No subscription.</p>
+<p class="tga-for-student font-body-md text-on-surface-variant">Student Lab $59. Every Lab is sold on its own. No subscription.</p>
 </div>
 </div>
 </section>
@@ -2442,15 +2480,16 @@ document.querySelectorAll('.tga-ptable a.tga-buy').forEach(function(a){
 <div class="max-w-container-max mx-auto px-margin-page relative z-10">
 <div class="mb-16">
 <h2 class="font-headline-lg text-headline-lg text-primary-fixed mb-4">Every Lab Includes</h2>
-<p class="text-body-lg text-secondary-fixed-dim max-w-xl">We provide all the tools necessary for both the student and the parent to succeed.</p>
+<p class="tga-for-parent text-body-lg text-secondary-fixed-dim max-w-xl">We provide all the tools necessary for both the student and the parent to succeed.</p>
+<p class="tga-for-student text-body-lg text-secondary-fixed-dim max-w-xl">Everything you need to finish the Lab and use the skill.</p>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+<div class="grid grid-cols-2 gap-8" id="tga-includes-grid">
 <div class="text-center p-6 border border-on-secondary-fixed-variant rounded-2xl hover:bg-white/5 transition-all">
 <span class="material-symbols-outlined text-primary-fixed text-4xl mb-4">play_circle</span>
 <h4 class="font-bold">Engaging Video</h4>
 <p class="text-label-lg opacity-60">High-quality student lessons</p>
 </div>
-<div class="text-center p-6 border border-on-secondary-fixed-variant rounded-2xl hover:bg-white/5 transition-all">
+<div class="tga-for-parent text-center p-6 border border-on-secondary-fixed-variant rounded-2xl hover:bg-white/5 transition-all">
 <span class="material-symbols-outlined text-primary-fixed text-4xl mb-4">family_restroom</span>
 <h4 class="font-bold">Parent Video</h4>
 <p class="text-label-lg opacity-60">Context &amp; guidance</p>
@@ -2745,7 +2784,7 @@ Partner Schools
 <div class="md:col-span-3 md:col-start-7">
 <h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Programs</h4>
 <div class="flex flex-col gap-4">
-<a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="Home.html">Home</a>
+<a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" data-tga-home href="parent_first_homepage.html">Home</a>
 <a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="Series and Labs.html">Series &amp; Labs</a>
 <a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="meet_coach_walker_t.e.a.m.s._growth_academy.html">Meet Coach Walker</a>
 <a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="contact_t.e.a.m.s._growth_academy.html">Contact</a>
