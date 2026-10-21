@@ -1,725 +1,298 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<html class="light scroll-smooth" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>T.E.A.M.S. Coaching Growth Academy</title>
-<!-- Tailwind CSS -->
+<title>T.E.A.M.S. Digital Lab Series for Parents and Students</title>
+<meta name="description" content="Short video Labs for parents and teens on the same topic. Parents start with the words and a plan. Students get their own lesson."/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Google Fonts: Archivo (primary) + Overpass (buttons) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600;700;800&amp;family=Overpass:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
-
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .glass-card-light {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .bg-grid-pattern {
-            background-image: 
-                linear-gradient(to right, rgba(0, 161, 171, 0.05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(0, 161, 171, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        .clip-slant-bottom {
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-        }
-        
-        .clip-slant-top {
-            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
-        }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #39B2B9, #5fd7e2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Second font: Overpass for buttons only (Archivo stays everywhere else) */
-        button:not(.nav-login), a.btn {
-            font-family: 'Overpass', sans-serif !important;
-        }
-        /* Header nav — match live Kajabi .link-list__link (Open Sans) */
-        header nav.hidden {
-            flex-wrap: nowrap !important;
-            align-items: center !important;
-            column-gap: 1.15rem !important;
-        }
-        .nav-link {
-            cursor: pointer;
-            font-family: 'Open Sans', sans-serif !important;
-            font-weight: 400 !important;
-            font-size:  15px !important;
-            letter-spacing: 0.02em !important;
-            line-height: 1.2 !important;
-            text-transform: uppercase !important;
-            color: #595959 !important;
-            text-decoration: none !important;
-            border-bottom: 2px solid transparent;
-            padding: 6px 0 4px !important;
-            margin: 0 !important;
-            white-space: nowrap !important;
-            transition: color .2s ease, border-color .2s ease;
-        }
-        .nav-link:hover { color: #39B2B9 !important; }
-        .nav-link--active {
-            color: #39B2B9 !important;
-            border-bottom-color: #39B2B9 !important;
-            font-weight: 700 !important;
-        }
-
-        /* Roles — mobile always 3 per row */
-        @media (max-width: 767px) {
-          .tga-roles {
-            display: grid !important;
-            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-            gap: 20px 8px !important;
-            justify-items: center !important;
-          }
-          .tga-role {
-            width: 100% !important;
-            max-width: 110px !important;
-          }
-        }
-
-        a.nav-login { text-decoration: none !important; display: inline-block; }
-        .nav-login, button.nav-login, a.nav-login {
-            font-family: 'Open Sans', sans-serif !important;
-            font-weight: 400 !important;
-            font-size: 13px !important;
-            letter-spacing: normal !important;
-            line-height: 1.2 !important;
-            text-transform: uppercase !important;
-            color: #595959 !important;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            margin: 0 10px 0 0;
-            transition: color .2s ease;
-        }
-        .nav-login:hover { color: #39B2B9 !important; }
-
-            /* Branded buttons — match teamscoachingaz.com (pill + teal, darken on hover) */
-        .btn, button, input[type="submit"] { border-radius: 9999px !important; transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
-        .btn:hover, button:hover, input[type="submit"]:hover { transform: translateY(-3px) !important; }
-        .btn.bg-primary, .btn.bg-primary-container,
-        button.bg-primary, button.bg-primary-container,
-        input[type="submit"] { background-color: #39B2B9 !important; border-color: #39B2B9 !important; }
-        .btn.bg-primary:hover, .btn.bg-primary-container:hover,
-        button.bg-primary:hover, button.bg-primary-container:hover,
-        input[type="submit"]:hover { background-color: #1B878D !important; border-color: #1B878D !important; }
-    </style>
-<!-- Tailwind Config -->
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "slate-gray": "#4A4A4A",
-                    "tertiary-fixed": "#c8e6ff",
-                    "surface-variant": "#e1e3e4",
-                    "surface-container-highest": "#e1e3e4",
-                    "on-primary-container": "#003033",
-                    "on-primary-fixed": "#002022",
-                    "on-background": "#191c1d",
-                    "surface-container-lowest": "#ffffff",
-                    "primary-fixed": "#7ef4fe",
-                    "on-error-container": "#93000a",
-                    "secondary-container": "#e2dfde",
-                    "surface-dim": "#d9dadb",
-                    "on-tertiary": "#ffffff",
-                    "on-primary-fixed-variant": "#004f54",
-                    "on-surface-variant": "#3d494a",
-                    "error-container": "#ffdad6",
-                    "on-secondary-container": "#636262",
-                    "charcoal": "#13151A", 
-                    "surface": "#F9FAFB",
-                    "on-tertiary-fixed-variant": "#004c6d",
-                    "secondary": "#5f5e5e",
-                    "primary-container": "#39B2B9",
-                    "primary": "#39B2B9",
-                    "on-tertiary-fixed": "#001e2e",
-                    "deep-teal": "#1B878D",
-                    "outline": "#6d797b",
-                    "on-secondary-fixed": "#1b1b1b",
-                    "primary-fixed-dim": "#5fd7e2",
-                    "on-error": "#ffffff",
-                    "on-primary": "#ffffff",
-                    "surface-container-high": "#e7e8e9",
-                    "inverse-surface": "#2e3132",
-                    "error": "#ba1a1a",
-                    "background": "#f8f9fa",
-                    "surface-bright": "#ffffff",
-                    "outline-variant": "#bcc9ca",
-                    "tertiary-fixed-dim": "#94cdf5",
-                    "secondary-fixed": "#e5e2e1",
-                    "on-secondary": "#ffffff",
-                    "on-surface": "#191c1d",
-                    "tertiary": "#256487",
-                    "inverse-on-surface": "#f0f1f2",
-                    "surface-tint": "#39B2B9",
-                    "tertiary-container": "#5e98be",
-                    "teal-wash": "#E6F6F7",
-                    "inverse-primary": "#5fd7e2",
-                    "secondary-fixed-dim": "#c8c6c5",
-                    "on-secondary-fixed-variant": "#474746",
-                    "on-tertiary-container": "#002e44",
-                    "surface-container-low": "#f3f4f5",
-                    "surface-container": "#edeeef"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "2xl": "1rem",
-                    "3xl": "1.5rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "stack-sm": "0.5rem",
-                    "margin-page": "2rem",
-                    "stack-lg": "2.5rem",
-                    "stack-md": "1rem",
-                    "gutter": "1.5rem",
-                    "container-max": "1200px"
-            },
-            "fontFamily": {
-                    "headline-md": ["Archivo"],
-                    "headline-lg-mobile": ["Archivo"],
-                    "headline-lg": ["Archivo"],
-                    "display-lg": ["Archivo"],
-                    "body-lg": ["Archivo"],
-                    "body-md": ["Archivo"],
-                    "label-lg": ["Archivo"],
-                    "sans": ["Archivo", "sans-serif"]
-            }
-          }
-        }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .glass-card-light {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  }
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(to right, rgba(0, 161, 171, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 161, 171, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #39B2B9, #1B878D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  button:not(.nav-login), a.btn { font-family: 'Overpass', sans-serif !important; }
+  header nav { flex-wrap: nowrap !important; align-items: center !important; column-gap: 1.15rem !important; }
+  .nav-link {
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 15px !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+    color: #595959 !important;
+    text-decoration: none !important;
+    border-bottom: 2px solid transparent;
+    padding: 6px 0 4px !important;
+    white-space: nowrap !important;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .nav-link:hover { color: #39B2B9 !important; }
+  .nav-link--active { color: #39B2B9 !important; border-bottom-color: #39B2B9 !important; font-weight: 700 !important; }
+  a.nav-login, .nav-login {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    color: #595959 !important;
+    text-decoration: none !important;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 10px 0 0;
+  }
+  .nav-login:hover { color: #39B2B9 !important; }
+  .btn, button { border-radius: 9999px !important; transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+  .btn:hover, button:hover { transform: translateY(-3px) !important; }
+  .btn.bg-primary, .btn.bg-primary-container, button.bg-primary { background-color: #39B2B9 !important; border-color: #39B2B9 !important; }
+  .btn.bg-primary:hover, .btn.bg-primary-container:hover, button.bg-primary:hover { background-color: #1B878D !important; }
+</style>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: "#39B2B9",
+          "primary-container": "#39B2B9",
+          "deep-teal": "#1B878D",
+          charcoal: "#13151A",
+          "slate-gray": "#4A4A4A",
+          "teal-wash": "#E6F6F7",
+          surface: "#F9FAFB",
+          tertiary: "#256487"
+        },
+        fontFamily: { sans: ["Archivo", "sans-serif"] },
+        maxWidth: { page: "1200px" }
       }
-    </script>
+    }
+  }
+</script>
 </head>
-<body class="bg-surface text-on-surface font-sans antialiased selection:bg-primary-container selection:text-white">
-<!-- TopNavBar -->
-<header class="w-full fixed top-0 z-50 glass-card-light border-b border-white/20 transition-all duration-300">
-<div class="max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center justify-between gap-6 h-20">
-<!-- Logo -->
-<a class="flex items-center gap-3 group" href="parent_first_homepage.html">
-<img alt="T.E.A.M.S. Coaching Academy Logo" class="h-[72px] w-[72px] object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfITmoi7XKIel2eO-w94ZfNaxwe8wnChfMmTvzrR76l7SLgAnyltL8bgxHQRmC8P4OxEzgVRAuaCcWjfCWxQwTaqk-2EULndgHUBy_acO9cC8152PrvKxi35MbjhqQA1Lnn3v0hAe60N6p26qZT3N48jaOscl04GjOKUbPYliPrHter-mVfN-5EhksTK2C8IILGAQtyDqIsSU_nsjqOQw0Cx0rFi3z5cqvSocEWC_spmFTwvrXByvppu6TJPHJ4c37GkivLvgX-ks0"/>
-</a>
-<!-- Desktop Navigation -->
-<nav class="hidden md:flex flex-1 items-center justify-center gap-0 flex-nowrap whitespace-nowrap">
-<a class="nav-link nav-link--active" href="parent_first_homepage.html">Home</a>
-<a class="nav-link" href="Series and Labs.html">Series &amp; Labs</a>
-<a class="nav-link" href="parent_first_homepage.html">For Parents</a>
-<a class="nav-link" href="student_homepage.html">For Students</a>
-<a class="nav-link" href="meet_coach_walker_t.e.a.m.s._growth_academy.html">Meet Coach Walker</a>
-<a class="nav-link" href="contact_t.e.a.m.s._growth_academy.html">Contact</a>
-<a class="nav-link" href="about_t.e.a.m.s._growth_academy.html">About T.E.A.M.S.</a>
-</nav>
-<!-- Actions -->
-<div class="flex items-center gap-3">
+<body class="bg-surface text-charcoal font-sans antialiased selection:bg-primary selection:text-white">
+
+<header class="w-full fixed top-0 z-50 glass-card-light border-b border-white/20">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center justify-between gap-6 h-20">
+    <a class="flex items-center gap-3 group" href="Home.html">
+      <img alt="T.E.A.M.S. Coaching Academy Logo" class="h-[72px] w-[72px] object-contain transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfITmoi7XKIel2eO-w94ZfNaxwe8wnChfMmTvzrR76l7SLgAnyltL8bgxHQRmC8P4OxEzgVRAuaCcWjfCWxQwTaqk-2EULndgHUBy_acO9cC8152PrvKxi35MbjhqQA1Lnn3v0hAe60N6p26qZT3N48jaOscl04GjOKUbPYliPrHter-mVfN-5EhksTK2C8IILGAQtyDqIsSU_nsjqOQw0Cx0rFi3z5cqvSocEWC_spmFTwvrXByvppu6TJPHJ4c37GkivLvgX-ks0"/>
+    </a>
+    <nav class="hidden md:flex flex-1 items-center justify-center">
+      <a class="nav-link nav-link--active" href="Home.html">Home</a>
+      <a class="nav-link" href="Series and Labs.html">Series &amp; Labs</a>
+      <a class="nav-link" href="parent_first_homepage.html">For Parents</a>
+      <a class="nav-link" href="student_homepage.html">For Students</a>
+      <a class="nav-link" href="meet_coach_walker_t.e.a.m.s._growth_academy.html">Meet Coach Walker</a>
+      <a class="nav-link" href="contact_t.e.a.m.s._growth_academy.html">Contact</a>
+      <a class="nav-link" href="about_t.e.a.m.s._growth_academy.html">About T.E.A.M.S.</a>
+    </nav>
+    <div class="flex items-center gap-3">
       <a class="nav-login hidden md:block" href="https://growthacademy.teamscoachingaz.com/login">Login</a>
-<a href="Series and Labs.html#pricing" class="btn inline-block bg-primary-container text-white hover:bg-deep-teal text-[12px] font-bold tracking-[0.04em] uppercase px-5 py-2.5 rounded-full transition-all shadow-[0_4px_14px_0_rgba(0,161,171,0.39)] hover:shadow-[0_6px_20px_rgba(0,161,171,0.23)] hover:-translate-y-0.5">Start Here</a>
-</div>
-</div>
+      <a href="parent_first_homepage.html" class="btn inline-block bg-primary text-white text-[12px] font-bold tracking-[0.04em] uppercase px-5 py-2.5 shadow-[0_4px_14px_0_rgba(0,161,171,0.39)]">Start Here</a>
+    </div>
+  </div>
 </header>
-<!-- Hero Section (White BG) -->
-<section class="bg-surface pt-32 pb-20 md:pt-48 md:pb-32 relative overflow-hidden bg-grid-pattern clip-slant-bottom">
-<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-teal-wash/50 to-transparent pointer-events-none"></div>
-<div class="absolute -top-40 -right-40 w-96 h-96 bg-primary-container/20 rounded-full blur-3xl"></div>
-<div class="absolute top-40 -left-20 w-72 h-72 bg-primary-container/10 rounded-full blur-3xl"></div>
-<div class="max-w-container-max mx-auto px-gutter flex flex-col lg:flex-row items-center gap-12 relative z-10">
-<div class="lg:w-3/5 flex flex-col items-start text-left">
-<span class="inline-block py-1.5 px-4 rounded-full bg-teal-wash text-primary-container font-bold text-xs tracking-widest uppercase mb-6 shadow-sm border border-primary-container/10">The Growth Academy</span>
-<h1 class="font-display-lg text-5xl md:text-6xl text-charcoal max-w-4xl mb-6 font-extrabold leading-tight">Equipping the Next Generation for <span class="text-gradient">Life's Transitions</span></h1>
-<p class="font-body-lg text-lg md:text-xl text-slate-gray max-w-2xl mb-10 leading-relaxed">At T.E.A.M.S. Coaching Growth Academy, our mission is to equip the next generation with the character, confidence, communication skills, and life strategies needed to thrive. We believe real growth happens through <strong>reflection, intentional conversation, and consistent accountability</strong> between students and parents.</p>
-<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-<a href="Series and Labs.html#series" class="btn inline-flex items-center justify-center text-center bg-primary-container text-white hover:bg-deep-teal font-bold text-sm tracking-wide uppercase px-8 py-4 rounded-full transition-all shadow-[0_4px_14px_0_rgba(0,161,171,0.39)] hover:shadow-[0_6px_20px_rgba(0,161,171,0.23)] hover:-translate-y-0.5">Explore Series &amp; Labs</a>
-<button class="bg-white border border-outline-variant text-charcoal hover:border-primary-container hover:text-primary-container font-bold text-sm tracking-wide uppercase px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2 shadow-sm">
-<span class="material-symbols-outlined text-xl">play_circle</span> Watch Introduction
-</button>
-</div>
-</div>
-<div class="lg:w-2/5 relative">
-<div class="absolute inset-0 bg-primary-container/20 rounded-3xl transform rotate-3 scale-105 blur-sm"></div>
-<div class="glass-card-light p-8 rounded-3xl relative z-10 border border-white">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-12 h-12 rounded-full bg-primary-container text-white flex items-center justify-center">
-<span class="material-symbols-outlined">forum</span>
-</div>
-<div>
-<h4 class="font-bold text-charcoal">Meaningful Conversations</h4>
-<p class="text-sm text-slate-gray">Bridge the gap between generations</p>
-</div>
-</div>
-<div class="flex items-center gap-4 mb-6 ml-8">
-<div class="w-12 h-12 rounded-full bg-charcoal text-white flex items-center justify-center">
-<span class="material-symbols-outlined">psychology</span>
-</div>
-<div>
-<h4 class="font-bold text-charcoal">Character Building</h4>
-<p class="text-sm text-slate-gray">Develop resilience and confidence</p>
-</div>
-</div>
-<div class="flex items-center gap-4 ml-16">
-<div class="w-12 h-12 rounded-full bg-teal-wash text-primary-container border border-primary-container/20 flex items-center justify-center">
-<span class="material-symbols-outlined">rocket_launch</span>
-</div>
-<div>
-<h4 class="font-bold text-charcoal">Life Strategies</h4>
-<p class="text-sm text-slate-gray">Tools for real-world success</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- More Than a Lab Section (Black BG) -->
-<section class="bg-charcoal text-white py-32 relative -mt-16 clip-slant-bottom z-20">
-<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMGExYWIiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djIwaDJWMzRoLTJ6bTItMThWMGgtMnYxNmgyeiIvPjxwYXRoIGQ9Ik0zNiAzNGgyMFYzNGgyVjBoLTJ2MTRIMzRWMGgtMnYxNmgyeSBNMTYgNTJWMTZoMnYzNmgtdnoiLz48cGF0aCBkPSJNMCAzdjJoMTZWMEgxNFYzSDB6TTE2IDUwaDJWMEgxNnY1MHptMTQgMEgwdjJoMzRWM1gzMFYwWiBNMzQgNTBWMzRoLTJ2MTZINlYzNGgtMnYyMGgyOHoiLz48cGF0aCBkPSJNMTYgMjhIMFYyNmgxNnYyem0wIDIyaC0yVjI2aDJ2MjR6Ii8+PHBhdGggZD0iTTM2IDE2aDIwVjBoMnYxNkgyVjBIMHYxNmgzNnptMCAwdjIwaDF2MmwxLTFWMThIMTZ2MTBIMXExVjE4aDM1eiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
-<div class="max-w-container-max mx-auto px-gutter text-center relative z-10">
-<span class="inline-block py-1 px-3 border border-primary-container/30 rounded text-primary-container font-bold text-xs tracking-widest uppercase mb-6">Our Philosophy</span>
-<h2 class="font-display-lg text-4xl md:text-5xl mb-12 text-white font-extrabold">More Than a Lab</h2>
-<div class="font-body-lg text-lg md:text-xl max-w-4xl mx-auto space-y-8 text-surface-variant relative">
-<div class="absolute -left-8 -top-8 text-primary-container/20 text-8xl font-serif">"</div>
-<p class="text-2xl md:text-3xl font-light italic text-white leading-relaxed">These aren't just videos to watch. They aren't just lessons to complete.</p>
-<p class="text-slate-300">They are designed to become Series &amp; Labs for growth that inspire lasting conversations, build positive habits, and encourage continuous personal development long after the lab has ended.</p>
-<p class="text-slate-300">Every lab intentionally engages both teens and parents, creating a shared understanding and common language that helps reinforce growth at home, at school, and in everyday life.</p>
-</div>
-</div>
-</section>
-<!-- The T.E.A.M.S. Series & Labs -->
-<section class="relative pt-40 pb-24 -mt-20 overflow-hidden" id="series">
-<div class="absolute inset-0 bg-gradient-to-b from-teal-wash/80 via-surface to-surface"></div>
-<div class="absolute top-24 right-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
-<div class="absolute bottom-10 left-0 w-56 h-56 bg-tertiary/10 rounded-full blur-3xl pointer-events-none"></div>
-<div class="max-w-container-max mx-auto px-gutter relative z-10">
-<div class="flex flex-col md:flex-row justify-between items-end mb-14 gap-6">
-<div class="max-w-2xl">
-<span class="text-primary font-bold text-xs tracking-widest uppercase mb-2 block">Curriculum</span>
-<h2 class="font-display-lg text-4xl md:text-5xl text-charcoal mb-4 font-extrabold">The T.E.A.M.S. Series &amp; Labs</h2>
-<p class="font-body-lg text-lg text-slate-gray">Five Series · 29 Labs — Transition, Empowerment, Athletic Mindset, Management, and Social. Every Lab is sold individually, with sibling discounts for families.</p>
-</div>
-<a href="Series and Labs.html#series" class="btn group inline-flex items-center gap-2 bg-primary text-white hover:bg-deep-teal font-bold text-sm tracking-wide uppercase px-6 py-3 rounded-full transition-all shadow-[0_8px_20px_rgba(57,178,185,0.28)] hover:-translate-y-0.5 whitespace-nowrap">
-View All Series
-<span class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-0.5">arrow_forward</span>
-</a>
-</div>
-<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<a href="Series and Labs.html#series-t" class="group flex flex-col bg-white rounded-2xl border border-outline-variant/30 shadow-[0_10px_28px_rgba(0,0,0,0.05)] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(27,135,141,0.14)]">
-<div class="h-2.5" style="background:#39B2B9"></div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="w-12 h-12 rounded-xl text-white flex items-center justify-center mb-4 font-extrabold text-xl transition-transform duration-300 group-hover:scale-105" style="background:#39B2B9">T</div>
-<p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#39B2B9">6 Labs · Sold Individually</p>
-<h3 class="font-bold text-xl text-charcoal mb-4 leading-snug">Transition Series</h3>
-<ul class="space-y-2.5 mb-6 flex-grow text-sm text-slate-gray">
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#39B2B9;font-variation-settings:'FILL' 1;">check_circle</span>Middle School Preparation and Survival</li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#39B2B9;font-variation-settings:'FILL' 1;">check_circle</span>High School Preparation and Survival</li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#39B2B9;font-variation-settings:'FILL' 1;">check_circle</span>Pathways After High School</li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#39B2B9;font-variation-settings:'FILL' 1;">check_circle</span>Navigating New Environments <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="text-xs font-bold uppercase tracking-wide mt-1" style="color:#39B2B9">+2 more in Series</li>
-</ul>
-<span class="inline-flex items-center gap-1 text-sm font-bold mt-auto" style="color:#39B2B9">Explore <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span></span>
-</div>
-</a>
-<a href="Series and Labs.html#series-e" class="group flex flex-col bg-white rounded-2xl border border-outline-variant/30 shadow-[0_10px_28px_rgba(0,0,0,0.05)] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(27,135,141,0.14)]">
-<div class="h-2.5" style="background:#1B878D"></div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="w-12 h-12 rounded-xl text-white flex items-center justify-center mb-4 font-extrabold text-xl transition-transform duration-300 group-hover:scale-105" style="background:#1B878D">E</div>
-<p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#1B878D">6 Labs · Sold Individually</p>
-<h3 class="font-bold text-xl text-charcoal mb-4 leading-snug">Empowerment Series</h3>
-<ul class="space-y-2.5 mb-6 flex-grow text-sm text-slate-gray">
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#1B878D;font-variation-settings:'FILL' 1;">check_circle</span>Peer Pressure and Social Value</li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#1B878D;font-variation-settings:'FILL' 1;">check_circle</span>Self Esteem and Knowing Your Worth</li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#1B878D;font-variation-settings:'FILL' 1;">check_circle</span>Finding Your Voice</li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#1B878D;font-variation-settings:'FILL' 1;">check_circle</span>Your Value and Values <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="text-xs font-bold uppercase tracking-wide mt-1" style="color:#1B878D">+2 more in Series</li>
-</ul>
-<span class="inline-flex items-center gap-1 text-sm font-bold mt-auto" style="color:#1B878D">Explore <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span></span>
-</div>
-</a>
-<a href="Series and Labs.html#series-a" class="group flex flex-col bg-white rounded-2xl border border-outline-variant/30 shadow-[0_10px_28px_rgba(0,0,0,0.05)] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(27,135,141,0.14)]">
-<div class="h-2.5" style="background:#13151A"></div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="w-12 h-12 rounded-xl text-white flex items-center justify-center mb-4 font-extrabold text-xl transition-transform duration-300 group-hover:scale-105" style="background:#13151A">A</div>
-<p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#13151A">5 Labs · Sold Individually</p>
-<h3 class="font-bold text-xl text-charcoal mb-4 leading-snug">Athletic Mindset Series</h3>
-<ul class="space-y-2.5 mb-6 flex-grow text-sm text-slate-gray">
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#13151A;font-variation-settings:'FILL' 1;">check_circle</span>How To Maximize Value as an Athlete <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#13151A;font-variation-settings:'FILL' 1;">check_circle</span>Sportsmanship and Respect <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#13151A;font-variation-settings:'FILL' 1;">check_circle</span>Athletic Leadership <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#13151A;font-variation-settings:'FILL' 1;">check_circle</span>Managing Expectations in Athletics <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="text-xs font-bold uppercase tracking-wide mt-1" style="color:#13151A">+1 more in Series</li>
-</ul>
-<span class="inline-flex items-center gap-1 text-sm font-bold mt-auto" style="color:#13151A">Explore <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span></span>
-</div>
-</a>
-<a href="Series and Labs.html#series-m" class="group flex flex-col bg-white rounded-2xl border border-outline-variant/30 shadow-[0_10px_28px_rgba(0,0,0,0.05)] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(27,135,141,0.14)]">
-<div class="h-2.5" style="background:#256487"></div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="w-12 h-12 rounded-xl text-white flex items-center justify-center mb-4 font-extrabold text-xl transition-transform duration-300 group-hover:scale-105" style="background:#256487">M</div>
-<p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#256487">7 Labs · Sold Individually</p>
-<h3 class="font-bold text-xl text-charcoal mb-4 leading-snug">Management Series</h3>
-<ul class="space-y-2.5 mb-6 flex-grow text-sm text-slate-gray">
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#256487;font-variation-settings:'FILL' 1;">check_circle</span>Financial Literacy <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#256487;font-variation-settings:'FILL' 1;">check_circle</span>Earning Your Keep <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#256487;font-variation-settings:'FILL' 1;">check_circle</span>Finding and Keeping a Job <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#256487;font-variation-settings:'FILL' 1;">check_circle</span>Time Management <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="text-xs font-bold uppercase tracking-wide mt-1" style="color:#256487">+3 more in Series</li>
-</ul>
-<span class="inline-flex items-center gap-1 text-sm font-bold mt-auto" style="color:#256487">Explore <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span></span>
-</div>
-</a>
-<a href="Series and Labs.html#series-s" class="group flex flex-col bg-white rounded-2xl border border-outline-variant/30 shadow-[0_10px_28px_rgba(0,0,0,0.05)] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(27,135,141,0.14)]">
-<div class="h-2.5" style="background:#5e98be"></div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="w-12 h-12 rounded-xl text-white flex items-center justify-center mb-4 font-extrabold text-xl transition-transform duration-300 group-hover:scale-105" style="background:#5e98be">S</div>
-<p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#5e98be">5 Labs · Sold Individually</p>
-<h3 class="font-bold text-xl text-charcoal mb-4 leading-snug">Social Series</h3>
-<ul class="space-y-2.5 mb-6 flex-grow text-sm text-slate-gray">
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#5e98be;font-variation-settings:'FILL' 1;">check_circle</span>Healthy Relationships <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#5e98be;font-variation-settings:'FILL' 1;">check_circle</span>Effective Communication <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#5e98be;font-variation-settings:'FILL' 1;">check_circle</span>Reading the Room <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="flex items-start gap-2"><span class="material-symbols-outlined text-base mt-0.5" style="color:#5e98be;font-variation-settings:'FILL' 1;">check_circle</span>Filter and Sensitivity <span style="opacity:.65;font-size:11px;font-weight:700;">(Soon)</span></li>
-<li class="text-xs font-bold uppercase tracking-wide mt-1" style="color:#5e98be">+1 more in Series</li>
-</ul>
-<span class="inline-flex items-center gap-1 text-sm font-bold mt-auto" style="color:#5e98be">Explore <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span></span>
-</div>
-</a>
-<!-- Pricing CTA card -->
-<a href="Series and Labs.html#pricing" class="group flex flex-col bg-teal-wash rounded-2xl border-2 border-primary/20 shadow-[0_10px_28px_rgba(0,0,0,0.05)] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(27,135,141,0.14)]">
-<div class="h-2.5 bg-primary"></div>
-<div class="p-6 flex flex-col flex-grow justify-center">
-<div class="w-12 h-12 rounded-xl bg-white border border-primary/25 text-primary flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105">
-<span class="material-symbols-outlined text-2xl">payments</span>
-</div>
-<p class="text-[11px] font-extrabold tracking-[0.12em] uppercase text-primary mb-2">Sibling Discounts</p>
-<h3 class="font-bold text-xl text-charcoal mb-4 leading-snug">Series &amp; Labs Pricing</h3>
-<p class="text-sm text-slate-gray mb-6 flex-grow">Parent alone $39 · Student alone $59 · Parent and student $79</p>
-<span class="inline-flex items-center gap-1 text-sm font-bold text-primary mt-auto">View Pricing <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span></span>
-</div>
-</a>
-</div>
-</div>
-</section>
-<!-- Meet Coach Walker Section -->
-<section class="bg-charcoal py-32 relative overflow-hidden" id="coach">
-<div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
-<div class="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-primary-container/10 to-transparent pointer-events-none"></div>
-<div class="max-w-container-max mx-auto px-gutter relative z-10">
-<div class="flex flex-col lg:flex-row items-center gap-16">
-<div class="lg:w-1/2 relative">
-<div class="absolute -inset-4 bg-primary-container/20 rounded-3xl transform -rotate-3 blur-sm"></div>
-<div class="absolute -inset-4 bg-gradient-to-br from-primary-container to-deep-teal rounded-3xl transform rotate-2 opacity-50"></div>
-<div class="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl border border-white/10">
-<img alt="Coach Walker mentoring students" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo842q5iHftXnH22chocugOcVCpMR9XQIcn10TIy9ubK9gVK9WXkAchK9quJICPRsYLnZI5R3nau3D1QxsHsHS_aw4MYWng6Vz71BaWN-0j1lLhlGvD3sGLkgcN-x4JxGw9RPGQokx5scQ05-wLTJ4vLWx62F-w7yIqvGSvGA0PzwHHHwZAUmDx4G0dJ-yhKL4hEgWYKTTuvx8ugm60stsGtyc8iiPHS8Gu9KvtuzcR4OIubfe92TR8UUi1Jj83FGt4t5wjuZMoXXP"/>
-<div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent opacity-80"></div>
-<div class="absolute bottom-0 left-0 p-8 w-full">
-<div class="glass-card p-4 rounded-xl border-l-4 border-l-primary-container inline-block">
-<span class="text-white font-bold block text-lg">20+ Years</span>
-<span class="text-primary-fixed text-sm uppercase tracking-wider">Experience</span>
-</div>
-</div>
-</div>
-</div>
-<div class="lg:w-1/2">
-<span class="text-primary-fixed font-bold text-xs tracking-widest uppercase mb-4 block">The Guide</span>
-<h2 class="font-display-lg text-4xl md:text-5xl text-white mb-8 font-extrabold">Meet Coach Walker</h2>
-<div class="glass-card p-8 rounded-3xl mb-10 relative">
-<span class="absolute top-0 right-8 -translate-y-1/2 text-6xl text-primary-container/30 material-symbols-outlined">format_quote</span>
-<p class="font-body-lg text-lg text-slate-300 leading-relaxed relative z-10">For more than 20 years, Coach Walker has dedicated his career to helping young people build confidence, develop character, strengthen relationships, and successfully navigate life's biggest transitions... gaining firsthand insight into the challenges today's teens face.</p>
-</div>
-<div class="space-y-6">
-<h3 class="font-bold text-sm tracking-widest uppercase text-primary-fixed border-b border-white/10 pb-4">Roles &amp; Perspective</h3>
-<div class="tga-roles grid grid-cols-3 md:grid-cols-5 gap-y-6 gap-x-3 justify-items-center">
-<div class="tga-role flex flex-col items-center gap-2 text-center">
-<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-lg">school</span>
-</div>
-<span class="text-white font-medium text-sm">Teacher</span>
-</div>
-<div class="tga-role flex flex-col items-center gap-2 text-center">
-<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-lg">sports</span>
-</div>
-<span class="text-white font-medium text-sm">Coach</span>
-</div>
-<div class="tga-role flex flex-col items-center gap-2 text-center">
-<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-lg">account_balance</span>
-</div>
-<span class="text-white font-medium text-sm">Principal</span>
-</div>
-<div class="tga-role flex flex-col items-center gap-2 text-center">
-<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-lg">volunteer_activism</span>
-</div>
-<span class="text-white font-medium text-sm">Mentor</span>
-</div>
-<div class="tga-role flex flex-col items-center gap-2 text-center">
-<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-lg">family_restroom</span>
-</div>
-<span class="text-white font-medium text-sm">Parent</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Community Section -->
-<section class="bg-surface py-32 clip-slant-top -mt-16 relative z-20" id="community">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="text-center mb-20">
-<span class="text-primary-container font-bold text-xs tracking-widest uppercase mb-4 block">Gamified Growth</span>
-<h2 class="font-display-lg text-4xl md:text-5xl text-charcoal mb-6 font-extrabold">T.E.A.M.S. Community Rewards</h2>
-<p class="font-body-lg text-lg text-slate-gray max-w-3xl mx-auto">Inside our Kajabi community, growth is recognized and rewarded. Students earn points through challenges that build character and leadership.</p>
-</div>
-<div class="grid lg:grid-cols-12 gap-8 items-center">
-<div class="lg:col-span-7 space-y-6">
-<div class="bg-white p-8 rounded-3xl border border-outline-variant/30 shadow-sm flex flex-col md:flex-row gap-8 items-center hover:shadow-md transition-shadow">
-<div class="w-24 h-24 rounded-full bg-teal-wash flex items-center justify-center shrink-0 border-[6px] border-white shadow-[0_0_0_1px_rgba(0,161,171,0.2)]">
-<span class="text-3xl font-bold text-primary-container">XP</span>
-</div>
-<div>
-<h3 class="font-bold text-2xl text-charcoal mb-2">The Point System</h3>
-<p class="text-slate-gray mb-4">Students earn points by completing challenges focused on:</p>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface rounded-full text-sm font-medium text-charcoal border border-outline-variant/50"><span class="material-symbols-outlined text-[16px] text-primary-container">star</span> Leadership</span>
-<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface rounded-full text-sm font-medium text-charcoal border border-outline-variant/50"><span class="material-symbols-outlined text-[16px] text-primary-container">verified</span> Responsibility</span>
-<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface rounded-full text-sm font-medium text-charcoal border border-outline-variant/50"><span class="material-symbols-outlined text-[16px] text-primary-container">groups</span> Community Service</span>
-<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface rounded-full text-sm font-medium text-charcoal border border-outline-variant/50"><span class="material-symbols-outlined text-[16px] text-primary-container">psychology</span> Self-Reflection</span>
-</div>
-</div>
-</div>
-<div class="bg-charcoal p-8 rounded-3xl shadow-xl relative overflow-hidden">
-<div class="absolute right-0 top-0 w-64 h-64 bg-gradient-to-br from-primary-container/20 to-transparent rounded-full blur-3xl"></div>
-<h4 class="font-bold text-xs tracking-widest uppercase text-primary-fixed mb-6 relative z-10">Exclusive Rewards</h4>
-<div class="grid sm:grid-cols-2 gap-6 relative z-10">
-<div class="flex items-start gap-4">
-<div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0 text-primary-fixed">
-<span class="material-symbols-outlined text-xl">military_tech</span>
-</div>
-<p class="text-white text-sm font-medium pt-1">Digital badges &amp; Certificates</p>
-</div>
-<div class="flex items-start gap-4">
-<div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0 text-primary-fixed">
-<span class="material-symbols-outlined text-xl">trophy</span>
-</div>
-<p class="text-white text-sm font-medium pt-1">Top Performer recognition</p>
-</div>
-<div class="flex items-start gap-4">
-<div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0 text-primary-fixed">
-<span class="material-symbols-outlined text-xl">public</span>
-</div>
-<p class="text-white text-sm font-medium pt-1">Features on website/socials</p>
-</div>
-<div class="flex items-start gap-4">
-<div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0 text-primary-fixed">
-<span class="material-symbols-outlined text-xl">school</span>
-</div>
-<p class="text-white text-sm font-medium pt-1">Eligibility for scholarships</p>
-</div>
-</div>
-</div>
-</div>
-<div class="lg:col-span-5 h-full">
-<div class="bg-gradient-to-br from-primary-container to-deep-teal p-10 rounded-3xl shadow-xl text-center flex flex-col justify-center h-full relative overflow-hidden group">
-<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-50 mix-blend-overlay"></div>
-<div class="w-20 h-20 mx-auto bg-white/20 rounded-2xl backdrop-blur-sm flex items-center justify-center mb-8 border border-white/30 transform group-hover:rotate-12 transition-transform duration-300">
-<span class="material-symbols-outlined text-white text-4xl">diversity_3</span>
-</div>
-<h3 class="font-display-lg text-3xl text-white mb-4 font-bold relative z-10">Join the Community</h3>
-<p class="text-white/90 mb-8 font-medium relative z-10">Connect with peers, share your journey, and grow together in a safe, moderated environment.</p>
-<a href="Series and Labs.html#pricing" class="btn block text-center w-full bg-white text-primary-container hover:bg-surface font-bold text-sm tracking-wide uppercase px-8 py-4 rounded-xl transition-all shadow-lg relative z-10 hover:-translate-y-1">Enroll to Join Community</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- What's Included -->
-<section class="bg-surface py-24 bg-grid-pattern relative">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="text-center mb-20">
-<h2 class="font-display-lg text-4xl md:text-5xl text-charcoal mb-6 font-extrabold">What's Included in Every Lab</h2>
-<p class="font-body-lg text-lg text-slate-gray max-w-2xl mx-auto">More than a video series. A complete toolkit for student and family growth.</p>
-</div>
-<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-<!-- Video Lessons -->
-<div class="bg-white border border-outline-variant/30 rounded-3xl p-8 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
-<div class="absolute -right-10 -top-10 w-32 h-32 bg-teal-wash rounded-full transition-transform group-hover:scale-150 duration-500 z-0"></div>
-<div class="relative z-10">
-<div class="w-14 h-14 bg-surface rounded-xl flex items-center justify-center mb-6 text-primary-container border border-outline-variant/20 shadow-sm">
-<span class="material-symbols-outlined text-2xl">play_circle</span>
-</div>
-<h3 class="font-bold text-xl text-charcoal mb-3">Engaging Video Lessons</h3>
-<p class="font-body-md text-slate-gray leading-relaxed text-sm">Self-paced instruction teaching practical strategies students can immediately apply in everyday situations.</p>
-</div>
-</div>
-<!-- Parent Lab -->
-<div class="bg-charcoal rounded-3xl p-8 hover:-translate-y-2 shadow-xl transition-all duration-300 relative overflow-hidden lg:col-span-2 group">
-<div class="absolute inset-0 bg-gradient-to-r from-charcoal to-[#1a202c]"></div>
-<div class="absolute right-0 top-0 w-64 h-full bg-gradient-to-l from-primary-container/20 to-transparent z-0"></div>
-<div class="absolute top-6 right-6 bg-primary-container/20 border border-primary-container/40 text-primary-fixed px-3 py-1 rounded-full font-bold text-[10px] uppercase tracking-wider z-10 backdrop-blur-sm flex items-center gap-1">
-<span class="material-symbols-outlined text-[12px]">star</span> Crucial Context
+
+<section class="bg-surface pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden bg-grid-pattern">
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-teal-wash/60 to-transparent pointer-events-none"></div>
+  <div class="absolute -top-40 -right-40 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+  <div class="max-w-page mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7">
+      <span class="inline-block py-1.5 px-4 rounded-full bg-teal-wash text-deep-teal font-bold text-xs tracking-widest uppercase mb-6 border border-primary/15">Digital Lab Series for parents and students</span>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.08] tracking-tight mb-6">Parents get the words. Students get the skill. <span class="text-gradient">Same topic.</span></h1>
+      <p class="text-lg md:text-xl text-slate-gray max-w-2xl mb-4 leading-relaxed">Every Lab is built for the household. Parents start, because they buy and they need a plan for tonight. Students get their own lesson on the same topic, in their language.</p>
+      <p class="text-base text-charcoal font-semibold max-w-2xl mb-10">One Lab at a time. No subscription. Choose the page that fits who is starting.</p>
+      <div class="flex flex-col sm:flex-row flex-wrap gap-4">
+        <a href="parent_first_homepage.html" class="btn inline-flex items-center justify-center bg-primary text-white font-bold text-sm tracking-wide uppercase px-8 py-4 shadow-[0_4px_14px_0_rgba(0,161,171,0.39)]">For Parents</a>
+        <a href="student_homepage.html" class="btn inline-flex items-center justify-center bg-white border border-slate-300 text-charcoal hover:border-primary hover:text-deep-teal font-bold text-sm tracking-wide uppercase px-8 py-4">For Students</a>
+      </div>
+    </div>
+    <div class="lg:col-span-5">
+      <div class="relative">
+        <div class="absolute inset-0 bg-primary/15 rounded-3xl rotate-2 scale-105"></div>
+        <div class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl border border-white">
+          <img alt="Coach Walker with a student" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo842q5iHftXnH22chocugOcVCpMR9XQIcn10TIy9ubK9gVK9WXkAchK9quJICPRsYLnZI5R3nau3D1QxsHsHS_aw4MYWng6Vz71BaWN-0j1lLhlGvD3sGLkgcN-x4JxGw9RPGQokx5scQ05-wLTJ4vLWx62F-w7yIqvGSvGA0PzwHHHwZAUmDx4G0dJ-yhKL4hEgWYKTTuvx8ugm60stsGtyc8iiPHS8Gu9KvtuzcR4OIubfe92TR8UUi1Jj83FGt4t5wjuZMoXXP"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <p class="text-[11px] font-bold tracking-[0.14em] uppercase text-primary mb-2">Parents start · $39</p>
+            <p class="text-white text-lg font-bold leading-snug">Add the student lesson when they are ready. Together is $79.</p>
+          </div>
         </div>
-<div class="relative z-10 flex flex-col sm:flex-row gap-8 items-start sm:items-center h-full">
-<div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center shrink-0 text-primary-fixed border border-white/10 backdrop-blur-sm">
-<span class="material-symbols-outlined text-3xl">family_restroom</span>
-</div>
-<div>
-<h3 class="font-display-lg text-2xl text-white mb-3 font-bold">Parent Lab</h3>
-<p class="font-body-md text-slate-300 leading-relaxed max-w-xl text-sm">Explains what students learned and provides practical ways parents can reinforce the concepts at home, ensuring the entire family grows together.</p>
-</div>
-</div>
-</div>
-<!-- Digital Workbook -->
-<div class="bg-white border border-outline-variant/30 rounded-3xl p-8 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
-<div class="absolute -right-10 -top-10 w-32 h-32 bg-teal-wash rounded-full transition-transform group-hover:scale-150 duration-500 z-0"></div>
-<div class="relative z-10">
-<div class="w-14 h-14 bg-surface rounded-xl flex items-center justify-center mb-6 text-primary-container border border-outline-variant/20 shadow-sm">
-<span class="material-symbols-outlined text-2xl">edit_document</span>
-</div>
-<h3 class="font-bold text-xl text-charcoal mb-3">Interactive Workbook</h3>
-<p class="font-body-md text-slate-gray leading-relaxed text-sm">Featuring check-ins for understanding, guided self-reflection, goal-setting, and personal action plans.</p>
-</div>
-</div>
-<!-- Assessments -->
-<div class="bg-white border border-outline-variant/30 rounded-3xl p-8 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
-<div class="absolute -right-10 -top-10 w-32 h-32 bg-teal-wash rounded-full transition-transform group-hover:scale-150 duration-500 z-0"></div>
-<div class="relative z-10">
-<div class="w-14 h-14 bg-surface rounded-xl flex items-center justify-center mb-6 text-primary-container border border-outline-variant/20 shadow-sm">
-<span class="material-symbols-outlined text-2xl">assignment_turned_in</span>
-</div>
-<h3 class="font-bold text-xl text-charcoal mb-3">Pre/Post Assessments</h3>
-<p class="font-body-md text-slate-gray leading-relaxed text-sm">Measure growth and track progress with data-driven insights before and after each lab.</p>
-</div>
-</div>
-<!-- Certificate -->
-<div class="bg-white border border-outline-variant/30 rounded-3xl p-8 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
-<div class="absolute -right-10 -top-10 w-32 h-32 bg-teal-wash rounded-full transition-transform group-hover:scale-150 duration-500 z-0"></div>
-<div class="relative z-10">
-<div class="w-14 h-14 bg-surface rounded-xl flex items-center justify-center mb-6 text-primary-container border border-outline-variant/20 shadow-sm">
-<span class="material-symbols-outlined text-2xl">workspace_premium</span>
-</div>
-<h3 class="font-bold text-xl text-charcoal mb-3">Certificate of Completion</h3>
-<p class="font-body-md text-slate-gray leading-relaxed text-sm">Celebrate achievement with a formal certificate recognizing the student's commitment to growth.</p>
-</div>
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Growing With You -->
-<section class="bg-charcoal py-32 border-t border-white/10 relative overflow-hidden">
-<div class="absolute top-0 right-0 w-1/2 h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMGExYWIiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djIwaDJWMzRoLTJ6bTItMThWMGgtMnYxNmgyeiIvPjxwYXRoIGQ9Ik0zNiAzNGgyMFYzNGgyVjBoLTJ2MTRIMzRWMGgtMnYxNmgyeSBNMTYgNTJWMTZoMnYzNmgtdnoiLz48cGF0aCBkPSJNMCAzdjJoMTZWMEgxNFYzSDB6TTE2IDUwaDJWMEgxNnY1MHptMTQgMEgwdjJoMzRWM1gzMFYwWiBNMzQgNTBWMzRoLTJ2MTZINlYzNGgtMnYyMGgyOHoiLz48cGF0aCBkPSJNMTYgMjhIMFYyNmgxNnYyem0wIDIyaC0yVjI2aDJ2MjR6Ii8+PHBhdGggZD0iTTM2IDE2aDIwVjBoMnYxNkgyVjBIMHYxNmgzNnptMCAwdjIwaDF2MmwxLTFWMThIMTZ2MTBIMXExVjE4aDM1eiIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
-<div class="max-w-container-max mx-auto px-gutter text-center relative z-10">
-<h2 class="font-display-lg text-4xl md:text-5xl text-white mb-6 font-extrabold">Growing With You</h2>
-<p class="font-body-lg text-lg text-slate-300 max-w-3xl mx-auto mb-16 leading-relaxed">
-            The Academy is a lifelong partner for your family. Our curriculum spans five T.E.A.M.S. Series and 29 Labs — with more Labs releasing as students grow.
-        </p>
-<div class="grid md:grid-cols-3 gap-6 mb-16 relative">
-<div class="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-white/20 to-transparent hidden md:block -z-10"></div>
-<div class="glass-card p-8 rounded-3xl text-center relative overflow-hidden group hover:border-primary-container/50 transition-colors">
-<span class="inline-block px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold uppercase tracking-wider mb-6">Available Now</span>
-<h4 class="font-bold text-xl text-primary-fixed mb-3">5 Labs Ready</h4>
-<p class="text-sm text-slate-300">Middle/High School · Empowerment (3)</p>
-</div>
-<div class="bg-gradient-to-br from-primary-container/20 to-deep-teal/20 backdrop-blur-md border border-primary-container/30 p-8 rounded-3xl text-center shadow-[0_0_30px_rgba(0,161,171,0.1)] transform md:-translate-y-4">
-<span class="inline-block px-3 py-1 bg-primary-container text-white rounded-full text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">Coming Soon</span>
-<h4 class="font-bold text-xl text-white mb-3">24 Labs Coming Soon</h4>
-<p class="text-sm text-slate-300">Rest of T.E.A.M.S. Series</p>
-</div>
-<div class="glass-card p-8 rounded-3xl text-center relative overflow-hidden group hover:border-primary-container/50 transition-colors">
-<span class="inline-block px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold uppercase tracking-wider mb-6">Always</span>
-<h4 class="font-bold text-xl text-primary-fixed mb-3">Buy One Lab at a Time</h4>
-<p class="text-sm text-slate-300">Sibling discounts for families</p>
-</div>
-</div>
-<a href="Series and Labs.html#pricing" class="btn inline-block bg-primary-container text-white hover:bg-deep-teal font-bold text-sm tracking-wide uppercase px-10 py-5 rounded-full transition-all shadow-[0_4px_14px_0_rgba(0,161,171,0.39)] hover:shadow-[0_6px_20px_rgba(0,161,171,0.23)] hover:-translate-y-0.5">Start Your Journey Today</a>
-</div>
+
+<section class="bg-surface pb-8 md:pb-16" id="choose">
+  <div class="max-w-page mx-auto px-6">
+    <div class="max-w-2xl mb-10">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-3">Two pages. Pick who is starting.</h2>
+      <p class="text-lg text-slate-gray">The Labs are the same series. The copy, the starting price, and the next step change depending on who is here.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="parent_first_homepage.html" class="group bg-primary text-white rounded-3xl p-8 md:p-10 shadow-[0_12px_40px_rgba(57,178,185,0.35)] hover:-translate-y-1 transition-all no-underline">
+        <span class="inline-block text-[11px] font-bold tracking-widest uppercase bg-white/20 px-3 py-1 rounded-full mb-6">Start here</span>
+        <h3 class="text-3xl font-extrabold mb-3">For Parents</h3>
+        <p class="text-white/95 text-lg leading-relaxed mb-8">The words to use, a plan for home, and the Parent Lab at $39. Your teen does not have to buy in first.</p>
+        <span class="inline-flex items-center gap-2 font-bold uppercase tracking-wide text-sm">Go to the parent page <span class="material-symbols-outlined text-lg">arrow_forward</span></span>
+      </a>
+      <a href="student_homepage.html" class="group bg-white text-charcoal rounded-3xl p-8 md:p-10 border border-slate-200 shadow-sm hover:-translate-y-1 hover:border-primary transition-all no-underline">
+        <span class="inline-block text-[11px] font-bold tracking-widest uppercase bg-teal-wash text-deep-teal px-3 py-1 rounded-full mb-6">Students</span>
+        <h3 class="text-3xl font-extrabold mb-3">For Students</h3>
+        <p class="text-slate-gray text-lg leading-relaxed mb-8">Your lesson on school, friends, and what comes next. Best with a parent, so home lines up. $79 together, or $59 on your own.</p>
+        <span class="inline-flex items-center gap-2 font-bold uppercase tracking-wide text-sm text-deep-teal">Go to the student page <span class="material-symbols-outlined text-lg">arrow_forward</span></span>
+      </a>
+    </div>
+  </div>
 </section>
-<!-- Schedule a Discovery Call -->
-<section class="bg-primary-container py-20 md:py-24 text-center relative overflow-hidden" id="discovery-call">
-<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.18),transparent_55%)] pointer-events-none"></div>
-<div class="max-w-3xl mx-auto px-gutter relative z-10">
-<span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/90 text-primary-container font-bold text-xs tracking-widest uppercase mb-6 shadow-sm border border-white/40">
-<span class="material-symbols-outlined text-base" style="font-variation-settings:'FILL' 1;">calendar_month</span>
-Discovery Call
-</span>
-<h2 class="font-display-lg text-3xl md:text-4xl text-white mb-4 font-extrabold leading-tight">Schedule a Discovery Call</h2>
-<p class="font-body-lg text-lg text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">Talk with Coach Walker about the right Labs for your household, co-op, or school—and find the best next step for your students.</p>
-<div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-stretch sm:items-center">
-<a href="https://teamscoachingaz.square.site/" target="_blank" rel="noopener noreferrer" class="btn inline-flex items-center justify-center gap-2 bg-white text-primary-container hover:bg-teal-wash font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg hover:-translate-y-0.5">Schedule a Discovery Call</a>
-<a href="Series and Labs.html#pricing" class="inline-flex items-center justify-center gap-2 bg-transparent text-white border border-white/40 hover:bg-white/10 font-bold text-base px-8 py-4 rounded-full transition-all">Explore Series &amp; Labs</a>
-</div>
-</div>
+
+<section class="bg-charcoal text-white py-20 md:py-24">
+  <div class="max-w-page mx-auto px-6">
+    <div class="max-w-2xl mb-12">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Parents go first. Students join on the same topic.</h2>
+      <p class="text-lg text-slate-300">That is how the Labs stay one purchase story instead of two separate programs.</p>
+    </div>
+    <ol class="grid md:grid-cols-3 gap-5">
+      <li class="bg-white/5 border border-white/10 rounded-3xl p-7">
+        <span class="w-12 h-12 rounded-full bg-primary text-white font-extrabold flex items-center justify-center mb-5">1</span>
+        <h3 class="text-xl font-bold mb-2">Parent Lab, $39</h3>
+        <p class="text-slate-300 leading-relaxed">Watch on your own. Leave with one thing to say tonight. No buy-in from your teen required.</p>
+      </li>
+      <li class="bg-white/5 border border-white/10 rounded-3xl p-7">
+        <span class="w-12 h-12 rounded-full bg-primary text-white font-extrabold flex items-center justify-center mb-5">2</span>
+        <h3 class="text-xl font-bold mb-2">Student lesson</h3>
+        <p class="text-slate-300 leading-relaxed">The same topic, in their language, with scenarios they can use the same day.</p>
+      </li>
+      <li class="bg-white rounded-3xl p-7 text-charcoal border-2 border-primary">
+        <span class="w-12 h-12 rounded-full bg-primary text-white font-extrabold flex items-center justify-center mb-5">3</span>
+        <h3 class="text-xl font-bold mb-2">Together, $79</h3>
+        <p class="text-slate-gray leading-relaxed">Matching lessons for parent and student, so home actually lines up.</p>
+      </li>
+    </ol>
+  </div>
 </section>
-<!-- Footer -->
-<footer class="w-full bg-[#0a0b0d] border-t border-white/5 pt-20 pb-10">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-<div class="md:col-span-5">
-<a class="flex items-center gap-3 group mb-6 inline-block" href="Home.html">
-<img alt="T.E.A.M.S. Coaching Academy Logo" class="h-12 w-auto object-contain invert brightness-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfITmoi7XKIel2eO-w94ZfNaxwe8wnChfMmTvzrR76l7SLgAnyltL8bgxHQRmC8P4OxEzgVRAuaCcWjfCWxQwTaqk-2EULndgHUBy_acO9cC8152PrvKxi35MbjhqQA1Lnn3v0hAe60N6p26qZT3N48jaOscl04GjOKUbPYliPrHter-mVfN-5EhksTK2C8IILGAQtyDqIsSU_nsjqOQw0Cx0rFi3z5cqvSocEWC_spmFTwvrXByvppu6TJPHJ4c37GkivLvgX-ks0"/>
-</a>
-<p class="font-body-md text-slate-400 max-w-sm leading-relaxed mb-6">Helping parents and teens grow through reflection, honest conversation, and accountability.</p>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary-container hover:text-white transition-colors" href="#">
-<span class="material-symbols-outlined text-[20px]">share</span>
-</a>
-<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary-container hover:text-white transition-colors" href="contact_t.e.a.m.s._growth_academy.html">
-<span class="material-symbols-outlined text-[20px]">mail</span>
-</a>
-</div>
-</div>
-<div class="md:col-span-3 md:col-start-7">
-<h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Programs</h4>
-<div class="flex flex-col gap-4">
-<a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="parent_first_homepage.html">Home</a>
-<a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="Series and Labs.html">Series &amp; Labs</a>
-<a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="meet_coach_walker_t.e.a.m.s._growth_academy.html">Meet Coach Walker</a>
-<a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="contact_t.e.a.m.s._growth_academy.html">Contact</a>
-<a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="about_t.e.a.m.s._growth_academy.html">About T.E.A.M.S.</a>
-</div>
-</div>
-<div class="md:col-span-3">
-<h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Legal &amp; Support</h4>
-<div class="flex flex-col gap-4">
-<a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="#">Privacy Policy</a>
-<a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="#">Terms of Service</a>
-<a class="text-slate-400 hover:text-primary-fixed transition-colors text-sm font-medium" href="contact_t.e.a.m.s._growth_academy.html">Contact Us</a>
-</div>
-</div>
-</div>
-<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="font-body-md text-sm text-slate-500">© 2024 T.E.A.M.S. Coaching Growth Academy. All rights reserved.</p>
-</div>
-</div>
+
+<section class="bg-surface py-20 md:py-24" id="labs">
+  <div class="max-w-page mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+      <div class="max-w-2xl">
+        <span class="text-deep-teal font-bold text-xs tracking-widest uppercase mb-3 block">The Labs</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Six Labs ready today. More on the way.</h2>
+        <p class="text-lg text-slate-gray">Each Lab takes on one challenge. Parents and students work the same topic, from their own page.</p>
+      </div>
+      <a href="Series and Labs.html" class="btn inline-flex items-center gap-2 bg-primary text-white font-bold text-sm tracking-wide uppercase px-6 py-3 whitespace-nowrap">View all Series &amp; Labs <span class="material-symbols-outlined text-lg">arrow_forward</span></a>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <a href="Series and Labs.html" class="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+        <div class="h-2" style="background:#39B2B9"></div>
+        <div class="p-6">
+          <p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#39B2B9">Transition</p>
+          <h3 class="text-xl font-bold leading-snug mb-3">Middle School Preparation and Survival</h3>
+          <p class="text-slate-gray text-sm leading-relaxed">Middle school changes everything. Parents know what is coming. Students walk in ready.</p>
+        </div>
+      </a>
+      <a href="Series and Labs.html" class="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+        <div class="h-2" style="background:#39B2B9"></div>
+        <div class="p-6">
+          <p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#39B2B9">Transition</p>
+          <h3 class="text-xl font-bold leading-snug mb-3">High School Preparation and Survival</h3>
+          <p class="text-slate-gray text-sm leading-relaxed">Higher stakes and more freedom. Stay connected, and build the habits that carry through.</p>
+        </div>
+      </a>
+      <a href="Series and Labs.html" class="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+        <div class="h-2" style="background:#39B2B9"></div>
+        <div class="p-6">
+          <p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#39B2B9">Transition</p>
+          <h3 class="text-xl font-bold leading-snug mb-3">Pathways After High School</h3>
+          <p class="text-slate-gray text-sm leading-relaxed">College, trades, work, or a gap year. Help them choose a path they can stand behind.</p>
+        </div>
+      </a>
+      <a href="Series and Labs.html" class="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+        <div class="h-2" style="background:#1B878D"></div>
+        <div class="p-6">
+          <p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#1B878D">Empowerment</p>
+          <h3 class="text-xl font-bold leading-snug mb-3">Peer Pressure and Social Value</h3>
+          <p class="text-slate-gray text-sm leading-relaxed">What to say, and what to do, when fitting in starts to matter more than doing right.</p>
+        </div>
+      </a>
+      <a href="Series and Labs.html" class="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+        <div class="h-2" style="background:#1B878D"></div>
+        <div class="p-6">
+          <p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#1B878D">Empowerment</p>
+          <h3 class="text-xl font-bold leading-snug mb-3">Self Esteem and Knowing Your Worth</h3>
+          <p class="text-slate-gray text-sm leading-relaxed">Confidence that lasts longer than a compliment, for the teen and for the parent helping them.</p>
+        </div>
+      </a>
+      <a href="Series and Labs.html" class="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-lg transition-all">
+        <div class="h-2" style="background:#1B878D"></div>
+        <div class="p-6">
+          <p class="text-[11px] font-extrabold tracking-[0.12em] uppercase mb-2" style="color:#1B878D">Empowerment</p>
+          <h3 class="text-xl font-bold leading-snug mb-3">Finding Your Voice</h3>
+          <p class="text-slate-gray text-sm leading-relaxed">Help a quiet or unsure teen speak up at school, at home, and with friends.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-primary py-20 md:py-24 text-center relative overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.18),transparent_55%)] pointer-events-none"></div>
+  <div class="max-w-3xl mx-auto px-6 relative z-10">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-5">Start as a parent. Add the student when they are ready.</h2>
+    <p class="text-lg text-white/90 mb-8 leading-relaxed">Or open the student page if that is who is here now. Both paths buy the same Labs.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="parent_first_homepage.html" class="btn inline-flex justify-center bg-white text-deep-teal font-bold text-sm tracking-wide uppercase px-8 py-4">For Parents</a>
+      <a href="student_homepage.html" class="btn inline-flex justify-center border border-white/70 text-white font-bold text-sm tracking-wide uppercase px-8 py-4 hover:bg-white/10">For Students</a>
+    </div>
+  </div>
+</section>
+
+<footer class="w-full bg-[#0a0b0d] border-t border-white/5 pt-16 pb-10">
+  <div class="max-w-page mx-auto px-6">
+    <div class="grid md:grid-cols-12 gap-10 mb-12">
+      <div class="md:col-span-5">
+        <img alt="" class="h-12 w-auto object-contain invert brightness-0 mb-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfITmoi7XKIel2eO-w94ZfNaxwe8wnChfMmTvzrR76l7SLgAnyltL8bgxHQRmC8P4OxEzgVRAuaCcWjfCWxQwTaqk-2EULndgHUBy_acO9cC8152PrvKxi35MbjhqQA1Lnn3v0hAe60N6p26qZT3N48jaOscl04GjOKUbPYliPrHter-mVfN-5EhksTK2C8IILGAQtyDqIsSU_nsjqOQw0Cx0rFi3z5cqvSocEWC_spmFTwvrXByvppu6TJPHJ4c37GkivLvgX-ks0"/>
+        <p class="text-slate-400 max-w-sm leading-relaxed">Helping parents and students grow through reflection, honest conversation, and accountability.</p>
+      </div>
+      <div class="md:col-span-3 md:col-start-7">
+        <h2 class="text-white font-bold mb-5 uppercase text-sm tracking-wide">Programs</h2>
+        <div class="flex flex-col gap-3 text-sm">
+          <a class="text-slate-400 hover:text-primary" href="Home.html">Home</a>
+          <a class="text-slate-400 hover:text-primary" href="parent_first_homepage.html">For Parents</a>
+          <a class="text-slate-400 hover:text-primary" href="student_homepage.html">For Students</a>
+          <a class="text-slate-400 hover:text-primary" href="Series and Labs.html">Series &amp; Labs</a>
+        </div>
+      </div>
+      <div class="md:col-span-3">
+        <h2 class="text-white font-bold mb-5 uppercase text-sm tracking-wide">Support</h2>
+        <div class="flex flex-col gap-3 text-sm">
+          <a class="text-slate-400 hover:text-primary" href="meet_coach_walker_t.e.a.m.s._growth_academy.html">Meet Coach Walker</a>
+          <a class="text-slate-400 hover:text-primary" href="contact_t.e.a.m.s._growth_academy.html">Contact Us</a>
+          <a class="text-slate-400 hover:text-primary" href="https://growthacademy.teamscoachingaz.com/login">Login</a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 text-sm text-slate-500">© 2026 T.E.A.M.S. Coaching Growth Academy. All rights reserved.</div>
+  </div>
 </footer>
-</body></html>
+</body>
+</html>
