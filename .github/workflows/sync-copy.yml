@@ -1,0 +1,51 @@
+name: Sync website copy
+
+on:
+  schedule:
+    - cron: "*/20 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pull shared copy
+        run: |
+          python3 <<'PY'
+          import json, pathlib, urllib.request
+          url = "https://crudcrud.com/api/0019de36b53f4bbb86c17f903957ab2b/tga/6ad9c38a871dae03e85004b9"
+          try:
+              with urllib.request.urlopen(url, timeout=30) as res:
+                  data = json.loads(res.read().decode())
+          except Exception as exc:
+              print("skip", exc)
+              raise SystemExit(0)
+          data.pop("_id", None)
+          if not data.get("updatedAt"):
+              print("no updatedAt")
+              raise SystemExit(0)
+          path = pathlib.Path("tga-content.json")
+          current = {}
+          if path.exists():
+              current = json.loads(path.read_text())
+          if current.get("updatedAt") and current["updatedAt"] >= data["updatedAt"]:
+              print("file is current")
+              raise SystemExit(0)
+          path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
+          print("updated file")
+          PY
+      - name: Commit if needed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tga-content.json
+          if git diff --cached --quiet; then
+            echo "no change"
+            exit 0
+          fi
+          git commit -m "Sync saved website copy"
+          git push

@@ -3,6 +3,7 @@
   var APPROVE_PASSWORD = 'kajabi';
   var STORAGE_KEY = 'tga-content';
   var AUTH_KEY = 'tga-reviewer';
+  var SHARED_URL = 'https://crudcrud.com/api/0019de36b53f4bbb86c17f903957ab2b/tga/6ad9c38a871dae03e85004b9';
   var TAGS = 'h1,h2,h3,h4,h5,h6,p,li,blockquote,button,a,span,td,th,label,figcaption,dt,dd,summary';
 
   var state = {
@@ -214,47 +215,57 @@
     } catch (e) {}
   }
 
+  function cleanStore(data) {
+    if (!data || typeof data !== 'object') return null;
+    var copy = JSON.parse(JSON.stringify(data));
+    delete copy._id;
+    return copy;
+  }
+
+  function fetchJson(url) {
+    return fetch(url, { cache: 'no-store' })
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (data) { return cleanStore(data); })
+      .catch(function () { return null; });
+  }
+
+  function isNewer(candidate, current) {
+    if (!candidate || !candidate.updatedAt) return false;
+    if (!current || !current.updatedAt) return true;
+    return candidate.updatedAt > current.updatedAt;
+  }
+
   function loadStore() {
-    return Promise.resolve()
-      .then(function () {
-        var local = fromLocal();
-        if (local) mergeStore(local);
-        return fetch(dirUrl('tga-content.json').href, { cache: 'no-store' })
-          .then(function (res) { return res.ok ? res.json() : null; })
-          .catch(function () { return null; });
-      })
-      .then(function (fileData) {
-        var local = fromLocal();
-        if (fileData && fileData.updatedAt && (!local || !local.updatedAt || fileData.updatedAt >= local.updatedAt)) {
-          mergeStore(fileData);
-        } else if (local) {
-          mergeStore(local);
-        }
-        return fetch(apiUrl(), { cache: 'no-store' })
-          .then(function (res) { return res.ok ? res.json() : null; })
-          .catch(function () { return null; });
-      })
-      .then(function (apiData) {
-        var local = fromLocal();
-        if (apiData && apiData.updatedAt && (!local || !local.updatedAt || apiData.updatedAt >= local.updatedAt)) {
-          mergeStore(apiData);
-        }
-      })
-      .catch(function () {});
+    return Promise.all([
+      Promise.resolve(fromLocal()).then(cleanStore),
+      fetchJson(dirUrl('tga-content.json').href),
+      fetchJson(apiUrl()),
+      fetchJson(SHARED_URL)
+    ]).then(function (sources) {
+      var best = null;
+      sources.forEach(function (data) {
+        if (isNewer(data, best)) best = data;
+      });
+      if (best) mergeStore(best);
+    }).catch(function () {});
   }
 
   function saveStore() {
     state.updatedAt = new Date().toISOString();
     toLocal();
     var body = JSON.stringify(payload());
-    return fetch(apiUrl(), {
+    var localSave = fetch(apiUrl(), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: body
-    }).then(function (res) {
-      return res.ok;
-    }).catch(function () {
-      return false;
+    }).then(function (res) { return res.ok; }).catch(function () { return false; });
+    var sharedSave = fetch(SHARED_URL, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: body
+    }).then(function (res) { return res.ok; }).catch(function () { return false; });
+    return Promise.all([localSave, sharedSave]).then(function (results) {
+      return { local: results[0], shared: results[1] };
     });
   }
 
@@ -418,8 +429,10 @@
     leaveEdit();
     applyView();
     toggleChanges(true);
-    return saveStore().then(function () {
-      toast('Saved. Log in on Changes to approve one at a time.');
+    return saveStore().then(function (where) {
+      toast(where && where.shared
+        ? 'Saved. Refresh Incognito or another browser to see it.'
+        : 'Saved on this browser only.');
     });
   }
 
