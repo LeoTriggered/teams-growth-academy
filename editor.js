@@ -5,7 +5,11 @@
   var AUTH_KEY = 'tga-reviewer';
   var GITHUB_FILE = 'https://api.github.com/repos/LeoTriggered/teams-growth-academy/contents/tga-content.json';
   var GIST_URL = 'https://api.github.com/gists/7fef17de4247b60c4892c88e071e9528';
-  var SHARED_URL = 'https://crudcrud.com/api/0019de36b53f4bbb86c17f903957ab2b/tga/6ad9c38a871dae03e85004b9';
+  var SHARED_URLS = [
+    'https://crudcrud.com/api/0019de36b53f4bbb86c17f903957ab2b/tga/6ad9c38a871dae03e85004b9',
+    'https://json.extendsclass.com/bin/caabdca',
+    'https://extendsclass.com/api/json-storage/bin/caabdca'
+  ];
   var TAGS = 'h1,h2,h3,h4,h5,h6,p,li,blockquote,button,a,span,td,th,label,figcaption,dt,dd,summary';
 
   var state = {
@@ -187,18 +191,34 @@
   }
 
   function payload() {
+    var approved = {};
+    var draft = {};
+    var history = state.history || [];
+    function keep(id) {
+      if (!id) return;
+      if (Object.prototype.hasOwnProperty.call(state.approved, id)) approved[id] = state.approved[id];
+      if (Object.prototype.hasOwnProperty.call(state.draft, id)) draft[id] = state.draft[id];
+    }
+    history.forEach(function (item) { keep(item.fieldId); });
+    Object.keys(state.draft || {}).forEach(function (id) {
+      if ((state.draft[id] || '') !== (state.approved[id] || '')) keep(id);
+    });
     return {
-      approved: state.approved,
-      draft: state.draft,
-      history: state.history,
+      approved: approved,
+      draft: draft,
+      history: history,
       updatedAt: state.updatedAt
     };
   }
 
   function mergeStore(data) {
     if (!data || typeof data !== 'object') return;
-    if (data.approved && typeof data.approved === 'object') state.approved = data.approved;
-    if (data.draft && typeof data.draft === 'object') state.draft = data.draft;
+    if (data.approved && typeof data.approved === 'object') {
+      Object.keys(data.approved).forEach(function (id) { state.approved[id] = data.approved[id]; });
+    }
+    if (data.draft && typeof data.draft === 'object') {
+      Object.keys(data.draft).forEach(function (id) { state.draft[id] = data.draft[id]; });
+    }
     if (Array.isArray(data.history)) state.history = data.history;
     if (data.updatedAt) state.updatedAt = data.updatedAt;
   }
@@ -224,11 +244,54 @@
     return copy;
   }
 
+  function withTimeout(promise, ms) {
+    return new Promise(function (resolve, reject) {
+      var timer = setTimeout(function () { reject(new Error('timeout')); }, ms);
+      promise.then(function (value) {
+        clearTimeout(timer);
+        resolve(value);
+      }, function (err) {
+        clearTimeout(timer);
+        reject(err);
+      });
+    });
+  }
+
   function fetchJson(url) {
-    return fetch(url, { cache: 'no-store' })
+    return withTimeout(fetch(url, { cache: 'no-store' }), 8000)
       .then(function (res) { return res.ok ? res.json() : null; })
       .then(function (data) { return cleanStore(data); })
       .catch(function () { return null; });
+  }
+
+  function wait(ms) {
+    return new Promise(function (resolve) { setTimeout(resolve, ms); });
+  }
+
+  function putShared(url, body) {
+    return withTimeout(fetch(url, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      cache: 'no-store',
+      body: body
+    }), 8000).then(function (res) { return !!res.ok; }).catch(function () { return false; });
+  }
+
+  function saveShared(body) {
+    function attempt() {
+      return Promise.all(SHARED_URLS.map(function (url) {
+        return putShared(url, body);
+      })).then(function (results) {
+        return results.some(Boolean);
+      });
+    }
+    return attempt().then(function (ok) {
+      if (ok) return true;
+      return wait(700).then(attempt).then(function (retry) {
+        if (retry) return true;
+        return wait(1400).then(attempt);
+      });
+    });
   }
 
   function fetchGithubFile() {
@@ -270,14 +333,15 @@
   }
 
   function loadStore() {
-    return Promise.all([
-      fetchJson(SHARED_URL),
+    var remote = SHARED_URLS.map(fetchJson);
+    return Promise.all(remote.concat([
       fetchGist(),
       fetchGithubFile(),
+      fetchJson('https://gist.githubusercontent.com/LeoTriggered/7fef17de4247b60c4892c88e071e9528/raw/tga-content.json?t=' + Date.now()),
       fetchJson(dirUrl('tga-content.json').href),
       fetchJson(apiUrl()),
       Promise.resolve(fromLocal()).then(cleanStore)
-    ]).then(function (sources) {
+    ])).then(function (sources) {
       var best = null;
       sources.forEach(function (data) {
         if (isNewer(data, best)) best = data;
@@ -298,19 +362,7 @@
       headers: { 'Content-Type': 'application/json' },
       body: body
     }).then(function (res) { return res.ok; }).catch(function () { return false; });
-    function putShared() {
-      return fetch(SHARED_URL, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: body
-      }).then(function (res) { return res.ok; }).catch(function () { return false; });
-    }
-    var sharedSave = putShared().then(function (ok) {
-      return ok ? true : putShared().then(function (retry) {
-        return retry ? true : putShared();
-      });
-    });
-    return Promise.all([localSave, sharedSave]).then(function (results) {
+    return Promise.all([localSave, saveShared(body)]).then(function (results) {
       return { local: results[0], shared: results[1] };
     });
   }
@@ -476,8 +528,8 @@
     applyView();
     return saveStore().then(function (where) {
       toast(where && where.shared
-        ? 'Saved for everyone. Refresh any phone or computer to see the red and green copy.'
-        : 'Could not publish. Try Save again.');
+        ? 'Saved. Anyone who opens the site can see this after a refresh.'
+        : 'Saved on this computer only. Try Save again to publish.');
     });
   }
 
