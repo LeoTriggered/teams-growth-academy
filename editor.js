@@ -3,6 +3,8 @@
   var APPROVE_PASSWORD = 'kajabi';
   var STORAGE_KEY = 'tga-content';
   var AUTH_KEY = 'tga-reviewer';
+  var GITHUB_FILE = 'https://api.github.com/repos/LeoTriggered/teams-growth-academy/contents/tga-content.json';
+  var GIST_URL = 'https://api.github.com/gists/7fef17de4247b60c4892c88e071e9528';
   var SHARED_URL = 'https://crudcrud.com/api/0019de36b53f4bbb86c17f903957ab2b/tga/6ad9c38a871dae03e85004b9';
   var TAGS = 'h1,h2,h3,h4,h5,h6,p,li,blockquote,button,a,span,td,th,label,figcaption,dt,dd,summary';
 
@@ -229,6 +231,38 @@
       .catch(function () { return null; });
   }
 
+  function fetchGithubFile() {
+    return fetch(GITHUB_FILE + '?ref=main&t=' + Date.now(), {
+      cache: 'no-store',
+      headers: { Accept: 'application/vnd.github+json' }
+    }).then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (file) {
+        if (!file || !file.content) return null;
+        var raw = file.content.replace(/\n/g, '');
+        try {
+          return cleanStore(JSON.parse(atob(raw)));
+        } catch (err) {
+          return null;
+        }
+      }).catch(function () { return null; });
+  }
+
+  function fetchGist() {
+    return fetch(GIST_URL + '?t=' + Date.now(), {
+      cache: 'no-store',
+      headers: { Accept: 'application/vnd.github+json' }
+    }).then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (gist) {
+        var file = gist && gist.files && gist.files['tga-content.json'];
+        if (!file || !file.content) return null;
+        try {
+          return cleanStore(JSON.parse(file.content));
+        } catch (err) {
+          return null;
+        }
+      }).catch(function () { return null; });
+  }
+
   function isNewer(candidate, current) {
     if (!candidate || !candidate.updatedAt) return false;
     if (!current || !current.updatedAt) return true;
@@ -237,16 +271,21 @@
 
   function loadStore() {
     return Promise.all([
-      Promise.resolve(fromLocal()).then(cleanStore),
+      fetchJson(SHARED_URL),
+      fetchGist(),
+      fetchGithubFile(),
       fetchJson(dirUrl('tga-content.json').href),
       fetchJson(apiUrl()),
-      fetchJson(SHARED_URL)
+      Promise.resolve(fromLocal()).then(cleanStore)
     ]).then(function (sources) {
       var best = null;
       sources.forEach(function (data) {
         if (isNewer(data, best)) best = data;
       });
-      if (best) mergeStore(best);
+      if (best) {
+        mergeStore(best);
+        toLocal();
+      }
     }).catch(function () {});
   }
 
@@ -259,11 +298,18 @@
       headers: { 'Content-Type': 'application/json' },
       body: body
     }).then(function (res) { return res.ok; }).catch(function () { return false; });
-    var sharedSave = fetch(SHARED_URL, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: body
-    }).then(function (res) { return res.ok; }).catch(function () { return false; });
+    function putShared() {
+      return fetch(SHARED_URL, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: body
+      }).then(function (res) { return res.ok; }).catch(function () { return false; });
+    }
+    var sharedSave = putShared().then(function (ok) {
+      return ok ? true : putShared().then(function (retry) {
+        return retry ? true : putShared();
+      });
+    });
     return Promise.all([localSave, sharedSave]).then(function (results) {
       return { local: results[0], shared: results[1] };
     });
@@ -431,8 +477,8 @@
     toggleChanges(true);
     return saveStore().then(function (where) {
       toast(where && where.shared
-        ? 'Saved. Refresh Incognito or another browser to see it.'
-        : 'Saved on this browser only.');
+        ? 'Saved for everyone. Refresh any phone or computer to see the red and green copy.'
+        : 'Could not publish. Try Save again.');
     });
   }
 
