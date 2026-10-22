@@ -474,7 +474,6 @@
     recordSaveHistory();
     leaveEdit();
     applyView();
-    toggleChanges(true);
     return saveStore().then(function (where) {
       toast(where && where.shared
         ? 'Saved for everyone. Refresh any phone or computer to see the red and green copy.'
