@@ -1,6 +1,16 @@
 {
   "approved": {},
   "draft": {},
-  "history": [],
-  "updatedAt": null
+  "history": [
+    {
+      "id": "probe",
+      "at": "2026-10-22T17:40:00Z",
+      "page": "Home.html",
+      "fieldId": "Home.html::probe",
+      "before": "old",
+      "after": "new",
+      "status": "pending"
+    }
+  ],
+  "updatedAt": "2026-10-22T17:40:00Z"
 }
