@@ -1,6 +1,31 @@
 {
-  "approved": {},
-  "draft": {},
-  "history": [],
-  "updatedAt": "2026-10-22T17:42:00Z"
+  "approved": {
+    "Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)": "Six Labs ready today. More on the way.",
+    "Home.html::section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)": "Parents get the words. Students get the skill. Same topic."
+  },
+  "draft": {
+    "Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)": "Six Labs ready today. More on the way. Test",
+    "Home.html::section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)": "Parents get the words. Students get the skill. Same topic. Hello"
+  },
+  "history": [
+    {
+      "id": "2026-10-23T11:50:49.760Z::Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "at": "2026-10-23T11:50:49.760Z",
+      "page": "Series and Labs.html",
+      "fieldId": "Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "before": "Six Labs ready today. More on the way.",
+      "after": "Six Labs ready today. More on the way. Test",
+      "status": "pending"
+    },
+    {
+      "id": "2026-10-23T11:50:07.549Z::Home.html::section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "at": "2026-10-23T11:50:07.549Z",
+      "page": "Home.html",
+      "fieldId": "Home.html::section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "before": "Parents get the words. Students get the skill. Same topic.",
+      "after": "Parents get the words. Students get the skill. Same topic. Hello",
+      "status": "pending"
+    }
+  ],
+  "updatedAt": "2026-10-23T11:50:49.780Z"
 }
