@@ -10,6 +10,8 @@
     'https://json.extendsclass.com/bin/caabdca',
     'https://extendsclass.com/api/json-storage/bin/caabdca'
   ];
+  var NTFY_TOPIC = 'https://ntfy.sh/tga-copy-7fef17de4247b60c4892c88e071e9528';
+  var NTFY_LATEST = NTFY_TOPIC + '/json?poll=1&since=latest';
   var TAGS = 'h1,h2,h3,h4,h5,h6,p,li,blockquote,button,a,span,td,th,label,figcaption,dt,dd,summary';
 
   var state = {
@@ -241,6 +243,8 @@
     if (!data || typeof data !== 'object') return null;
     var copy = JSON.parse(JSON.stringify(data));
     delete copy._id;
+    if (!copy.updatedAt) return null;
+    if (!copy.approved && !copy.draft && !copy.history) return null;
     return copy;
   }
 
@@ -277,11 +281,20 @@
     }), 8000).then(function (res) { return !!res.ok; }).catch(function () { return false; });
   }
 
+  function postNtfy(body) {
+    return withTimeout(fetch(NTFY_TOPIC + '?priority=min', {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      cache: 'no-store',
+      body: body
+    }), 8000).then(function (res) { return !!res.ok; }).catch(function () { return false; });
+  }
+
   function saveShared(body) {
     function attempt() {
-      return Promise.all(SHARED_URLS.map(function (url) {
+      return Promise.all([postNtfy(body)].concat(SHARED_URLS.map(function (url) {
         return putShared(url, body);
-      })).then(function (results) {
+      }))).then(function (results) {
         return results.some(Boolean);
       });
     }
@@ -292,6 +305,25 @@
         return wait(1400).then(attempt);
       });
     });
+  }
+
+  function fetchNtfy() {
+    return withTimeout(fetch(NTFY_LATEST, { cache: 'no-store' }), 8000)
+      .then(function (res) { return res.ok ? res.text() : ''; })
+      .then(function (text) {
+        if (!text) return null;
+        var msg = JSON.parse(text);
+        var att = msg && msg.attachment && msg.attachment.url;
+        if (att) return fetchJson(att);
+        if (msg && typeof msg.message === 'string') {
+          try {
+            return cleanStore(JSON.parse(msg.message));
+          } catch (err) {
+            return null;
+          }
+        }
+        return null;
+      }).catch(function () { return null; });
   }
 
   function fetchGithubFile() {
@@ -335,6 +367,7 @@
   function loadStore() {
     var remote = SHARED_URLS.map(fetchJson);
     return Promise.all(remote.concat([
+      fetchNtfy(),
       fetchGist(),
       fetchGithubFile(),
       fetchJson('https://gist.githubusercontent.com/LeoTriggered/7fef17de4247b60c4892c88e071e9528/raw/tga-content.json?t=' + Date.now()),

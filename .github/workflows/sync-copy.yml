@@ -32,21 +32,45 @@ jobs:
                   "https://json.extendsclass.com/bin/caabdca",
                   "https://extendsclass.com/api/json-storage/bin/caabdca",
               ]
-              newest = None
+              newest = {"data": None}
+
+              def consider(candidate, source):
+                  if not isinstance(candidate, dict):
+                      return
+                  candidate.pop("_id", None)
+                  if not candidate.get("updatedAt"):
+                      return
+                  stamp = candidate.get("updatedAt") or ""
+                  current = newest["data"]
+                  if current is None or stamp > (current.get("updatedAt") or ""):
+                      newest["data"] = candidate
+                      print("from", source, stamp)
+
+              try:
+                  ntfy = "https://ntfy.sh/tga-copy-7fef17de4247b60c4892c88e071e9528/json?poll=1&since=latest"
+                  with urllib.request.urlopen(ntfy, timeout=20) as res:
+                      raw_msg = res.read().decode().strip()
+                  if raw_msg:
+                      msg = json.loads(raw_msg)
+                      att = (msg.get("attachment") or {}).get("url")
+                      if att:
+                          with urllib.request.urlopen(att, timeout=20) as res:
+                              consider(json.loads(res.read().decode()), att)
+                      elif isinstance(msg.get("message"), str):
+                          try:
+                              consider(json.loads(msg["message"]), "ntfy")
+                          except Exception:
+                              print("skip ntfy message")
+              except Exception as exc:
+                  print("skip ntfy", exc)
+
               for url in urls:
                   try:
                       with urllib.request.urlopen(url, timeout=20) as res:
-                          candidate = json.loads(res.read().decode())
-                      if not isinstance(candidate, dict):
-                          continue
-                      candidate.pop("_id", None)
-                      stamp = candidate.get("updatedAt") or ""
-                      if newest is None or stamp > (newest.get("updatedAt") or ""):
-                          newest = candidate
-                          print("from", url, stamp)
+                          consider(json.loads(res.read().decode()), url)
                   except Exception as exc:
                       print("skip", url, exc)
-              data = newest
+              data = newest["data"]
               if data is None:
                   print("no shared copy")
                   raise SystemExit(0)
