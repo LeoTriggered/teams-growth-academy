@@ -4,10 +4,64 @@
     "Home.html::section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)": "Parents get the words. Students get the skill. Same topic."
   },
   "draft": {
-    "Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)": "Six Labs ready today. More on the way. Test",
+    "Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)": "Six Labs ready today. the two ways.",
     "Home.html::section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)": "Parents get the words. Students get the skill. Same topic. Hello"
   },
   "history": [
+    {
+      "id": "2026-10-24T06:09:13.304Z::Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "at": "2026-10-24T06:09:13.304Z",
+      "page": "Series and Labs.html",
+      "fieldId": "Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "before": "Six Labs ready today. More on the two ways.",
+      "after": "Six Labs ready today. the two ways.",
+      "status": "pending"
+    },
+    {
+      "id": "2026-10-24T06:08:56.503Z::Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "at": "2026-10-24T06:08:56.503Z",
+      "page": "Series and Labs.html",
+      "fieldId": "Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "before": "Six Labs ready today. More on the way.",
+      "after": "Six Labs ready today. More on the two ways.",
+      "status": "pending"
+    },
+    {
+      "id": "2026-10-24T06:07:49.403Z::Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "at": "2026-10-24T06:07:49.403Z",
+      "page": "Series and Labs.html",
+      "fieldId": "Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "before": "Six Labs ready today. More on the",
+      "after": "Six Labs ready today. More on the way.",
+      "status": "pending"
+    },
+    {
+      "id": "2026-10-24T06:07:44.019Z::Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "at": "2026-10-24T06:07:44.019Z",
+      "page": "Series and Labs.html",
+      "fieldId": "Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "before": "Six Labs ready today. More on the Test 3",
+      "after": "Six Labs ready today. More on the",
+      "status": "pending"
+    },
+    {
+      "id": "2026-10-24T06:03:42.037Z::Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "at": "2026-10-24T06:03:42.037Z",
+      "page": "Series and Labs.html",
+      "fieldId": "Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "before": "Six Labs ready today. More on the way. Test 3",
+      "after": "Six Labs ready today. More on the Test 3",
+      "status": "pending"
+    },
+    {
+      "id": "2026-10-24T06:02:13.671Z::Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "at": "2026-10-24T06:02:13.671Z",
+      "page": "Series and Labs.html",
+      "fieldId": "Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
+      "before": "Six Labs ready today. More on the way. Test",
+      "after": "Six Labs ready today. More on the way. Test 3",
+      "status": "pending"
+    },
     {
       "id": "2026-10-23T11:50:49.760Z::Series and Labs.html::main:nth-of-type(1)>section:nth-of-type(1)>div:nth-of-type(3)>div:nth-of-type(1)>h1:nth-of-type(1)",
       "at": "2026-10-23T11:50:49.760Z",
@@ -27,5 +81,5 @@
       "status": "pending"
     }
   ],
-  "updatedAt": "2026-10-23T11:50:49.780Z"
+  "updatedAt": "2026-10-24T06:09:13.321Z"
 }
