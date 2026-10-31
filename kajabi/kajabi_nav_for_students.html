@@ -1,0 +1,61 @@
+<!--
+  WHERE TO PASTE (pick one):
+
+  A) Kajabi → Theme → Custom JS
+     Paste ONLY the JavaScript below. No <style>. No <script>.
+     This same script also highlights For Parents on /ForParents.
+
+  B) For Students page → Custom Code (12 columns)
+     Paste the <script> ... </script> block.
+-->
+<script>
+// <![CDATA[
+(function () {
+  var TEAL = '#39B2B9';
+  var GRAY = '#595959';
+
+  function cleanPath(href) {
+    href = (href || '').split('?')[0].split('#')[0];
+    try { href = new URL(href, window.location.origin).pathname; } catch (e) {}
+    href = (href || '/').replace(/\/+$/, '').toLowerCase();
+    return href || '/';
+  }
+
+  function setLink(a, on) {
+    a.style.setProperty('color', on ? TEAL : GRAY, 'important');
+    a.style.setProperty('-webkit-text-fill-color', on ? TEAL : GRAY, 'important');
+    a.style.setProperty('font-weight', on ? '700' : '400', 'important');
+    a.style.setProperty('border-bottom', on ? '2px solid ' + TEAL : '2px solid transparent', 'important');
+    a.style.setProperty('padding-bottom', '4px', 'important');
+    a.style.setProperty('box-shadow', 'none', 'important');
+  }
+
+  function paint() {
+    var path = cleanPath(window.location.pathname);
+    var links = document.querySelectorAll('.header a.link-list__link');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      var href = cleanPath(a.getAttribute('href'));
+      var label = (a.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
+      var isHome = href === '/home' || href === '/';
+      var onHome = path === '/home' || path === '/' || path === '';
+      var match = (isHome && onHome) || (!isHome && href && path === href);
+      if (path === '/flex' && label === 'flex') match = true;
+      if (path === '/forstudents' && label === 'for students') match = true;
+      if (path === '/forparents' && label === 'for parents') match = true;
+      if (label === 'freebies') match = false;
+      setLink(a, match);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', paint);
+  } else {
+    paint();
+  }
+  setTimeout(paint, 50);
+  setTimeout(paint, 400);
+  setTimeout(paint, 1200);
+})();
+// ]]>
+</script>

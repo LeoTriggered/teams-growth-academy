@@ -1,0 +1,170 @@
+<!--
+  KAJABI: Checkout left panel · Parent Lab
+  Healthy Relationships & Family Dynamics
+  Custom Code. Paste ALL of this, including <style>.
+-->
+<style>
+  .tga-left :root, .tga-left{
+    --teal:#39B2B9; --deep-teal:#1B878D; --charcoal:#13151A;
+    --wash:#E6F6F7; --slate:#4A4A4A; --line:rgba(0,161,171,.18);
+  }
+  .tga-left *{box-sizing:border-box;}
+  .tga-left{
+    max-width:560px;margin:0 auto;padding:48px 44px;
+    font-family:'Archivo','Open Sans',sans-serif;color:#13151A;
+  }
+
+  .tga-left .tga-topbar{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding-bottom:26px;margin-bottom:28px;border-bottom:1px solid var(--line);
+  }
+  .tga-left .brand-text{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--slate);line-height:1.35;}
+  .tga-left .brand-text strong{display:block;color:var(--charcoal);font-size:15px;font-weight:800;letter-spacing:0;}
+  .tga-left .logo{display:flex;align-items:center;gap:10px;}
+  .tga-left .logo img{height:56px;width:auto;display:block;}
+
+  .tga-left .eyebrow{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--deep-teal);background:var(--wash);padding:7px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .tga-left h1{font-size:38px;line-height:1.12;font-weight:800;margin:0 0 16px;}
+  .tga-left h1 .grad{
+    background:linear-gradient(135deg,var(--teal),#5fd7e2);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .tga-left .lead{font-size:17px;line-height:1.6;color:var(--slate);margin:0 0 30px;}
+
+  .tga-left .benefits{list-style:none;margin:0 0 32px;padding:0;}
+  .tga-left .benefits li{display:flex;align-items:flex-start;gap:12px;font-size:16px;font-weight:600;margin-bottom:14px;}
+  .tga-left .benefits .ic{
+    flex-shrink:0;width:24px;height:24px;border-radius:50%;
+    background:var(--teal);display:flex;align-items:center;justify-content:center;margin-top:1px;
+  }
+  .tga-left .benefits .ic svg{width:14px;height:14px;fill:#fff;}
+
+  .tga-left .rewards{
+    background:var(--charcoal);border-radius:20px;padding:26px 28px;position:relative;overflow:hidden;
+    box-shadow:0 12px 34px rgba(0,0,0,.22);margin-bottom:20px;
+  }
+  .tga-left .rewards::after{
+    content:"";position:absolute;right:-40px;top:-40px;width:220px;height:220px;
+    background:radial-gradient(circle,rgba(57,178,185,.35),transparent 70%);
+  }
+  .tga-left .rewards h4{
+    font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);margin:0 0 18px;position:relative;z-index:1;
+  }
+  .tga-left .rewards-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;position:relative;z-index:1;}
+  .tga-left .reward{display:flex;align-items:flex-start;gap:12px;}
+  .tga-left .reward .rc{
+    flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.1);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .tga-left .reward .rc svg{width:20px;height:20px;fill:var(--teal);}
+  .tga-left .reward span{color:#fff;font-size:14px;font-weight:600;line-height:1.35;padding-top:3px;}
+
+  .tga-left .parent-note{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--wash);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:28px;
+  }
+  .tga-left .parent-note .pic{
+    flex-shrink:0;width:42px;height:42px;border-radius:12px;background:#fff;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,161,171,.12);
+  }
+  .tga-left .parent-note .pic svg{width:22px;height:22px;fill:var(--deep-teal);}
+  .tga-left .parent-note h5{margin:0 0 10px;font-size:15px;font-weight:800;}
+  .tga-left .parent-note .vid-row{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:10px 0;border-bottom:1px solid #d7e8ea;
+  }
+  .tga-left .parent-note .vid-row:last-of-type{border-bottom:0;}
+  .tga-left .parent-note .vid-left{
+    display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--charcoal);
+  }
+  .tga-left .parent-note .vid-check{
+    width:20px;height:20px;border-radius:50%;background:var(--teal);
+    display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .tga-left .parent-note .vid-time{
+    display:flex;align-items:center;gap:8px;padding-left:14px;border-left:1px solid #d7e8ea;
+    font-size:14px;font-weight:400;color:var(--charcoal);white-space:nowrap;
+  }
+  .tga-left .parent-note .vid-time svg{width:16px;height:16px;stroke:var(--teal);fill:none;stroke-width:2;}
+  .tga-left .parent-note p{margin:10px 0 0;font-size:13.5px;color:var(--slate);line-height:1.5;}
+
+  .tga-left .trust{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:14px;font-weight:600;color:var(--slate);}
+  .tga-left .trust svg{width:18px;height:18px;fill:var(--deep-teal);}
+  .tga-left .trust .dot{width:4px;height:4px;border-radius:50%;background:#c9d3d3;}
+
+  @media (max-width:900px){
+    .tga-left{padding:32px 22px;}
+    .tga-left h1{font-size:30px;}
+    .tga-left .rewards-grid{grid-template-columns:1fr;}
+  }
+</style>
+
+<div class="tga-left">
+
+  <div class="tga-topbar">
+    <div class="brand-text">
+      <strong>Digital Lab Series</strong>
+      Character &middot; Confidence &middot; Leadership
+    </div>
+    <div class="logo">
+      <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/sites/2148874776/images/d632075-f534-f45f-71bd-e217a7f174ce_ChatGPT_Image_Jul_11_2026_02_35_04_PM.png" alt="T.E.A.M.S. Growth Academy">
+    </div>
+  </div>
+
+  <span class="eyebrow">Social Series &middot; Parent Lab</span>
+
+  <h1>Healthy Relationships <span class="grad">&amp; Family Dynamics</span></h1>
+
+  <p class="lead">Your lesson first. How to talk about friendships, family, and conflict without turning dinner into a lecture — so you know what to say tonight.</p>
+
+  <ul class="benefits">
+    <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>See the difference between effort, trust, and control in their friendships</li>
+    <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>Spot guilt trips and unhealthy patterns before they get stuck</li>
+    <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>Help them set a boundary without a blow-up</li>
+    <li><span class="ic"><svg viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span>Strengthen family and sibling relationships at home</li>
+  </ul>
+
+  <div class="rewards">
+    <h4>What's Included</h4>
+    <div class="rewards-grid">
+      <div class="reward"><span class="rc"><svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2m6 3v7l6-3.5z"/></svg></span><span>Parent Lab video</span></div>
+      <div class="reward"><span class="rc"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5zm-1 15-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9z"/></svg></span><span>Lifetime access, watch on your time</span></div>
+      <div class="reward"><span class="rc"><svg viewBox="0 0 24 24"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3m-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3m0 2c-2.3 0-7 1.2-7 3.5V19h14v-2.5C15 14.2 10.3 13 8 13m8 0c-.3 0-.6 0-1 .1 1.2.9 2 2 2 2.9V19h6v-2.5c0-2.3-4.7-3.5-7-3.5"/></svg></span><span>A plan you can use that same night</span></div>
+      <div class="reward"><span class="rc"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5zm0 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6"/></svg></span><span>Coach Walker's proven framework</span></div>
+    </div>
+  </div>
+
+  <div class="parent-note">
+    <span class="pic" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2m6 3v7l6-3.5z"/></svg>
+    </span>
+    <div style="flex:1;min-width:0;">
+      <h5>One video included</h5>
+
+      <div class="vid-row">
+        <div class="vid-left">
+          <span class="vid-check">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="#fff"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          </span>
+          Parents
+        </div>
+        <div class="vid-time">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Parent Lab
+        </div>
+      </div>
+
+      <p>This is the <strong>Parent Lab</strong>. You get the training video so you can talk about friendships, boundaries, and family conflict at home. Add the student Lab later if they will sit down.</p>
+    </div>
+  </div>
+
+  <div class="trust">
+    <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5zm0 10.9h7c-.5 4.1-3.3 7.8-7 8.9z"/></svg>
+    Secure checkout <span class="dot"></span> Lifetime access <span class="dot"></span> Family pricing available
+  </div>
+
+</div>

@@ -1,0 +1,558 @@
+<!--
+  KAJABI: For Students page. Custom Code (not Text). Width = 12 columns.
+  Paste ALL of this including <style>, as ONE block.
+  Delete the old For Students body sections first. Keep Kajabi header and footer.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&display=swap');
+.tga-stu,.tga-stu *,.tga-stu *::before,.tga-stu *::after{box-sizing:border-box!important;}
+.tga-stu{width:100%!important;max-width:100%!important;margin:0!important;padding:0!important;font-family:Archivo,'Open Sans',Arial,sans-serif!important;color:#13151A!important;overflow-x:hidden!important;}
+.tga-stu a{text-decoration:none!important;}
+
+/* HERO */
+.tga-stu-hero{width:100%!important;margin:0!important;padding:48px 16px 32px!important;background-color:#F9FAFB!important;background-image:linear-gradient(to right,rgba(57,178,185,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(57,178,185,.07) 1px,transparent 1px)!important;background-size:40px 40px!important;position:relative!important;overflow:hidden!important;}
+.tga-stu-hero__in{width:100%!important;max-width:1200px!important;margin:0 auto!important;display:flex!important;flex-direction:column!important;gap:28px!important;}
+.tga-stu-hero__copy{width:100%!important;min-width:0!important;}
+.tga-stu-hero span.tga-stu-hero__badge{
+  display:inline-block!important;
+  width:auto!important;
+  max-width:100%!important;
+  height:auto!important;
+  margin:0 0 24px!important;
+  padding:6px 16px!important;
+  border:1px solid rgba(57,178,185,.35)!important;
+  border-radius:9999px!important;
+  background:#E6F6F7!important;
+  color:#1B878D!important;
+  -webkit-text-fill-color:#1B878D!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  letter-spacing:.12em!important;
+  text-transform:uppercase!important;
+  line-height:1.25!important;
+  box-shadow:none!important;
+  white-space:nowrap!important;
+}
+.tga-stu-hero span.tga-stu-hero__badge span,
+.tga-stu-hero span.tga-stu-hero__badge *{
+  display:inline!important;
+  width:auto!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  color:#1B878D!important;
+  -webkit-text-fill-color:#1B878D!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  letter-spacing:.12em!important;
+  text-transform:uppercase!important;
+  line-height:1.25!important;
+  box-shadow:none!important;
+  white-space:nowrap!important;
+}
+.tga-stu-hero h1.tga-stu-hero__title{display:block!important;margin:0 0 20px!important;color:#13151A!important;-webkit-text-fill-color:#13151A!important;font-size:clamp(32px,8vw,56px)!important;font-weight:800!important;line-height:1.08!important;letter-spacing:-.02em!important;text-align:left!important;overflow-wrap:break-word!important;}
+.tga-stu-hero h1.tga-stu-hero__title span{display:inline!important;font-size:inherit!important;font-weight:inherit!important;line-height:inherit!important;}
+.tga-stu-hero h1.tga-stu-hero__title span.tga-stu-hero__line,
+.tga-stu-hero h1.tga-stu-hero__title span.tga-stu-hero__line span{color:#13151A!important;-webkit-text-fill-color:#13151A!important;background:none!important;}
+.tga-stu-hero h1.tga-stu-hero__title span.tga-stu-hero__accent,
+.tga-stu-hero h1.tga-stu-hero__title span.tga-stu-hero__accent span{color:#39B2B9!important;-webkit-text-fill-color:#39B2B9!important;background:none!important;}
+.tga-stu-hero p.tga-stu-hero__p,.tga-stu-hero p.tga-stu-hero__p span,.tga-stu-hero p.tga-stu-hero__p *{margin:0 0 14px!important;color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;font-size:clamp(16px,3.6vw,20px)!important;line-height:1.65!important;}
+.tga-stu-hero p.tga-stu-hero__strong,.tga-stu-hero p.tga-stu-hero__strong span,.tga-stu-hero p.tga-stu-hero__strong *{margin:0 0 28px!important;color:#13151A!important;-webkit-text-fill-color:#13151A!important;font-size:16px!important;font-weight:700!important;line-height:1.6!important;}
+.tga-stu-hero__btns{display:flex!important;flex-direction:column!important;gap:12px!important;width:100%!important;}
+.tga-stu a.tga-stu-btn{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;padding:16px 24px!important;border-radius:9999px!important;font-size:13px!important;font-weight:700!important;letter-spacing:.06em!important;text-transform:uppercase!important;text-align:center!important;line-height:1.3!important;}
+.tga-stu a.tga-stu-btn--teal,.tga-stu a.tga-stu-btn--teal span{background:#39B2B9!important;border:0!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;}
+.tga-stu a.tga-stu-btn--ghost,.tga-stu a.tga-stu-btn--ghost span{background:#ffffff!important;border:1px solid #d1d5db!important;color:#13151A!important;-webkit-text-fill-color:#13151A!important;}
+.tga-stu-hero__media{position:relative!important;width:100%!important;max-width:480px!important;margin:0 auto!important;}
+.tga-stu-hero__media::before{content:" "!important;position:absolute!important;inset:0!important;background:rgba(57,178,185,.15)!important;border-radius:24px!important;transform:rotate(2deg) scale(1.05)!important;z-index:0!important;}
+.tga-stu-hero__card{position:relative!important;z-index:1!important;overflow:hidden!important;border-radius:24px!important;aspect-ratio:4/5!important;background:#E6F6F7!important;border:1px solid #fff!important;box-shadow:0 25px 50px -12px rgba(0,0,0,.25)!important;}
+.tga-stu-hero__card img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center top!important;display:block!important;margin:0!important;border:0!important;}
+.tga-stu-hero__cap{position:absolute!important;left:0!important;right:0!important;bottom:0!important;padding:24px!important;background:linear-gradient(to top,rgba(19,21,26,.85),transparent)!important;}
+.tga-stu-hero__cap-k,.tga-stu-hero__cap-k span{display:block!important;margin:0 0 8px!important;color:#39B2B9!important;-webkit-text-fill-color:#39B2B9!important;font-size:11px!important;font-weight:700!important;letter-spacing:.14em!important;text-transform:uppercase!important;}
+.tga-stu-hero__cap-t,.tga-stu-hero__cap-t span{margin:0!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:18px!important;font-weight:700!important;line-height:1.3!important;}
+
+/* 3 CARDS */
+.tga-stu-pills{width:100%!important;margin:0!important;padding:8px 16px 48px!important;background:#F9FAFB!important;}
+.tga-stu-pills__in{width:100%!important;max-width:1200px!important;margin:0 auto!important;display:grid!important;grid-template-columns:1fr!important;gap:16px!important;}
+.tga-stu-pills__card{margin:0!important;padding:28px 24px!important;background:#ffffff!important;border:1px solid #e5e7eb!important;border-radius:24px!important;}
+.tga-stu-pills__icon{width:48px!important;height:48px!important;border-radius:16px!important;display:flex!important;align-items:center!important;justify-content:center!important;margin:0 0 18px!important;}
+.tga-stu-pills__icon--mint{background:#E6F6F7!important;}
+.tga-stu-pills__icon--dark{background:#13151A!important;}
+.tga-stu-pills__icon svg{width:22px!important;height:22px!important;display:block!important;}
+.tga-stu-pills__icon--mint svg{fill:#1B878D!important;}
+.tga-stu-pills__icon--dark svg{fill:#ffffff!important;}
+.tga-stu-pills h2,.tga-stu-pills h2 span{margin:0 0 8px!important;color:#13151A!important;-webkit-text-fill-color:#13151A!important;font-size:20px!important;font-weight:700!important;}
+.tga-stu-pills p,.tga-stu-pills p span{margin:0!important;color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;font-size:16px!important;line-height:1.6!important;}
+
+/* HOW */
+.tga-stu-how{width:100%!important;margin:0!important;padding:56px 16px 48px!important;background:#13151A!important;color:#ffffff!important;}
+.tga-stu-how__in{width:100%!important;max-width:1200px!important;margin:0 auto!important;display:flex!important;flex-direction:column!important;gap:28px!important;}
+.tga-stu-how__badge,.tga-stu-how__badge span{display:inline-block!important;margin:0 0 18px!important;padding:6px 12px!important;border:1px solid rgba(57,178,185,.45)!important;border-radius:6px!important;color:#39B2B9!important;-webkit-text-fill-color:#39B2B9!important;font-size:11px!important;font-weight:700!important;letter-spacing:.16em!important;text-transform:uppercase!important;}
+.tga-stu-how h2,.tga-stu-how h2 span{display:block!important;margin:0 0 20px!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:clamp(28px,7vw,36px)!important;font-weight:800!important;line-height:1.12!important;letter-spacing:-.02em!important;text-align:left!important;}
+.tga-stu-how p.tga-stu-how__p,.tga-stu-how p.tga-stu-how__p span,.tga-stu-how p.tga-stu-how__p *{margin:0 0 16px!important;color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;font-size:clamp(16px,3.6vw,18px)!important;line-height:1.65!important;}
+.tga-stu-how__btnwrap{margin:32px 0 0!important;}
+.tga-stu-how a.tga-stu-how__btn,.tga-stu-how a.tga-stu-how__btn span{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;padding:14px 28px!important;border-radius:9999px!important;background:#39B2B9!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:12px!important;font-weight:700!important;letter-spacing:.06em!important;text-transform:uppercase!important;}
+.tga-stu-how__card{display:flex!important;align-items:flex-start!important;gap:16px!important;margin:0 0 14px!important;padding:20px 18px!important;background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.10)!important;border-radius:24px!important;}
+.tga-stu-how__card:last-child{margin:0!important;}
+.tga-stu-how__num{flex:0 0 48px!important;width:48px!important;height:48px!important;border-radius:9999px!important;background:#39B2B9!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:16px!important;font-weight:800!important;line-height:48px!important;text-align:center!important;}
+.tga-stu-how h3,.tga-stu-how h3 span{margin:2px 0 6px!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:20px!important;font-weight:700!important;}
+.tga-stu-how p.tga-stu-how__text,.tga-stu-how p.tga-stu-how__text span,.tga-stu-how p.tga-stu-how__text *{margin:0!important;color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;font-size:15px!important;line-height:1.5!important;}
+
+/* INCLUDED */
+.tga-stu-inc{width:100%!important;margin:0!important;padding:56px 16px 48px!important;background:#E6F6F7!important;}
+.tga-stu-inc__in{width:100%!important;max-width:1200px!important;margin:0 auto!important;}
+.tga-stu-inc__head{max-width:672px!important;margin:0 auto 32px!important;text-align:center!important;}
+.tga-stu-inc h2,.tga-stu-inc h2 span{display:block!important;margin:0 0 16px!important;color:#13151A!important;-webkit-text-fill-color:#13151A!important;font-size:clamp(28px,7vw,36px)!important;font-weight:800!important;line-height:1.12!important;text-align:center!important;}
+.tga-stu-inc p.tga-stu-inc__sub,.tga-stu-inc p.tga-stu-inc__sub span{margin:0!important;color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;font-size:18px!important;line-height:1.65!important;text-align:center!important;}
+.tga-stu-inc__grid{display:grid!important;grid-template-columns:1fr!important;gap:16px!important;}
+.tga-stu-inc__card{padding:28px 24px!important;background:#ffffff!important;border:1px solid #e5e7eb!important;border-radius:24px!important;}
+.tga-stu-inc__card svg{width:28px!important;height:28px!important;fill:#1B878D!important;display:block!important;margin:0 0 16px!important;}
+.tga-stu-inc h3,.tga-stu-inc h3 span{display:block!important;margin:0 0 8px!important;color:#13151A!important;-webkit-text-fill-color:#13151A!important;font-size:20px!important;font-weight:700!important;}
+.tga-stu-inc p.tga-stu-inc__t,.tga-stu-inc p.tga-stu-inc__t span{margin:0!important;color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;font-size:14px!important;line-height:1.6!important;}
+
+/* LABS */
+.tga-stu-labs{width:100%!important;margin:0!important;padding:56px 16px 48px!important;background:#F9FAFB!important;}
+.tga-stu-labs__in{width:100%!important;max-width:1200px!important;margin:0 auto!important;}
+.tga-stu-labs__head{display:flex!important;flex-direction:column!important;gap:20px!important;margin:0 0 28px!important;}
+.tga-stu-labs__eyebrow,.tga-stu-labs__eyebrow span{display:block!important;margin:0 0 12px!important;color:#1B878D!important;-webkit-text-fill-color:#1B878D!important;font-size:12px!important;font-weight:700!important;letter-spacing:.16em!important;text-transform:uppercase!important;}
+.tga-stu-labs h2,.tga-stu-labs h2 span{display:block!important;margin:0 0 16px!important;color:#13151A!important;-webkit-text-fill-color:#13151A!important;font-size:clamp(26px,7vw,36px)!important;font-weight:800!important;line-height:1.12!important;text-align:left!important;}
+.tga-stu-labs p.tga-stu-labs__sub,.tga-stu-labs p.tga-stu-labs__sub span{margin:0!important;color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;font-size:18px!important;line-height:1.65!important;}
+.tga-stu-labs a.tga-stu-labs__cta,.tga-stu-labs a.tga-stu-labs__cta span{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;padding:14px 22px!important;border-radius:9999px!important;background:#39B2B9!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:13px!important;font-weight:700!important;letter-spacing:.06em!important;text-transform:uppercase!important;}
+.tga-stu-labs__grid{display:grid!important;grid-template-columns:1fr!important;gap:16px!important;}
+.tga-stu-labs__card{display:block!important;background:#ffffff!important;border:1px solid #e5e7eb!important;border-radius:24px!important;overflow:hidden!important;}
+.tga-stu-labs__bar{height:8px!important;width:100%!important;line-height:0!important;font-size:0!important;}
+.tga-stu-labs__card--t .tga-stu-labs__bar{background:#39B2B9!important;}
+.tga-stu-labs__card--e .tga-stu-labs__bar{background:#1B878D!important;}
+.tga-stu-labs__card--s .tga-stu-labs__bar{background:#5e98be!important;}
+.tga-stu-labs__body{padding:22px 24px 24px!important;}
+.tga-stu-labs__meta,.tga-stu-labs__meta span{margin:0 0 8px!important;font-size:11px!important;font-weight:800!important;letter-spacing:.12em!important;text-transform:uppercase!important;}
+.tga-stu-labs__card--t .tga-stu-labs__meta,.tga-stu-labs__card--t .tga-stu-labs__meta span{color:#39B2B9!important;-webkit-text-fill-color:#39B2B9!important;}
+.tga-stu-labs__card--e .tga-stu-labs__meta,.tga-stu-labs__card--e .tga-stu-labs__meta span{color:#1B878D!important;-webkit-text-fill-color:#1B878D!important;}
+.tga-stu-labs__card--s .tga-stu-labs__meta,.tga-stu-labs__card--s .tga-stu-labs__meta span{color:#5e98be!important;-webkit-text-fill-color:#5e98be!important;}
+.tga-stu-labs h3,.tga-stu-labs h3 span{display:block!important;margin:0 0 12px!important;color:#13151A!important;-webkit-text-fill-color:#13151A!important;font-size:20px!important;font-weight:700!important;line-height:1.3!important;}
+.tga-stu-labs p.tga-stu-labs__t,.tga-stu-labs p.tga-stu-labs__t span{margin:0!important;color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;font-size:14px!important;line-height:1.6!important;}
+.tga-stu-labs__soon{display:flex!important;flex-direction:column!important;gap:16px!important;margin:20px 0 0!important;padding:20px 18px!important;background:rgba(230,246,247,.5)!important;border:1.5px dashed rgba(57,178,185,.4)!important;border-radius:24px!important;}
+.tga-stu-labs__soon p,.tga-stu-labs__soon p span{margin:0!important;color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;font-size:15px!important;line-height:1.6!important;}
+.tga-stu-labs__soon strong{color:#13151A!important;}
+.tga-stu-labs a.tga-stu-labs__soon-btn,.tga-stu-labs a.tga-stu-labs__soon-btn span{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;padding:12px 20px!important;border:1px solid rgba(57,178,185,.3)!important;border-radius:9999px!important;background:#ffffff!important;color:#1B878D!important;-webkit-text-fill-color:#1B878D!important;font-size:13px!important;font-weight:700!important;letter-spacing:.06em!important;text-transform:uppercase!important;}
+
+/* PRICE */
+.tga-stu-price{width:100%!important;margin:0!important;padding:56px 16px 48px!important;background:#13151A!important;}
+.tga-stu-price__in{width:100%!important;max-width:1200px!important;margin:0 auto!important;}
+.tga-stu-price__head{margin:0 0 28px!important;max-width:672px!important;}
+.tga-stu-price h2,.tga-stu-price h2 span{display:block!important;margin:0 0 16px!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:clamp(28px,7vw,36px)!important;font-weight:800!important;line-height:1.12!important;text-align:left!important;}
+.tga-stu-price p.tga-stu-price__sub,.tga-stu-price p.tga-stu-price__sub span,.tga-stu-price p.tga-stu-price__sub *{margin:0!important;color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;font-size:18px!important;line-height:1.65!important;}
+.tga-stu-price__grid{display:grid!important;grid-template-columns:1fr!important;gap:16px!important;max-width:896px!important;}
+.tga-stu-price__card{display:flex!important;flex-direction:column!important;padding:28px 24px!important;border-radius:24px!important;}
+.tga-stu-price__card--both{background:#39B2B9!important;}
+.tga-stu-price__card--solo{background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.10)!important;}
+.tga-stu-price__badge,.tga-stu-price__badge span{display:inline-block!important;align-self:flex-start!important;margin:0 0 20px!important;padding:6px 12px!important;border-radius:9999px!important;background:rgba(255,255,255,.20)!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:11px!important;font-weight:700!important;letter-spacing:.14em!important;text-transform:uppercase!important;}
+.tga-stu-price h3,.tga-stu-price h3 span{margin:0 0 8px!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:24px!important;font-weight:700!important;}
+.tga-stu-price p.tga-stu-price__amt,.tga-stu-price p.tga-stu-price__amt span{margin:0 0 4px!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:clamp(40px,10vw,48px)!important;font-weight:800!important;line-height:1!important;}
+.tga-stu-price p.tga-stu-price__per,.tga-stu-price p.tga-stu-price__per span{margin:0 0 24px!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:13px!important;font-weight:600!important;letter-spacing:.06em!important;text-transform:uppercase!important;opacity:.85!important;}
+.tga-stu-price p.tga-stu-price__copy,.tga-stu-price p.tga-stu-price__copy span{margin:0 0 28px!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:16px!important;line-height:1.6!important;flex:1 1 auto!important;}
+.tga-stu-price__card--solo p.tga-stu-price__copy,.tga-stu-price__card--solo p.tga-stu-price__copy span{color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;}
+.tga-stu-price a.tga-stu-price__btn--white,.tga-stu-price a.tga-stu-price__btn--white span{background:#ffffff!important;color:#1B878D!important;-webkit-text-fill-color:#1B878D!important;border:0!important;}
+.tga-stu-price a.tga-stu-price__btn--line,.tga-stu-price a.tga-stu-price__btn--line span{background:rgba(255,255,255,.10)!important;border:1px solid rgba(255,255,255,.20)!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;}
+
+/* COACH */
+.tga-stu-coach{width:100%!important;margin:0!important;padding:56px 16px 48px!important;background:#F9FAFB!important;}
+.tga-stu-coach__in{width:100%!important;max-width:1200px!important;margin:0 auto!important;display:flex!important;flex-direction:column!important;gap:28px!important;}
+.tga-stu-coach__media{position:relative!important;width:100%!important;max-width:420px!important;margin:0 auto!important;}
+.tga-stu-coach__media::before{content:" "!important;position:absolute!important;inset:-10px!important;background:rgba(57,178,185,.15)!important;border-radius:24px!important;transform:rotate(-2deg)!important;z-index:0!important;}
+.tga-stu-coach__frame{position:relative!important;z-index:1!important;overflow:hidden!important;border-radius:24px!important;aspect-ratio:4/5!important;background:#111!important;box-shadow:0 25px 50px -12px rgba(0,0,0,.25)!important;}
+.tga-stu-coach__frame img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center top!important;display:block!important;margin:0!important;border:0!important;}
+.tga-stu-coach__badge{position:absolute!important;left:16px!important;bottom:16px!important;z-index:2!important;max-width:calc(100% - 32px)!important;padding:10px 14px!important;background:rgba(19,21,26,.82)!important;border-radius:16px!important;border-left:4px solid #39B2B9!important;}
+.tga-stu-coach__badge p{margin:0!important;}
+.tga-stu-coach__badge-title,.tga-stu-coach__badge-title span{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:16px!important;font-weight:700!important;}
+.tga-stu-coach__badge-sub,.tga-stu-coach__badge-sub span{margin:6px 0 0!important;color:#39B2B9!important;-webkit-text-fill-color:#39B2B9!important;font-size:11px!important;font-weight:700!important;letter-spacing:.08em!important;text-transform:uppercase!important;}
+.tga-stu-coach__eyebrow,.tga-stu-coach__eyebrow span{display:block!important;margin:0 0 12px!important;color:#1B878D!important;-webkit-text-fill-color:#1B878D!important;font-size:12px!important;font-weight:700!important;letter-spacing:.16em!important;text-transform:uppercase!important;}
+.tga-stu-coach h2,.tga-stu-coach h2 span{display:block!important;margin:0 0 20px!important;color:#13151A!important;-webkit-text-fill-color:#13151A!important;font-size:clamp(28px,7vw,36px)!important;font-weight:800!important;line-height:1.12!important;text-align:left!important;}
+.tga-stu-coach p.tga-stu-coach__p,.tga-stu-coach p.tga-stu-coach__p span{margin:0 0 16px!important;color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;font-size:18px!important;line-height:1.65!important;}
+.tga-stu-coach__roles{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px 8px!important;margin:8px 0 24px!important;}
+.tga-stu-coach__role{display:flex!important;flex-direction:column!important;align-items:center!important;gap:8px!important;text-align:center!important;}
+.tga-stu-coach__icon{width:40px!important;height:40px!important;border-radius:9999px!important;background:#39B2B9!important;display:flex!important;align-items:center!important;justify-content:center!important;}
+.tga-stu-coach__icon svg{width:18px!important;height:18px!important;fill:#ffffff!important;}
+.tga-stu-coach__role span{color:#13151A!important;-webkit-text-fill-color:#13151A!important;font-size:13px!important;font-weight:600!important;}
+.tga-stu-coach a.tga-stu-coach__btn,.tga-stu-coach a.tga-stu-coach__btn span{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;padding:16px 28px!important;border-radius:9999px!important;background:#39B2B9!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:13px!important;font-weight:700!important;letter-spacing:.06em!important;text-transform:uppercase!important;}
+
+/* CTA */
+.tga-stu-cta{width:100%!important;margin:0!important;padding:64px 16px 56px!important;background:#39B2B9!important;text-align:center!important;}
+.tga-stu-cta__in{width:100%!important;max-width:768px!important;margin:0 auto!important;}
+.tga-stu-cta h2,.tga-stu-cta h2 span{display:block!important;margin:0 0 18px!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:clamp(28px,7vw,36px)!important;font-weight:800!important;line-height:1.15!important;text-align:center!important;}
+.tga-stu-cta p,.tga-stu-cta p span{margin:0 0 28px!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:18px!important;line-height:1.65!important;text-align:center!important;}
+.tga-stu-cta a.tga-stu-cta__btn,.tga-stu-cta a.tga-stu-cta__btn span{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;max-width:100%!important;margin:0 auto!important;padding:16px 28px!important;border-radius:9999px!important;background:#ffffff!important;color:#1B878D!important;-webkit-text-fill-color:#1B878D!important;font-size:13px!important;font-weight:700!important;letter-spacing:.06em!important;text-transform:uppercase!important;}
+
+@media only screen and (max-width:1023px){
+  .tga-stu-hero p.tga-stu-hero__strong{margin-bottom:8px!important;}
+  .tga-stu-hero__btns{
+    display:flex!important;
+    flex-direction:column!important;
+    flex-wrap:nowrap!important;
+    gap:12px!important;
+    width:100%!important;
+    max-width:100%!important;
+    margin:20px 0 28px 0!important;
+    padding:0!important;
+    position:relative!important;
+    z-index:2!important;
+    float:none!important;
+    clear:both!important;
+  }
+  .tga-stu-hero__btns a.tga-stu-btn{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    position:relative!important;
+    z-index:2!important;
+    float:none!important;
+    white-space:normal!important;
+    padding:14px 18px!important;
+    box-sizing:border-box!important;
+    text-align:center!important;
+  }
+  .tga-stu-hero__btns a.tga-stu-btn span{
+    display:inline!important;
+    width:auto!important;
+    max-width:100%!important;
+    padding:0!important;
+    margin:0!important;
+    border:0!important;
+    background:transparent!important;
+    float:none!important;
+    white-space:normal!important;
+  }
+  .tga-stu-hero__media{
+    position:relative!important;
+    z-index:1!important;
+    margin-top:8px!important;
+    clear:both!important;
+    float:none!important;
+  }
+}
+@media only screen and (min-width:768px){
+  .tga-stu-hero{padding:72px 24px 24px!important;}
+  .tga-stu-pills{padding:8px 24px 56px!important;}
+  .tga-stu-pills__in{grid-template-columns:1fr 1fr 1fr!important;gap:20px!important;}
+  .tga-stu-how{padding:72px 24px 64px!important;}
+  .tga-stu-how a.tga-stu-how__btn{width:auto!important;display:inline-flex!important;}
+  .tga-stu-inc{padding:72px 24px 64px!important;}
+  .tga-stu-inc__grid{grid-template-columns:1fr 1fr!important;gap:20px!important;}
+  .tga-stu-labs{padding:72px 24px 56px!important;}
+  .tga-stu-labs__grid{grid-template-columns:1fr 1fr!important;gap:20px!important;}
+  .tga-stu-labs a.tga-stu-labs__cta{width:auto!important;}
+  .tga-stu-labs__soon{flex-direction:row!important;align-items:center!important;justify-content:space-between!important;}
+  .tga-stu-labs a.tga-stu-labs__soon-btn{width:auto!important;white-space:nowrap!important;}
+  .tga-stu-price{padding:80px 24px 64px!important;}
+  .tga-stu-price__grid{grid-template-columns:1fr 1fr!important;}
+  .tga-stu-coach{padding:72px 24px 64px!important;}
+  .tga-stu-coach__roles{grid-template-columns:repeat(5,minmax(0,1fr))!important;}
+  .tga-stu-coach a.tga-stu-coach__btn{width:auto!important;display:inline-flex!important;}
+  .tga-stu-cta{padding:80px 24px!important;}
+  .tga-stu-cta h2,.tga-stu-cta h2 span{font-size:48px!important;}
+  .tga-stu-cta a.tga-stu-cta__btn{width:auto!important;display:inline-flex!important;min-width:280px!important;}
+}
+@media only screen and (min-width:1024px){
+  .tga-stu-hero__in{flex-direction:row!important;align-items:center!important;gap:48px!important;}
+  .tga-stu-hero__copy{flex:1 1 58%!important;}
+  .tga-stu-hero__media{flex:0 0 38%!important;margin:0!important;}
+  .tga-stu-hero h1.tga-stu-hero__title,.tga-stu-hero h1.tga-stu-hero__title span{font-size:56px!important;}
+  .tga-stu-hero__btns{display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;width:auto!important;max-width:100%!important;margin:0!important;gap:16px!important;}
+  .tga-stu-hero__btns a.tga-stu-btn{
+    display:inline-flex!important;
+    width:auto!important;
+    max-width:none!important;
+    white-space:nowrap!important;
+    padding:16px 24px!important;
+  }
+  .tga-stu-hero__btns a.tga-stu-btn span{
+    display:inline!important;
+    width:auto!important;
+    padding:0!important;
+    border:0!important;
+    background:transparent!important;
+    white-space:nowrap!important;
+  }
+  .tga-stu-how__in{flex-direction:row!important;align-items:flex-start!important;gap:56px!important;}
+  .tga-stu-how__copy,.tga-stu-how__steps{flex:1 1 50%!important;}
+  .tga-stu-how h2,.tga-stu-how h2 span{font-size:48px!important;}
+  .tga-stu-inc h2,.tga-stu-inc h2 span{font-size:48px!important;}
+  .tga-stu-inc__grid{grid-template-columns:1fr 1fr 1fr 1fr!important;}
+  .tga-stu-labs__head{flex-direction:row!important;align-items:flex-end!important;justify-content:space-between!important;}
+  .tga-stu-labs h2,.tga-stu-labs h2 span{font-size:48px!important;}
+  .tga-stu-labs a.tga-stu-labs__cta{width:auto!important;white-space:nowrap!important;}
+  .tga-stu-labs__grid{grid-template-columns:1fr 1fr 1fr!important;}
+  .tga-stu-price h2,.tga-stu-price h2 span{font-size:48px!important;}
+  .tga-stu-coach__in{flex-direction:row!important;align-items:center!important;gap:56px!important;}
+  .tga-stu-coach__media{flex:0 0 42%!important;max-width:480px!important;margin:0!important;}
+  .tga-stu-coach h2,.tga-stu-coach h2 span{font-size:48px!important;}
+}
+</style>
+
+<div class="tga-stu">
+
+  <div class="tga-stu-hero">
+    <div class="tga-stu-hero__in">
+      <div class="tga-stu-hero__copy">
+        <span class="tga-stu-hero__badge" style="color:#1B878D!important;"><span style="color:#1B878D!important;">Short Labs for students</span></span>
+        <h1 class="tga-stu-hero__title" style="color:#13151A!important;-webkit-text-fill-color:#13151A!important;"><span class="tga-stu-hero__line" style="color:#13151A!important;-webkit-text-fill-color:#13151A!important;">School, friends, and what comes next. </span><span class="tga-stu-hero__accent" style="color:#39B2B9!important;-webkit-text-fill-color:#39B2B9!important;">In words you will actually use.</span></h1>
+        <p class="tga-stu-hero__p" style="color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;"><span style="color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;">A Lab is a short video and a few real situations. You watch on your own, try the skill, and leave with a plan for that day. Not a lecture you forget by lunch.</span></p>
+        <p class="tga-stu-hero__strong" style="color:#13151A!important;"><span style="color:#13151A!important;">Your parent gets the matching Lab on the same topic, so home is not two different conversations. One purchase. No monthly fee.</span></p>
+        <div class="tga-stu-hero__btns">
+          <a class="tga-stu-btn tga-stu-btn--teal" href="#tga-stu-price" style="color:#ffffff!important;background:#39B2B9!important;"><span style="color:#ffffff!important;">Get this Lab with a parent</span></a>
+          <a class="tga-stu-btn tga-stu-btn--ghost" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs" style="color:#13151A!important;background:#ffffff!important;"><span style="color:#13151A!important;">See all Series &amp; Labs</span></a>
+        </div>
+      </div>
+      <div class="tga-stu-hero__media">
+        <div class="tga-stu-hero__card">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBENBydcL6nSwpwB29Y6NvTIXtjBjJ4dC2i7TjckQZPCHuhuDJ9XGUOChILjisuVntyHUu_LEpWzY61x0e2YMjnwakTig4CzBIL37yW8XVrlXaDLLBH1hbd_Dr9i4CWDYM_d2aDXWGIgNHStUpqMbNObfWIEeFNOV5G1uXJ10FoZBayLCCxhauuJ3OaUHVyGIwQ316RjxEBrVnv3ikVWOPyw5iX8jROHfKEcdGzq0F5xI4h2hjeFsz9KgwAHUEMK5fvx62_0Vib-k7R" alt="Students learning together" width="600" height="750">
+          <div class="tga-stu-hero__cap">
+            <p class="tga-stu-hero__cap-k" style="color:#39B2B9!important;"><span style="color:#39B2B9!important;">You + a parent · $79</span></p>
+            <p class="tga-stu-hero__cap-t" style="color:#ffffff!important;"><span style="color:#ffffff!important;">Your lesson, plus a matching Parent Lab so home is not a mess of mixed signals.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tga-stu-pills">
+    <div class="tga-stu-pills__in">
+      <div class="tga-stu-pills__card">
+        <span class="tga-stu-pills__icon tga-stu-pills__icon--mint"><svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path></svg></span>
+        <h2 style="color:#13151A!important;"><span style="color:#13151A!important;">Know what's coming</span></h2>
+        <p style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">What 7th grade, 9th grade, and after graduation actually feel like</span></p>
+      </div>
+      <div class="tga-stu-pills__card">
+        <span class="tga-stu-pills__icon tga-stu-pills__icon--dark"><svg viewBox="0 0 24 24"><path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"></path></svg></span>
+        <h2 style="color:#13151A!important;"><span style="color:#13151A!important;">Speak up for yourself</span></h2>
+        <p style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">How to say what you mean when the room is loud</span></p>
+      </div>
+      <div class="tga-stu-pills__card">
+        <span class="tga-stu-pills__icon tga-stu-pills__icon--mint"><svg viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"></path></svg></span>
+        <h2 style="color:#13151A!important;"><span style="color:#13151A!important;">Use it the same day</span></h2>
+        <p style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">Practice, then a plan. Not another talk you forget by lunch.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="tga-stu-how">
+    <div class="tga-stu-how__in">
+      <div class="tga-stu-how__copy">
+        <span class="tga-stu-how__badge" style="color:#39B2B9!important;"><span style="color:#39B2B9!important;">Built for students</span></span>
+        <h2 style="color:#ffffff!important;"><span style="color:#ffffff!important;">Your Lab. Your pace. One next step.</span></h2>
+        <p class="tga-stu-how__p" style="color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;"><span style="color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;">This is not another adult talking at you. Each Lab takes one real problem and walks you through it.</span></p>
+        <p class="tga-stu-how__p" style="color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;"><span style="color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;">You watch the video, work the situations, and leave with a plan that is yours. Your parent gets the matching Lab on the same topic, so you are not the only one trying at home.</span></p>
+        <div class="tga-stu-how__btnwrap"><a class="tga-stu-how__btn" href="#tga-stu-price" style="color:#ffffff!important;background:#39B2B9!important;"><span style="color:#ffffff!important;">Get this Lab with a parent</span></a></div>
+      </div>
+      <div class="tga-stu-how__steps">
+        <div class="tga-stu-how__card">
+          <span class="tga-stu-how__num" style="color:#ffffff!important;">1</span>
+          <div>
+            <h3 style="color:#ffffff!important;"><span style="color:#ffffff!important;">Pick the topic.</span></h3>
+            <p class="tga-stu-how__text" style="color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;"><span style="color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;">Pick the Lab that matches what is actually going on this week.</span></p>
+          </div>
+        </div>
+        <div class="tga-stu-how__card">
+          <span class="tga-stu-how__num" style="color:#ffffff!important;">2</span>
+          <div>
+            <h3 style="color:#ffffff!important;"><span style="color:#ffffff!important;">Watch and practice.</span></h3>
+            <p class="tga-stu-how__text" style="color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;"><span style="color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;">Short lessons, then situations that feel like real life.</span></p>
+          </div>
+        </div>
+        <div class="tga-stu-how__card">
+          <span class="tga-stu-how__num" style="color:#ffffff!important;">3</span>
+          <div>
+            <h3 style="color:#ffffff!important;"><span style="color:#ffffff!important;">Use it that day.</span></h3>
+            <p class="tga-stu-how__text" style="color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;"><span style="color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;">Leave with a plan, not more homework.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tga-stu-inc">
+    <div class="tga-stu-inc__in">
+      <div class="tga-stu-inc__head">
+        <h2 style="color:#13151A!important;"><span style="color:#13151A!important;">What is in a Student Lab</span></h2>
+        <p class="tga-stu-inc__sub" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">One topic. Your lesson. Something you can try that day.</span></p>
+      </div>
+      <div class="tga-stu-inc__grid">
+        <div class="tga-stu-inc__card">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"></path></svg>
+          <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">Student Video Lessons</span></h3>
+          <p class="tga-stu-inc__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">Watch on your own. Short lessons you can use the same day.</span></p>
+        </div>
+        <div class="tga-stu-inc__card">
+          <svg viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"></path></svg>
+          <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">Scenarios Activity</span></h3>
+          <p class="tga-stu-inc__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">Real situations, then a plan for that week. Not a worksheet you toss.</span></p>
+        </div>
+        <div class="tga-stu-inc__card">
+          <svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg>
+          <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">Pre/Post Assessments</span></h3>
+          <p class="tga-stu-inc__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">A before and after, so you can see if anything actually changed.</span></p>
+        </div>
+        <div class="tga-stu-inc__card">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.09 6.26L20.5 9.27l-5 4.87 1.18 6.88L12 17.77 7.32 21.02 8.5 14.14l-5-4.87 6.41-1.01L12 2z"></path></svg>
+          <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">Certificate of Completion</span></h3>
+          <p class="tga-stu-inc__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">A certificate when you finish. Not the whole point, but it is yours.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tga-stu-labs" id="tga-stu-labs">
+    <div class="tga-stu-labs__in">
+      <div class="tga-stu-labs__head">
+        <div>
+          <span class="tga-stu-labs__eyebrow" style="color:#1B878D!important;"><span style="color:#1B878D!important;">Pick the Lab that matches this week</span></span>
+          <h2 style="color:#13151A!important;"><span style="color:#13151A!important;">Labs you can start now. More still in production.</span></h2>
+          <p class="tga-stu-labs__sub" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">Each Lab takes one problem. Pick the one that is actually going on.</span></p>
+        </div>
+        <a class="tga-stu-labs__cta" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs" style="color:#ffffff!important;background:#39B2B9!important;"><span style="color:#ffffff!important;">View all Series &amp; Labs →</span></a>
+      </div>
+      <div class="tga-stu-labs__grid">
+        <a class="tga-stu-labs__card tga-stu-labs__card--t" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+          <div class="tga-stu-labs__bar"><span>&nbsp;</span></div>
+          <div class="tga-stu-labs__body">
+            <p class="tga-stu-labs__meta">Transition</p>
+            <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">Middle School Preparation and Survival</span></h3>
+            <p class="tga-stu-labs__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">Lockers, new friends, more teachers. Walk in knowing the map.</span></p>
+          </div>
+        </a>
+        <a class="tga-stu-labs__card tga-stu-labs__card--t" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+          <div class="tga-stu-labs__bar"><span>&nbsp;</span></div>
+          <div class="tga-stu-labs__body">
+            <p class="tga-stu-labs__meta">Transition</p>
+            <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">High School Preparation and Survival</span></h3>
+            <p class="tga-stu-labs__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">More freedom, higher stakes. Habits that do not fall apart in October.</span></p>
+          </div>
+        </a>
+        <a class="tga-stu-labs__card tga-stu-labs__card--t" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+          <div class="tga-stu-labs__bar"><span>&nbsp;</span></div>
+          <div class="tga-stu-labs__body">
+            <p class="tga-stu-labs__meta">Transition</p>
+            <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">Pathways After High School</span></h3>
+            <p class="tga-stu-labs__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">College, a trade, a job, or a year off. Pick something you can live with.</span></p>
+          </div>
+        </a>
+        <a class="tga-stu-labs__card tga-stu-labs__card--e" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+          <div class="tga-stu-labs__bar"><span>&nbsp;</span></div>
+          <div class="tga-stu-labs__body">
+            <p class="tga-stu-labs__meta">Empowerment</p>
+            <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">Peer Pressure and Social Value</span></h3>
+            <p class="tga-stu-labs__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">What to do when the group wants one thing and you know better.</span></p>
+          </div>
+        </a>
+        <a class="tga-stu-labs__card tga-stu-labs__card--e" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+          <div class="tga-stu-labs__bar"><span>&nbsp;</span></div>
+          <div class="tga-stu-labs__body">
+            <p class="tga-stu-labs__meta">Empowerment</p>
+            <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">Self Esteem and Knowing Your Worth</span></h3>
+            <p class="tga-stu-labs__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">Confidence that still stands when nobody claps.</span></p>
+          </div>
+        </a>
+        <a class="tga-stu-labs__card tga-stu-labs__card--e" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+          <div class="tga-stu-labs__bar"><span>&nbsp;</span></div>
+          <div class="tga-stu-labs__body">
+            <p class="tga-stu-labs__meta">Empowerment</p>
+            <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">Finding Your Voice</span></h3>
+            <p class="tga-stu-labs__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">Say the thing instead of swallowing it. At school, at home, with friends.</span></p>
+          </div>
+        </a>
+        <a class="tga-stu-labs__card tga-stu-labs__card--t" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+          <div class="tga-stu-labs__bar"><span>&nbsp;</span></div>
+          <div class="tga-stu-labs__body">
+            <p class="tga-stu-labs__meta">Transition</p>
+            <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">Navigating Transitions &amp; New Environments</span></h3>
+            <p class="tga-stu-labs__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">New school, new team, new group. Walk in ready instead of disappearing.</span></p>
+          </div>
+        </a>
+        <a class="tga-stu-labs__card tga-stu-labs__card--s" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+          <div class="tga-stu-labs__bar"><span>&nbsp;</span></div>
+          <div class="tga-stu-labs__body">
+            <p class="tga-stu-labs__meta">Social</p>
+            <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">Effective Communication &amp; Boundaries</span></h3>
+            <p class="tga-stu-labs__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">Say what you mean. Listen all the way through. Set a boundary without a blow-up.</span></p>
+          </div>
+        </a>
+        <a class="tga-stu-labs__card tga-stu-labs__card--s" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+          <div class="tga-stu-labs__bar"><span>&nbsp;</span></div>
+          <div class="tga-stu-labs__body">
+            <p class="tga-stu-labs__meta">Social</p>
+            <h3 style="color:#13151A!important;"><span style="color:#13151A!important;">Healthy Relationships &amp; Family Dynamics</span></h3>
+            <p class="tga-stu-labs__t" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">Friends, siblings, family. Know when to lean in and when to step back.</span></p>
+          </div>
+        </a>
+      </div>
+      <div class="tga-stu-labs__soon">
+        <p style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;"><strong>Coming soon.</strong> Athletic Mindset, Management, and more Social Labs are still being filmed.</span></p>
+        <a class="tga-stu-labs__soon-btn" href="https://digitallabseries.teamscoachingaz.com/ContactUs" style="color:#1B878D!important;"><span style="color:#1B878D!important;">Join the list</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tga-stu-price" id="tga-stu-price">
+    <div class="tga-stu-price__in">
+      <div class="tga-stu-price__head">
+        <h2 style="color:#ffffff!important;"><span style="color:#ffffff!important;">You get your Lab. Your parent gets the matching one.</span></h2>
+        <p class="tga-stu-price__sub" style="color:#d1d5db!important;"><span style="color:#d1d5db!important;">When you do a Lab, the parent who buys it gets the matching lesson. That is the whole idea.</span></p>
+      </div>
+      <div class="tga-stu-price__grid">
+        <div class="tga-stu-price__card tga-stu-price__card--both">
+          <span class="tga-stu-price__badge" style="color:#ffffff!important;"><span style="color:#ffffff!important;">Start here</span></span>
+          <h3 style="color:#ffffff!important;"><span style="color:#ffffff!important;">You and a parent</span></h3>
+          <p class="tga-stu-price__amt" style="color:#ffffff!important;"><span style="color:#ffffff!important;">$79</span></p>
+          <p class="tga-stu-price__per" style="color:#ffffff!important;"><span style="color:#ffffff!important;">per Lab</span></p>
+          <p class="tga-stu-price__copy" style="color:#ffffff!important;"><span style="color:#ffffff!important;">Your lesson plus the matching Parent Lab. Same topic. Home is not two different stories.</span></p>
+          <a class="tga-stu-btn tga-stu-price__btn--white" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs" style="color:#1B878D!important;background:#ffffff!important;"><span style="color:#1B878D!important;">Get both Labs</span></a>
+        </div>
+        <div class="tga-stu-price__card tga-stu-price__card--solo">
+          <h3 style="color:#ffffff!important;"><span style="color:#ffffff!important;">Student only</span></h3>
+          <p class="tga-stu-price__amt" style="color:#ffffff!important;"><span style="color:#ffffff!important;">$59</span></p>
+          <p class="tga-stu-price__per" style="color:#ffffff!important;"><span style="color:#ffffff!important;">per Lab</span></p>
+          <p class="tga-stu-price__copy"><span>Just your lessons, if a parent already has theirs or you are doing this on your own.</span></p>
+          <a class="tga-stu-btn tga-stu-price__btn--line" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs" style="color:#ffffff!important;"><span style="color:#ffffff!important;">See Student Labs</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tga-stu-coach">
+    <div class="tga-stu-coach__in">
+      <div class="tga-stu-coach__media">
+        <div class="tga-stu-coach__frame">
+          <img src="https://leotriggered.github.io/teams-growth-academy/images/flex-coach-portrait.jpg" alt="Coach Walker" width="600" height="750">
+          <div class="tga-stu-coach__badge">
+            <p class="tga-stu-coach__badge-title" style="color:#ffffff!important;"><span style="color:#ffffff!important;">20+ years</span></p>
+            <p class="tga-stu-coach__badge-sub" style="color:#39B2B9!important;"><span style="color:#39B2B9!important;">Teacher, coach, principal, mentor, parent</span></p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="tga-stu-coach__eyebrow" style="color:#1B878D!important;"><span style="color:#1B878D!important;">Your coach</span></span>
+        <h2 style="color:#13151A!important;"><span style="color:#13151A!important;">Built by someone who has sat in that chair.</span></h2>
+        <p class="tga-stu-coach__p" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">Coach Walker was a teacher, coach, principal, and mentor for more than 20 years. These Labs came out of real talks with students in the same spots you are in now.</span></p>
+        <p class="tga-stu-coach__p" style="color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">You get what he used to say in his office: a clear picture of what is going on, and something you can try this week.</span></p>
+        <div class="tga-stu-coach__roles">
+          <div class="tga-stu-coach__role"><span class="tga-stu-coach__icon"><svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path></svg></span><span>Teacher</span></div>
+          <div class="tga-stu-coach__role"><span class="tga-stu-coach__icon"><svg viewBox="0 0 24 24"><path d="M15.49 9.63c-.18-3-1.62-4.71-3.3-5.57C12.86 3.86 13 3.39 13 3c0-.55-.45-1-1-1s-1 .45-1 1c0 .39.14.86.8 1.06-1.67.86-3.1 2.57-3.29 5.57L15.49 9.63zM14.27 21H22v-1.5l-1.5-1.31V12h-1.27c-.83 3.12-3.13 5.45-5.96 6.32L14.27 21zM7.5 12H6v6.19L4.5 19.5V21h7.73l.96-2.68C10.4 17.45 8.1 15.12 7.27 12H7.5z"></path></svg></span><span>Coach</span></div>
+          <div class="tga-stu-coach__role"><span class="tga-stu-coach__icon"><svg viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zm-4.5-9L2 6v2h19V6l-9.5-5z"></path></svg></span><span>Principal</span></div>
+          <div class="tga-stu-coach__role"><span class="tga-stu-coach__icon"><svg viewBox="0 0 24 24"><path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"></path></svg></span><span>Mentor</span></div>
+          <div class="tga-stu-coach__role"><span class="tga-stu-coach__icon"><svg viewBox="0 0 24 24"><path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H17c-.8 0-1.54.5-1.85 1.26l-1.92 5.02c-.16.42.15.87.6.87h.01c.26 0 .5-.16.59-.41L16 11.12V22h4zM12.5 11.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5zM5.5 6c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2zm2 16v-7H9V9.5c0-.83-.67-1.5-1.5-1.5h-4C2.67 8 2 8.67 2 9.5V15h1.5v7h4z"></path></svg></span><span>Parent</span></div>
+        </div>
+        <a class="tga-stu-coach__btn" href="https://digitallabseries.teamscoachingaz.com/MEETCOACHWALKER" style="color:#ffffff!important;background:#39B2B9!important;"><span style="color:#ffffff!important;">Meet Coach Walker</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="tga-stu-cta">
+    <div class="tga-stu-cta__in">
+      <h2 style="color:#ffffff!important;"><span style="color:#ffffff!important;">One Lab. One skill. Start this week.</span></h2>
+      <p style="color:#ffffff!important;"><span style="color:#ffffff!important;">Pick the thing in front of you and start the student lesson. When the next problem shows up, there will be another Lab for it.</span></p>
+      <a class="tga-stu-cta__btn" href="#tga-stu-price" style="color:#1B878D!important;background:#ffffff!important;"><span style="color:#1B878D!important;">Get this Lab with a parent</span></a>
+    </div>
+  </div>
+
+</div>

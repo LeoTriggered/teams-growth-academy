@@ -1,0 +1,168 @@
+<!--
+  KAJABI: Custom Code (not Text). Width 12 columns.
+  Paste ALL of this including <style>.
+  Headline is WHITE like GitHub. Phone stacks 1 card, no overlap.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&display=swap');
+.tga-price,.tga-price *,.tga-price *::before,.tga-price *::after{box-sizing:border-box!important;}
+.tga-price{width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;padding:56px 16px 48px!important;background:#13151A!important;font-family:Archivo,'Open Sans',Arial,sans-serif!important;color:#ffffff!important;overflow-x:hidden!important;}
+.tga-price__inner{width:100%!important;max-width:1200px!important;min-width:0!important;margin:0 auto!important;}
+.tga-price__head{width:100%!important;max-width:100%!important;min-width:0!important;margin:0 0 28px!important;}
+.tga-price h2.tga-price__title,
+.tga-price h2.tga-price__title span{
+  display:block!important;
+  margin:0 0 16px!important;
+  color:#ffffff!important;
+  font-size:clamp(28px,7vw,36px)!important;
+  font-weight:800!important;
+  line-height:1.12!important;
+  letter-spacing:-.02em!important;
+  text-align:left!important;
+  overflow-wrap:break-word!important;
+  -webkit-text-fill-color:#ffffff!important;
+}
+.tga-price p.tga-price__sub,
+.tga-price p.tga-price__sub span{
+  margin:0!important;
+  color:#d1d5db!important;
+  font-size:clamp(15px,3.6vw,18px)!important;
+  font-weight:400!important;
+  line-height:1.65!important;
+  text-align:left!important;
+  overflow-wrap:break-word!important;
+  -webkit-text-fill-color:#d1d5db!important;
+}
+.tga-price__grid{display:grid!important;grid-template-columns:1fr!important;gap:16px!important;width:100%!important;min-width:0!important;align-items:stretch!important;}
+.tga-price__card{display:flex!important;flex-direction:column!important;width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;padding:28px 24px!important;border-radius:24px!important;}
+.tga-price__card--parent{background:#39B2B9!important;color:#ffffff!important;box-shadow:0 12px 40px rgba(57,178,185,.35)!important;}
+.tga-price__card--both{background:#ffffff!important;color:#13151A!important;border:2px solid #39B2B9!important;}
+.tga-price__card--student{background:rgba(255,255,255,.05)!important;color:#ffffff!important;border:1px solid rgba(255,255,255,.10)!important;}
+.tga-price__badge{display:inline-block!important;align-self:flex-start!important;margin:0 0 20px!important;padding:6px 12px!important;border-radius:9999px!important;font-size:11px!important;font-weight:700!important;letter-spacing:.14em!important;text-transform:uppercase!important;line-height:1.2!important;}
+.tga-price__card--parent .tga-price__badge{background:rgba(255,255,255,.20)!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;}
+.tga-price__card--both .tga-price__badge{background:#E6F6F7!important;color:#1B878D!important;-webkit-text-fill-color:#1B878D!important;}
+.tga-price h3.tga-price__name,
+.tga-price h3.tga-price__name span{
+  margin:0 0 8px!important;
+  font-size:clamp(22px,5vw,24px)!important;
+  font-weight:700!important;
+  line-height:1.25!important;
+  overflow-wrap:break-word!important;
+}
+.tga-price__card--parent h3.tga-price__name,
+.tga-price__card--parent h3.tga-price__name span{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;}
+.tga-price__card--both h3.tga-price__name,
+.tga-price__card--both h3.tga-price__name span{color:#13151A!important;-webkit-text-fill-color:#13151A!important;}
+.tga-price__card--student h3.tga-price__name,
+.tga-price__card--student h3.tga-price__name span{color:#ffffff!important;font-size:clamp(20px,4.6vw,22px)!important;-webkit-text-fill-color:#ffffff!important;}
+.tga-price p.tga-price__amt,
+.tga-price p.tga-price__amt span{
+  margin:0 0 4px!important;
+  font-size:clamp(40px,10vw,48px)!important;
+  font-weight:800!important;
+  line-height:1!important;
+}
+.tga-price__card--parent p.tga-price__amt,
+.tga-price__card--parent p.tga-price__amt span{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;}
+.tga-price__card--both p.tga-price__amt,
+.tga-price__card--both p.tga-price__amt span{color:#13151A!important;-webkit-text-fill-color:#13151A!important;}
+.tga-price__card--student p.tga-price__amt,
+.tga-price__card--student p.tga-price__amt span{color:#ffffff!important;font-size:clamp(32px,8vw,36px)!important;-webkit-text-fill-color:#ffffff!important;}
+.tga-price p.tga-price__per,
+.tga-price p.tga-price__per span{
+  margin:0 0 24px!important;
+  font-size:13px!important;
+  font-weight:600!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+}
+.tga-price__card--parent p.tga-price__per,
+.tga-price__card--parent p.tga-price__per span{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;opacity:.85!important;}
+.tga-price__card--both p.tga-price__per,
+.tga-price__card--both p.tga-price__per span{color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;}
+.tga-price__card--student p.tga-price__per,
+.tga-price__card--student p.tga-price__per span{color:#94a3b8!important;margin-bottom:20px!important;-webkit-text-fill-color:#94a3b8!important;}
+.tga-price p.tga-price__copy,
+.tga-price p.tga-price__copy span{
+  margin:0 0 28px!important;
+  font-size:16px!important;
+  line-height:1.6!important;
+  flex:1 1 auto!important;
+  overflow-wrap:break-word!important;
+}
+.tga-price__card--parent p.tga-price__copy,
+.tga-price__card--parent p.tga-price__copy span{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;}
+.tga-price__card--both p.tga-price__copy,
+.tga-price__card--both p.tga-price__copy span{color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;}
+.tga-price__card--student p.tga-price__copy,
+.tga-price__card--student p.tga-price__copy span{color:#cbd5e1!important;margin:0!important;-webkit-text-fill-color:#cbd5e1!important;}
+.tga-price a.tga-price__btn{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  padding:16px 24px!important;
+  border:0!important;
+  border-radius:9999px!important;
+  font-size:13px!important;
+  font-weight:700!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+  text-decoration:none!important;
+  text-align:center!important;
+  white-space:normal!important;
+  line-height:1.3!important;
+}
+.tga-price a.tga-price__btn--white,
+.tga-price a.tga-price__btn--white span{background:#ffffff!important;color:#1B878D!important;-webkit-text-fill-color:#1B878D!important;}
+.tga-price a.tga-price__btn--teal,
+.tga-price a.tga-price__btn--teal span{background:#39B2B9!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;}
+@media only screen and (min-width:480px){
+  .tga-price{padding:64px 20px 56px!important;}
+  .tga-price__card{padding:32px!important;}
+}
+@media only screen and (min-width:768px){
+  .tga-price{padding:80px 24px 64px!important;}
+  .tga-price__head{max-width:672px!important;margin:0 0 48px!important;}
+  .tga-price h2.tga-price__title,.tga-price h2.tga-price__title span{font-size:40px!important;}
+  .tga-price__grid{grid-template-columns:1fr 1fr!important;gap:20px!important;}
+  .tga-price__card--student{grid-column:1 / -1!important;}
+}
+@media only screen and (min-width:1024px){
+  .tga-price h2.tga-price__title,.tga-price h2.tga-price__title span{font-size:48px!important;line-height:1.08!important;}
+  .tga-price__grid{grid-template-columns:1fr 1fr 1fr!important;}
+  .tga-price__card--student{grid-column:auto!important;}
+}
+</style>
+<div class="tga-price">
+  <div class="tga-price__inner">
+    <div class="tga-price__head">
+      <h2 class="tga-price__title" style="color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;"><span style="color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;">Start with yourself. Add your teen when they are ready.</span></h2>
+      <p class="tga-price__sub" style="color:#d1d5db!important;-webkit-text-fill-color:#d1d5db!important;"><span style="color:#d1d5db!important;-webkit-text-fill-color:#d1d5db!important;">You can buy it alone. When they do their Lab too, you both get the matching lesson on the same topic.</span></p>
+    </div>
+    <div class="tga-price__grid">
+      <article class="tga-price__card tga-price__card--parent">
+        <span class="tga-price__badge" style="color:#ffffff!important;">Start here</span>
+        <h3 class="tga-price__name" style="color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;"><span style="color:#ffffff!important;">Parent Lab</span></h3>
+        <p class="tga-price__amt" style="color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;"><span style="color:#ffffff!important;">$39</span></p>
+        <p class="tga-price__per" style="color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;"><span style="color:#ffffff!important;">per Lab</span></p>
+        <p class="tga-price__copy" style="color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;"><span style="color:#ffffff!important;">Your lesson and a plan for home. One sitting. They do not have to sit down first.</span></p>
+        <a class="tga-price__btn tga-price__btn--white" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs" style="color:#1B878D!important;background:#ffffff!important;"><span style="color:#1B878D!important;">Start with the Parent Lab</span></a>
+      </article>
+      <article class="tga-price__card tga-price__card--both">
+        <span class="tga-price__badge" style="color:#1B878D!important;">Together</span>
+        <h3 class="tga-price__name" style="color:#13151A!important;-webkit-text-fill-color:#13151A!important;"><span style="color:#13151A!important;">Parent and student</span></h3>
+        <p class="tga-price__amt" style="color:#13151A!important;-webkit-text-fill-color:#13151A!important;"><span style="color:#13151A!important;">$79</span></p>
+        <p class="tga-price__per" style="color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">per Lab</span></p>
+        <p class="tga-price__copy" style="color:#4A4A4A!important;-webkit-text-fill-color:#4A4A4A!important;"><span style="color:#4A4A4A!important;">Your lesson and theirs, on the same topic, so you are not talking past each other at home.</span></p>
+        <a class="tga-price__btn tga-price__btn--teal" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs" style="color:#ffffff!important;background:#39B2B9!important;"><span style="color:#ffffff!important;">Get both Labs</span></a>
+      </article>
+      <article class="tga-price__card tga-price__card--student">
+        <h3 class="tga-price__name" style="color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;"><span style="color:#ffffff!important;">Student only</span></h3>
+        <p class="tga-price__amt" style="color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;"><span style="color:#ffffff!important;">$59</span></p>
+        <p class="tga-price__per" style="color:#94a3b8!important;-webkit-text-fill-color:#94a3b8!important;"><span style="color:#94a3b8!important;">per Lab</span></p>
+        <p class="tga-price__copy" style="color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;"><span style="color:#cbd5e1!important;">Just the student lessons, if they are doing this without you.</span></p>
+      </article>
+    </div>
+  </div>
+</div>

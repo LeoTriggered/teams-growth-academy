@@ -1,0 +1,136 @@
+<!--
+  KAJABI: Student pricing. Custom Code (not Text). Width = 12 columns.
+  Paste ALL of this including <style>.
+  Desktop = 2 cards side by side. Phone = 1 card stacked, no overlap.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&display=swap');
+.tga-sprice,.tga-sprice *,.tga-sprice *::before,.tga-sprice *::after{box-sizing:border-box!important;}
+.tga-sprice{width:100%!important;max-width:100%!important;min-width:0!important;margin:0!important;padding:56px 16px 48px!important;background:#13151A!important;font-family:Archivo,'Open Sans',Arial,sans-serif!important;color:#ffffff!important;overflow-x:hidden!important;}
+.tga-sprice a{text-decoration:none!important;}
+.tga-sprice__in{width:100%!important;max-width:1200px!important;min-width:0!important;margin:0 auto!important;}
+.tga-sprice__head{width:100%!important;max-width:672px!important;min-width:0!important;margin:0 0 28px!important;}
+.tga-sprice h2.tga-sprice__title,
+.tga-sprice h2.tga-sprice__title span{display:block!important;margin:0 0 16px!important;padding:0!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:clamp(28px,7vw,36px)!important;font-weight:800!important;line-height:1.12!important;letter-spacing:-.02em!important;text-align:left!important;overflow-wrap:break-word!important;}
+.tga-sprice p.tga-sprice__sub,
+.tga-sprice p.tga-sprice__sub span{margin:0!important;padding:0!important;color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;font-size:18px!important;line-height:1.65!important;}
+.tga-sprice__grid{display:flex!important;flex-direction:column!important;gap:16px!important;width:100%!important;max-width:896px!important;min-width:0!important;}
+.tga-sprice__card{display:flex!important;flex-direction:column!important;width:100%!important;min-width:0!important;margin:0!important;padding:28px 24px!important;border-radius:24px!important;}
+.tga-sprice__card--both{background:#39B2B9!important;box-shadow:0 12px 40px rgba(57,178,185,.35)!important;}
+.tga-sprice__card--solo{background:rgba(255,255,255,.05)!important;border:1px solid rgba(255,255,255,.10)!important;}
+.tga-sprice span.tga-sprice__badge{
+  display:inline-block!important;
+  align-self:flex-start!important;
+  width:auto!important;
+  margin:0 0 20px!important;
+  padding:6px 12px!important;
+  border-radius:9999px!important;
+  background:rgba(255,255,255,.20)!important;
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  letter-spacing:.14em!important;
+  text-transform:uppercase!important;
+  line-height:1.2!important;
+  white-space:nowrap!important;
+}
+.tga-sprice span.tga-sprice__badge span{
+  display:inline!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  letter-spacing:.14em!important;
+  text-transform:uppercase!important;
+}
+.tga-sprice h3.tga-sprice__name,
+.tga-sprice h3.tga-sprice__name span{display:block!important;margin:0 0 8px!important;padding:0!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:24px!important;font-weight:700!important;line-height:1.25!important;}
+.tga-sprice p.tga-sprice__amt,
+.tga-sprice p.tga-sprice__amt span{margin:0 0 4px!important;padding:0!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:clamp(40px,10vw,48px)!important;font-weight:800!important;line-height:1!important;}
+.tga-sprice p.tga-sprice__per,
+.tga-sprice p.tga-sprice__per span{margin:0 0 24px!important;padding:0!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:13px!important;font-weight:600!important;letter-spacing:.06em!important;text-transform:uppercase!important;opacity:.85!important;}
+.tga-sprice p.tga-sprice__copy,
+.tga-sprice p.tga-sprice__copy span{margin:0 0 28px!important;padding:0!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:16px!important;line-height:1.6!important;flex:1 1 auto!important;overflow-wrap:break-word!important;}
+.tga-sprice__card--solo p.tga-sprice__copy,
+.tga-sprice__card--solo p.tga-sprice__copy span{color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;}
+.tga-sprice a.tga-sprice__btn{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  margin-top:auto!important;
+  padding:16px 24px!important;
+  border-radius:9999px!important;
+  font-size:13px!important;
+  font-weight:700!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+  text-align:center!important;
+  line-height:1.3!important;
+  box-sizing:border-box!important;
+}
+.tga-sprice a.tga-sprice__btn span{
+  display:inline!important;
+  width:auto!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+}
+.tga-sprice a.tga-sprice__btn--white{background:#ffffff!important;border:0!important;color:#1B878D!important;-webkit-text-fill-color:#1B878D!important;}
+.tga-sprice a.tga-sprice__btn--white span{color:#1B878D!important;-webkit-text-fill-color:#1B878D!important;}
+.tga-sprice a.tga-sprice__btn--line{background:rgba(255,255,255,.10)!important;border:1px solid rgba(255,255,255,.20)!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;}
+.tga-sprice a.tga-sprice__btn--line span{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;}
+@media only screen and (max-width:1023px){
+  .tga-sprice__grid{display:flex!important;flex-direction:column!important;}
+  .tga-sprice__card{width:100%!important;max-width:100%!important;float:none!important;clear:both!important;}
+  .tga-sprice a.tga-sprice__btn{
+    display:block!important;
+    width:100%!important;
+    position:relative!important;
+    z-index:2!important;
+    float:none!important;
+    white-space:normal!important;
+  }
+}
+@media only screen and (min-width:768px){
+  .tga-sprice{padding:80px 24px 64px!important;}
+  .tga-sprice__card{padding:32px!important;}
+}
+@media only screen and (min-width:1024px){
+  .tga-sprice{padding:96px 24px 88px!important;}
+  .tga-sprice h2.tga-sprice__title,.tga-sprice h2.tga-sprice__title span{font-size:48px!important;line-height:1.08!important;}
+  .tga-sprice__head{margin:0 0 48px!important;}
+  .tga-sprice__grid{flex-direction:row!important;align-items:stretch!important;gap:20px!important;}
+  .tga-sprice__card{flex:1 1 50%!important;}
+}
+</style>
+<div class="tga-sprice" id="tga-sprice">
+  <div class="tga-sprice__in">
+    <div class="tga-sprice__head">
+      <h2 class="tga-sprice__title" style="color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;"><span style="color:#ffffff!important;">You get your Lab. Your parent gets the matching one.</span></h2>
+      <p class="tga-sprice__sub" style="color:#cbd5e1!important;-webkit-text-fill-color:#cbd5e1!important;"><span style="color:#cbd5e1!important;">When you do a Lab, the parent who buys it gets the matching lesson. That is the whole idea.</span></p>
+    </div>
+    <div class="tga-sprice__grid">
+      <div class="tga-sprice__card tga-sprice__card--both">
+        <span class="tga-sprice__badge" style="color:#ffffff!important;"><span style="color:#ffffff!important;">Start here</span></span>
+        <h3 class="tga-sprice__name" style="color:#ffffff!important;"><span style="color:#ffffff!important;">You and a parent</span></h3>
+        <p class="tga-sprice__amt" style="color:#ffffff!important;"><span style="color:#ffffff!important;">$79</span></p>
+        <p class="tga-sprice__per" style="color:#ffffff!important;"><span style="color:#ffffff!important;">per Lab</span></p>
+        <p class="tga-sprice__copy" style="color:#ffffff!important;"><span style="color:#ffffff!important;">Your lesson plus the matching Parent Lab. Same topic. Home is not two different stories.</span></p>
+        <a class="tga-sprice__btn tga-sprice__btn--white" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs" style="color:#1B878D!important;background:#ffffff!important;"><span style="color:#1B878D!important;">Get both Labs</span></a>
+      </div>
+      <div class="tga-sprice__card tga-sprice__card--solo">
+        <h3 class="tga-sprice__name" style="color:#ffffff!important;"><span style="color:#ffffff!important;">Student only</span></h3>
+        <p class="tga-sprice__amt" style="color:#ffffff!important;"><span style="color:#ffffff!important;">$59</span></p>
+        <p class="tga-sprice__per" style="color:#ffffff!important;"><span style="color:#ffffff!important;">per Lab</span></p>
+        <p class="tga-sprice__copy" style="color:#cbd5e1!important;"><span style="color:#cbd5e1!important;">Just your lessons, if a parent already has theirs or you are doing this on your own.</span></p>
+        <a class="tga-sprice__btn tga-sprice__btn--line" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs" style="color:#ffffff!important;"><span style="color:#ffffff!important;">See Student Labs</span></a>
+      </div>
+    </div>
+  </div>
+</div>

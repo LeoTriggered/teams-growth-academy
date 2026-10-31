@@ -1,0 +1,375 @@
+<!--
+  KAJABI INSTRUCTIONS
+  1. Delete the current Text block.
+  2. Add Content → Custom Code (not Text). Width = 12 columns.
+  3. Paste ALL of this, including the <style> tag.
+  Desktop = GitHub layout (3 cards). Phone = 1 card, button under the text, no overlap.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&display=swap');
+
+.tga-labs,
+.tga-labs * ,
+.tga-labs *::before,
+.tga-labs *::after {
+  box-sizing: border-box !important;
+}
+
+.tga-labs {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 56px 16px 48px !important;
+  background: #F9FAFB !important;
+  font-family: Archivo, 'Open Sans', Arial, sans-serif !important;
+  color: #13151A !important;
+  overflow-x: hidden !important;
+}
+
+.tga-labs__inner {
+  width: 100% !important;
+  max-width: 1200px !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+}
+
+.tga-labs__head {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important;
+  gap: 20px !important;
+  margin: 0 0 28px !important;
+  min-width: 0 !important;
+}
+
+.tga-labs__intro {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.tga-labs__eyebrow {
+  display: block !important;
+  margin: 0 0 12px !important;
+  color: #1B878D !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  line-height: 1.3 !important;
+}
+
+.tga-labs__title {
+  margin: 0 0 16px !important;
+  color: #13151A !important;
+  font-size: clamp(26px, 7vw, 36px) !important;
+  font-weight: 800 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.02em !important;
+  text-align: left !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+}
+
+.tga-labs__sub {
+  margin: 0 !important;
+  color: #4A4A4A !important;
+  font-size: clamp(15px, 3.6vw, 18px) !important;
+  line-height: 1.65 !important;
+  text-align: left !important;
+  overflow-wrap: break-word !important;
+}
+
+.tga-labs__cta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 14px 22px !important;
+  border: 0 !important;
+  border-radius: 9999px !important;
+  background: #39B2B9 !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  white-space: normal !important;
+  line-height: 1.3 !important;
+}
+
+.tga-labs__grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 16px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.tga-labs__card {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+  box-shadow: 0 1px 2px rgba(19, 21, 26, 0.05) !important;
+}
+
+.tga-labs__bar {
+  height: 8px !important;
+  width: 100% !important;
+}
+
+.tga-labs__card--t .tga-labs__bar { background: #39B2B9 !important; }
+.tga-labs__card--e .tga-labs__bar { background: #1B878D !important; }
+.tga-labs__card--s .tga-labs__bar { background: #5e98be !important; }
+
+.tga-labs__body {
+  padding: 22px 24px 24px !important;
+  min-width: 0 !important;
+}
+
+.tga-labs__meta {
+  margin: 0 0 8px !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  line-height: 1.3 !important;
+}
+
+.tga-labs__card--t .tga-labs__meta { color: #39B2B9 !important; }
+.tga-labs__card--e .tga-labs__meta { color: #1B878D !important; }
+.tga-labs__card--s .tga-labs__meta { color: #5e98be !important; }
+
+.tga-labs__name {
+  margin: 0 0 12px !important;
+  color: #13151A !important;
+  font-size: clamp(18px, 4.4vw, 20px) !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  text-align: left !important;
+  overflow-wrap: break-word !important;
+}
+
+.tga-labs__text {
+  margin: 0 !important;
+  color: #4A4A4A !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  text-align: left !important;
+  overflow-wrap: break-word !important;
+}
+
+.tga-labs__soon {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: wrap !important;
+  align-items: stretch !important;
+  gap: 16px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 20px 0 0 !important;
+  padding: 20px 18px !important;
+  background: rgba(230, 246, 247, 0.5) !important;
+  border: 1.5px dashed rgba(57, 178, 185, 0.4) !important;
+  border-radius: 24px !important;
+}
+
+.tga-labs__soon-text {
+  margin: 0 !important;
+  color: #4A4A4A !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  overflow-wrap: break-word !important;
+}
+
+.tga-labs__soon-text strong {
+  color: #13151A !important;
+  font-weight: 700 !important;
+}
+
+.tga-labs__soon-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  padding: 12px 20px !important;
+  border: 1px solid rgba(57, 178, 185, 0.3) !important;
+  border-radius: 9999px !important;
+  background: #ffffff !important;
+  color: #1B878D !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  white-space: normal !important;
+}
+
+.tga-labs__note {
+  margin: 16px 0 0 !important;
+  color: #4A4A4A !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+@media only screen and (min-width: 480px) {
+  .tga-labs { padding: 64px 20px 52px !important; }
+}
+
+@media only screen and (min-width: 768px) {
+  .tga-labs { padding: 72px 24px 56px !important; }
+  .tga-labs__title { font-size: 36px !important; }
+  .tga-labs__sub { font-size: 18px !important; }
+  .tga-labs__grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+  }
+  .tga-labs__cta { padding: 14px 24px !important; }
+}
+
+@media only screen and (min-width: 1024px) {
+  .tga-labs { padding: 80px 24px 64px !important; }
+  .tga-labs__head {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-end !important;
+    justify-content: space-between !important;
+    gap: 32px !important;
+    margin: 0 0 48px !important;
+  }
+  .tga-labs__intro { max-width: 672px !important; flex: 1 1 auto !important; }
+  .tga-labs__title { font-size: 48px !important; line-height: 1.08 !important; }
+  .tga-labs__cta {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    align-self: flex-end !important;
+    white-space: nowrap !important;
+    padding: 12px 24px !important;
+  }
+  .tga-labs__grid { grid-template-columns: 1fr 1fr 1fr !important; }
+  .tga-labs__soon {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+    padding: 20px 24px !important;
+    border-radius: 9999px !important;
+  }
+  .tga-labs__soon-text { flex: 1 1 auto !important; min-width: 0 !important; }
+  .tga-labs__soon-btn {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+}
+</style>
+
+<div class="tga-labs">
+  <div class="tga-labs__inner">
+    <div class="tga-labs__head">
+      <div class="tga-labs__intro">
+        <span class="tga-labs__eyebrow">Pick the Lab that matches this week</span>
+        <h2 class="tga-labs__title">Labs you can start now. More still in production.</h2>
+        <p class="tga-labs__sub">Each Lab takes one problem. Start with about 12 minutes of the parent lesson. That is enough for one conversation tonight.</p>
+      </div>
+      <a class="tga-labs__cta" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">View all Series &amp; Labs →</a>
+    </div>
+
+    <div class="tga-labs__grid">
+      <a class="tga-labs__card tga-labs__card--t" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+        <div class="tga-labs__bar"></div>
+        <div class="tga-labs__body">
+          <p class="tga-labs__meta">Transition</p>
+          <h3 class="tga-labs__name">Middle School Preparation and Survival</h3>
+          <p class="tga-labs__text">Seventh grade hits fast. Know what is coming before they are already in it.</p>
+        </div>
+      </a>
+      <a class="tga-labs__card tga-labs__card--t" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+        <div class="tga-labs__bar"></div>
+        <div class="tga-labs__body">
+          <p class="tga-labs__meta">Transition</p>
+          <h3 class="tga-labs__name">High School Preparation and Survival</h3>
+          <p class="tga-labs__text">More freedom, less talking. Stay in the loop without turning into the police.</p>
+        </div>
+      </a>
+      <a class="tga-labs__card tga-labs__card--t" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+        <div class="tga-labs__bar"></div>
+        <div class="tga-labs__body">
+          <p class="tga-labs__meta">Transition</p>
+          <h3 class="tga-labs__name">Pathways After High School</h3>
+          <p class="tga-labs__text">College, a trade, a job, or a year off. Help them choose without doing the choosing.</p>
+        </div>
+      </a>
+      <a class="tga-labs__card tga-labs__card--e" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+        <div class="tga-labs__bar"></div>
+        <div class="tga-labs__body">
+          <p class="tga-labs__meta">Empowerment</p>
+          <h3 class="tga-labs__name">Peer Pressure and Social Value</h3>
+          <p class="tga-labs__text">What to say when the group wants one thing and they know better.</p>
+        </div>
+      </a>
+      <a class="tga-labs__card tga-labs__card--e" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+        <div class="tga-labs__bar"></div>
+        <div class="tga-labs__body">
+          <p class="tga-labs__meta">Empowerment</p>
+          <h3 class="tga-labs__name">Self Esteem and Knowing Your Worth</h3>
+          <p class="tga-labs__text">Confidence that still stands when nobody claps.</p>
+        </div>
+      </a>
+      <a class="tga-labs__card tga-labs__card--e" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+        <div class="tga-labs__bar"></div>
+        <div class="tga-labs__body">
+          <p class="tga-labs__meta">Empowerment</p>
+          <h3 class="tga-labs__name">Finding Your Voice</h3>
+          <p class="tga-labs__text">For the quiet kid who has something to say and keeps swallowing it.</p>
+        </div>
+      </a>
+      <a class="tga-labs__card tga-labs__card--t" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+        <div class="tga-labs__bar"></div>
+        <div class="tga-labs__body">
+          <p class="tga-labs__meta">Transition</p>
+          <h3 class="tga-labs__name">Navigating Transitions &amp; New Environments</h3>
+          <p class="tga-labs__text">First-day nerves, unwritten rules, starting over. Walk in ready instead of guessing.</p>
+        </div>
+      </a>
+      <a class="tga-labs__card tga-labs__card--s" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+        <div class="tga-labs__bar"></div>
+        <div class="tga-labs__body">
+          <p class="tga-labs__meta">Social</p>
+          <h3 class="tga-labs__name">Effective Communication &amp; Boundaries</h3>
+          <p class="tga-labs__text">Help them say what they mean, listen all the way through, and set a clear boundary.</p>
+        </div>
+      </a>
+      <a class="tga-labs__card tga-labs__card--s" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs">
+        <div class="tga-labs__bar"></div>
+        <div class="tga-labs__body">
+          <p class="tga-labs__meta">Social</p>
+          <h3 class="tga-labs__name">Healthy Relationships &amp; Family Dynamics</h3>
+          <p class="tga-labs__text">Friendships and family — trust, respect, and when to step back.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="tga-labs__soon">
+      <p class="tga-labs__soon-text"><strong>Coming soon.</strong> Athletic Mindset, Management, and more Social Labs are still being filmed. Get on the list and we will email you when a Lab opens.</p>
+      <a class="tga-labs__soon-btn" href="https://digitallabseries.teamscoachingaz.com/contact">Join the list</a>
+    </div>
+
+    <p class="tga-labs__note">Labs are live now. More come out through the year.</p>
+  </div>
+</div>

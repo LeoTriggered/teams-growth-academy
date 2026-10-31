@@ -1,0 +1,131 @@
+<!--
+  KAJABI: Student closing CTA. Custom Code (not Text). Width = 12 columns.
+  Paste ALL of this including <style> and <script>.
+  Teal band = full screen edge to edge (breaks Kajabi inner box).
+  Desktop = compact white pill. Phone = button full width, no overlap.
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&display=swap');
+.tga-scta,.tga-scta *,.tga-scta *::before,.tga-scta *::after{box-sizing:border-box!important;}
+.tga-scta{
+  width:100vw!important;
+  max-width:100vw!important;
+  min-width:0!important;
+  margin:0!important;
+  margin-left:calc(50% - 50vw)!important;
+  margin-right:calc(50% - 50vw)!important;
+  padding:64px 16px 56px!important;
+  background:#39B2B9!important;
+  font-family:Archivo,'Open Sans',Arial,sans-serif!important;
+  color:#ffffff!important;
+  overflow-x:hidden!important;
+  text-align:center!important;
+  position:relative!important;
+}
+.tga-scta.tga-scta--flush{
+  width:100%!important;
+  max-width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+}
+.tga-scta a{text-decoration:none!important;}
+.tga-scta__glow{position:absolute!important;inset:0!important;background:radial-gradient(ellipse at top right,rgba(255,255,255,.18),transparent 55%)!important;pointer-events:none!important;z-index:0!important;}
+.tga-scta__in{width:100%!important;max-width:768px!important;min-width:0!important;margin:0 auto!important;position:relative!important;z-index:1!important;}
+.tga-scta h2.tga-scta__title,
+.tga-scta h2.tga-scta__title span{display:block!important;margin:0 0 18px!important;padding:0!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:clamp(28px,7vw,36px)!important;font-weight:800!important;line-height:1.15!important;letter-spacing:-.02em!important;text-align:center!important;overflow-wrap:break-word!important;}
+.tga-scta p.tga-scta__p,
+.tga-scta p.tga-scta__p span{margin:0 0 28px!important;padding:0!important;color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;font-size:clamp(16px,3.6vw,18px)!important;line-height:1.65!important;text-align:center!important;overflow-wrap:break-word!important;}
+.tga-scta a.tga-scta__btn{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:100%!important;
+  max-width:100%!important;
+  margin:0 auto!important;
+  padding:16px 28px!important;
+  border:0!important;
+  border-radius:9999px!important;
+  background:#ffffff!important;
+  color:#1B878D!important;
+  -webkit-text-fill-color:#1B878D!important;
+  font-size:13px!important;
+  font-weight:700!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+  text-decoration:none!important;
+  text-align:center!important;
+  line-height:1.3!important;
+  white-space:normal!important;
+  box-sizing:border-box!important;
+}
+.tga-scta a.tga-scta__btn span{
+  display:inline!important;
+  width:auto!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  color:#1B878D!important;
+  -webkit-text-fill-color:#1B878D!important;
+  font-size:13px!important;
+  font-weight:700!important;
+  letter-spacing:.06em!important;
+  text-transform:uppercase!important;
+}
+@media only screen and (max-width:1023px){
+  .tga-scta a.tga-scta__btn{
+    display:flex!important;
+    width:100%!important;
+    max-width:100%!important;
+    position:relative!important;
+    z-index:2!important;
+    float:none!important;
+    clear:both!important;
+    white-space:normal!important;
+  }
+}
+@media only screen and (min-width:768px){
+  .tga-scta{padding:80px 24px!important;}
+  .tga-scta h2.tga-scta__title,.tga-scta h2.tga-scta__title span{font-size:48px!important;line-height:1.12!important;}
+}
+@media only screen and (min-width:1024px){
+  .tga-scta{padding:80px 24px 80px!important;}
+  .tga-scta a.tga-scta__btn{width:auto!important;display:inline-flex!important;min-width:280px!important;padding:16px 32px!important;white-space:nowrap!important;}
+}
+</style>
+<div class="tga-scta" id="tga-scta">
+  <div class="tga-scta__glow"></div>
+  <div class="tga-scta__in">
+    <h2 class="tga-scta__title" style="color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;"><span style="color:#ffffff!important;">One Lab. One skill. Start this week.</span></h2>
+    <p class="tga-scta__p" style="color:#ffffff!important;"><span style="color:#ffffff!important;">Pick the thing in front of you and start the student lesson. When the next problem shows up, there will be another Lab for it.</span></p>
+    <a class="tga-scta__btn" href="https://digitallabseries.teamscoachingaz.com/Seriesandlabs" style="color:#1B878D!important;background:#ffffff!important;"><span style="color:#1B878D!important;">Get this Lab with a parent</span></a>
+  </div>
+</div>
+<script>
+(function(){
+  var el = document.getElementById('tga-scta');
+  if(!el) return;
+  var n = el.parentElement;
+  var hops = 0;
+  while(n && hops < 10 && n !== document.body){
+    var tag = (n.tagName || '').toLowerCase();
+    var cls = (n.className || '').toString().toLowerCase();
+    if(tag === 'header' || tag === 'nav' || tag === 'footer') break;
+    if(cls.indexOf('header') >= 0 || cls.indexOf('navbar') >= 0 || cls.indexOf('site-header') >= 0) break;
+    n.style.setProperty('padding','0','important');
+    n.style.setProperty('margin','0','important');
+    n.style.setProperty('max-width','none','important');
+    n.style.setProperty('width','100%','important');
+    n.style.setProperty('background','#39B2B9','important');
+    n.style.setProperty('box-shadow','none','important');
+    n.style.setProperty('border','0','important');
+    n.style.setProperty('overflow','visible','important');
+    hops++;
+    if(tag === 'section') break;
+    n = n.parentElement;
+  }
+  el.classList.add('tga-scta--flush');
+  document.documentElement.style.setProperty('overflow-x','hidden','important');
+  document.body.style.setProperty('overflow-x','hidden','important');
+})();
+</script>
